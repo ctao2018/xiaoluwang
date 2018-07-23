@@ -9,7 +9,7 @@ let pf = {
 	rtBtn: '',
 	rtStr: '',
 	headerBg: 'bg-white',
-	showTitle: true,
+	showTitle: false,
 	isHead: true,
 	isFoot: false
 }
