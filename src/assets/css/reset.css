@@ -55,4 +55,5 @@ eric/tools/css/reset/)
  button,input,textarea{
    padding: 0px;
    outline: none;
+   font-size: 1rem;
  }

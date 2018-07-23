@@ -5,7 +5,7 @@ const footer = require('./footer.ejs');
 let pf = {
 	pageTitle: "home",
 	ltBtn1: 'back-to',
-	ltStr1: '',
+	ltStr1: '返回',
 	ltBtn2: false,
 	ltStr2: '',
 	rtBtn1: false,

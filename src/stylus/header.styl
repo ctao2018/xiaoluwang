@@ -1,6 +1,13 @@
 @import './base'
 @import './sprite'
 
+$nav-btn(w = 45,h = 45)
+  position relative
+  width Rem(w)
+  height Rem(h)
+  background transparent
+  border 0
+
 .nav-wrap
   position fixed
   z-index 19
@@ -10,9 +17,12 @@
   box-sizing border-box
   display flex
   justify-content space-between
+  align-items center
   height Rem(45)
   &.bg-normal
     background $theme-color
+  &.bg-opacity
+    background transparent
   .nav-title
     position absolute
     top 0px
@@ -23,15 +33,181 @@
     text-align center
     color #fff
     box-sizing border-box
-  .back-to
-    width Rem(45)
-    height Rem(45)
-    background transparent
-    border 0
+  .lt-btn-box,.lt-btn-box
+    display flex
+    align-items center
+  .back-to//返回
+    $nav-btn(35,45)
+    font-size 0
     &:after
       content ''
       display block
-      abs(13,auto,auto,15)
+      abs(0,0,0,0)
+      margin auto
       $headerSprite(3)
-    
-  
+  .nav-op-back//返回
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(14)
+  .nav-close
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(6)
+  .nav-share
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(5)
+  .nav-op-share
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(15)
+  .nav-addr//地址
+    position relative
+    padding 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+    &:after
+      content ''
+      display block
+      abs(2,0,0,auto)
+      margin auto
+      $headerSprite(1)
+  .nav-addr2
+    position relative
+    padding 0 Rem(15) 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+    &:after
+      content ''
+      display block
+      abs(0,0,0,auto)
+      margin auto
+      $headerSprite(2)
+  .nav-card
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(12)
+  .nav-menu
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(8)
+  .btn-string
+    position relative
+    padding 0 Rem(10)
+    background transparent
+    border 0
+    color #fff
+  .nav-msg
+    $nav-btn(35,45)
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,10,0,0)
+      margin auto
+      $headerSprite(13)
+  .nav-msg-l
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,10,0,0)
+      margin auto
+      $headerSprite(11)
+  .nav-scan
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(10)
+  .nav-set
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(9)
+  .nav-search
+    flex 1 1 auto
+    display flex
+    align-items center
+    margin 0 Rem(15)
+    background #FA9158
+    border-radius 20px
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    &:before
+      content ''
+      display block
+      $headerSprite(4)
+      margin-right Rem(10)
+    input[type=text]
+      flex 1 1 auto
+      border 0
+      background transparent
+      height 100%
+      color #fff
+      &::-webkit-input-placeholder
+        color #fff
+  .nav-search-white
+    flex 1 1 auto
+    display flex
+    align-items center
+    margin 0 Rem(15)
+    background #fff
+    border-radius 20px
+    height Rem(30)
+    padding 0 Rem(10)
+    box-sizing border-box
+    &:before
+      content ''
+      display block
+      $headerSprite(16)
+      margin-right Rem(10)
+    input[type=text]
+      flex 1 1 auto
+      border 0
+      background transparent
+      height 100%
+      color #666
+      &::-webkit-input-placeholder
+        color #666
