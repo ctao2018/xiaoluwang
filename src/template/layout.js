@@ -4,12 +4,18 @@ const footer = require('./footer.ejs');
 
 let pf = {
 	pageTitle: "home",
-	ltBtn: 'back-to',
-	ltStr: '',
-	rtBtn: '',
-	rtStr: '',
-	headerBg: 'bg-white',
-	showTitle: false,
+	ltBtn1: 'back-to',
+	ltStr1: '',
+	ltBtn2: false,
+	ltStr2: '',
+	rtBtn1: false,
+	rtStr1: '',
+	rtBtn2: false,
+	rtStr2: '',
+	search: false,
+	searchStr: '商品关键字/店铺名称',
+	headerBg: 'bg-normal',
+	showTitle: true,
 	isHead: true,
 	isFoot: false
 }

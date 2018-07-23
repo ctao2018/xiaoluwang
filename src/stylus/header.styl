@@ -1,0 +1,37 @@
+@import './base'
+@import './sprite'
+
+.nav-wrap
+  position fixed
+  z-index 19
+  top 0px
+  left 0px
+  width 100%
+  box-sizing border-box
+  display flex
+  justify-content space-between
+  height Rem(45)
+  &.bg-normal
+    background $theme-color
+  .nav-title
+    position absolute
+    top 0px
+    width 100%
+    padding 0 Rem(80)
+    line-height Rem(45)
+    font-size Rem(19)
+    text-align center
+    color #fff
+    box-sizing border-box
+  .back-to
+    width Rem(45)
+    height Rem(45)
+    background transparent
+    border 0
+    &:after
+      content ''
+      display block
+      abs(13,auto,auto,15)
+      $headerSprite(3)
+    
+  

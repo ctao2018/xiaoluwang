@@ -1,15 +1,17 @@
-reSize(num)
-  return (num/14)rem
+$theme-color = #ff772e
+
+Rem(num)
+  return num == 'auto' ? auto : (num/14)rem
 
 abs(t,r,b,l)
   position absolute
-  top t
-  right r
-  bottom b
-  left l
+  top Rem(t)
+  right Rem(r)
+  bottom Rem(b)
+  left Rem(l)
 
 getBg(name)
-  str = '../assets/images/icon/'+name+'.png'
+  str = '../assets/images/'+name+'.png'
   background url(str) no-repeat
 
 botLine()
@@ -20,10 +22,10 @@ ellp()
   text-overflow ellipsis
   white-space nowrap
 
-ellps()
+ellps(line = 2)
   display -webkit-box
   -webkit-box-orient vertical
-  -webkit-line-clamp 2
+  -webkit-line-clamp line
   overflow hidden
 
 toMore(r = 15)
@@ -31,12 +33,12 @@ toMore(r = 15)
   &:after
     content ''
     display block
-    width reSize(9)
-    height reSize(16)
+    width Rem(9)
+    height Rem(16)
     position absolute
-    right reSize(r)
+    right Rem(r)
     top 50%
-    margin-top reSize(-8)
+    margin-top Rem(-8)
     getBg('to-more')
-    background-size reSize(9) reSize(16)
+    background-size Rem(9) Rem(16)
     background-position center

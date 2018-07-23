@@ -1,8 +1,10 @@
 const content = require('./index.ejs');
 const layout = require('../../template/layout.js');
 const pf = {
-  pageTitle: '向阳宝贝',
-  isFoot: true
+  pageTitle: '小鹿网',
+  isFoot: false,
+  rtBtn1:false,
+  rtStr1:'保存'
 }
 
 

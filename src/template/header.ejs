@@ -1,12 +1,31 @@
 <% if(isHead){ %>
 <div class="nav-wrap <%= headerBg %>">
-  <% if(ltBtn != ''){ %>
-  <button type="button" class="<%= ltBtn %>"><%= ltStr %></button>
+  <% if(ltBtn1 != false){ %>
+  <div class="lt-btn-box">
+    <% if(ltBtn1 != false){ %>
+      <button type="button" class="<%= ltBtn1 %>"><%= ltStr1 %></button>
+    <% } %>
+    <% if(ltBtn2 != false){ %>
+      <button type="button" class="<%= ltBtn2 %>"><%= ltStr2 %></button>
+    <% } %>
+  </div>
   <% } %>
-  <h3 class="nav-title"><%= showTitle ? pageTitle : '' %></h3>
-  <% if(rtBtn != ''){ %>
-  <button type="button" class="<%= rtBtn %>"><%= rtStr %></button>
+  <% if(showTitle != false){ %>
+    <h3 class="nav-title"><%= pageTitle %></h3>
   <% } %>
+  <% if(search != false){ %>
+    <div class="searchClass"><input type="text" placeholder="<%= searchStr %>"></div>
+  <% } %>
+  <% if(rtBtn1 != false){ %>
+    <div class="rt-btn-box">
+      <% if(rtBtn1 != false){ %>
+        <button type="button" class="<%= rtBtn1 %>"><%= rtStr1 %></button>
+      <% } %>
+      <% if(rtBtn2 != false){ %>
+        <button type="button" class="<%= rtBtn2 %>"><%= rtStr2 %></button>
+      <% } %>
+    </div>
+    <% } %>
 </div>
 <% } %>
 

@@ -40,7 +40,7 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
 .body-main
   height 100%
   box-sizing border-box
-  padding reSize(45) 0 0
+  padding Rem(45) 0 0
   &.ptop-none
     padding-top 0
   
@@ -48,8 +48,10 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
   display flex
   flex-flow column
   min-height 100%
-  padding 0 0 reSize(50)
+  padding 0 0 Rem(50)
   box-sizing border-box
+  &.max-h
+    flex 1 0 100%
   &.pbot-none
     padding-bottom 0
 .lt
@@ -66,6 +68,7 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
   height 100%
   overflow hidden
 
+// 清除浮动
 .clearfix:after
   content ''
   display block
@@ -75,6 +78,7 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
   clear both
   float none
 
+// tips
 .show-tips
   position fixed
   width 100%
@@ -95,6 +99,8 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
     100%
       opacity 1
       transform scale(1)
+
+// loading
 .show-loading
   position fixed
   z-index 99
@@ -119,31 +125,32 @@ input[type="button"],input[type="submit"],input[type="reset"],textarea
     100%
       transform rotate(360deg)
 
+// 开关美化
 input[type='checkbox'].p-switch,input[type='radio'].p-switch
   display inline-block
-  width reSize(40)
-  height reSize(20)
+  width Rem(40)
+  height Rem(20)
   vertical-align middle
   position relative
   cursor pointer
   overflow hidden
   box-sizing border-box
-  margin 0 0 0 reSize(5)
+  margin 0 0 0 Rem(5)
   &:before
     content ""
     display block
-    width reSize(40)
-    height reSize(20)
+    width Rem(40)
+    height Rem(20)
     background #f9f9f9
     border 1px solid #b3b3b3
-    border-radius reSize(40)
+    border-radius Rem(40)
     box-sizing border-box
     transition .3s
   &:after
     content ""
     display block
-    width reSize(18)
-    height reSize(18)
+    width Rem(18)
+    height Rem(18)
     border-radius 100%
     background #fff
     position absolute
@@ -158,7 +165,9 @@ input[type='checkbox'].p-switch,input[type='radio'].p-switch
     background #31cd31
   &:checked:after
     box-shadow 0 0 5px rgba(0,0,0,.5)
-    left reSize(21)
+    left Rem(21)
+
+// 弹窗背景
 .bg-drop
   position fixed
   top 0px
@@ -172,10 +181,10 @@ input[type='checkbox'].p-switch,input[type='radio'].p-switch
   position fixed
   left 0px
   right 0px
-  top reSize(150)
+  top Rem(150)
   z-index 199
   margin auto
-  width reSize(300)
+  width Rem(300)
   background #fff
   border-radius 10px
   overflow hidden
@@ -211,6 +220,7 @@ input[type='checkbox'].p-switch,input[type='radio'].p-switch
     100%
       opacity 1
 
+// 红星标注
 .red-point
   position relative
   &:after
@@ -221,5 +231,5 @@ input[type='checkbox'].p-switch,input[type='radio'].p-switch
     border-radius 100%
     background #f00
     position absolute
-    right reSize(5)
-    top reSize(5)
+    right Rem(5)
+    top Rem(5)
