@@ -1,0 +1,12 @@
+<% if(isHead){ %>
+<div class="nav-wrap <%= headerBg %>">
+  <% if(ltBtn != ''){ %>
+  <button type="button" class="<%= ltBtn %>"><%= ltStr %></button>
+  <% } %>
+  <h3 class="nav-title"><%= showTitle ? pageTitle : '' %></h3>
+  <% if(rtBtn != ''){ %>
+  <button type="button" class="<%= rtBtn %>"><%= rtStr %></button>
+  <% } %>
+</div>
+<% } %>
+

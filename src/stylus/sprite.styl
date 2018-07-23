@@ -1,0 +1,142 @@
+@import './base'
+
+spriteSize(num)
+  return (num/2/10.2)rem
+
+$sprite(num)
+  background: url('../assets/images/icon/c-jdsprite.png') no-repeat
+  background-size spriteSize(1000) spriteSize(1000)
+  if num == 1
+    background-position spriteSize(-17) spriteSize(-16) 
+    width spriteSize(43)
+    height spriteSize(33)
+  if num == 2
+    background-position spriteSize(-80) spriteSize(-21) 
+    width spriteSize(16)
+    height spriteSize(25)
+  if num == 3
+    background-position spriteSize(-112) spriteSize(-22) 
+    width spriteSize(18)
+    height spriteSize(25)
+  if num == 4
+    background-position spriteSize(-148) spriteSize(-22) 
+    width spriteSize(29)
+    height spriteSize(27)
+  if num == 5
+    background-position spriteSize(-195) spriteSize(-21) 
+    width spriteSize(26)
+    height spriteSize(26)
+  if num == 6
+    background-position spriteSize(-243) spriteSize(-19) 
+    width spriteSize(36)
+    height spriteSize(27)
+  if num == 7
+    background-position spriteSize(-298) spriteSize(-19) 
+    width spriteSize(26)
+    height spriteSize(26)
+  if num == 8
+    background-position spriteSize(-344) spriteSize(-23) 
+    width spriteSize(15)
+    height spriteSize(15)
+  if num == 9
+    background-position spriteSize(-381) spriteSize(-12) 
+    width spriteSize(26)
+    height spriteSize(26)
+  if num == 10
+    background-position spriteSize(-449) spriteSize(-15) 
+    width spriteSize(35)
+    height spriteSize(35)
+  if num == 11
+    background-position spriteSize(-506) spriteSize(-22) 
+    width spriteSize(24)
+    height spriteSize(18)
+  if num == 12
+    background-position spriteSize(-558) spriteSize(-20) 
+    width spriteSize(24)
+    height spriteSize(27)
+  if num == 13
+    background-position spriteSize(-610) spriteSize(-20) 
+    width spriteSize(21)
+    height spriteSize(20)
+  if num == 14
+    background-position spriteSize(-658) spriteSize(-19) 
+    width spriteSize(22)
+    height spriteSize(24)
+  if num == 15
+    background-position spriteSize(-703) spriteSize(-19) 
+    width spriteSize(26)
+    height spriteSize(26)
+  if num == 16
+    background-position spriteSize(-755) spriteSize(-19) 
+    width spriteSize(24)
+    height spriteSize(24)
+  if num == 17
+    background-position spriteSize(-804) spriteSize(-21) 
+    width spriteSize(22)
+    height spriteSize(22)
+
+$spriteLand(num,hei)
+  background: url('../assets/images/icon/land-sprites.png') no-repeat
+  background-size spriteSize(378) spriteSize(372)
+  position absolute
+  left reSize(15)
+  if num == 1
+    background-position spriteSize(-30) spriteSize(-30) 
+    width spriteSize(36)
+    height spriteSize(35)
+    top spriteSize((hei*2 - 35)/2)
+  if num == 2
+    background-position spriteSize(-126) spriteSize(-30) 
+    width spriteSize(35)
+    height spriteSize(35)
+    top spriteSize((hei*2 - 35)/2)
+  if num == 3
+    background-position spriteSize(-221) spriteSize(-30) 
+    width spriteSize(34)
+    height spriteSize(34)
+    top spriteSize((hei*2 - 34)/2)
+  if num == 4
+    background-position spriteSize(-315) spriteSize(-30) 
+    width spriteSize(33)
+    height spriteSize(33)
+    top spriteSize((hei*2 - 33)/2)
+  if num == 5
+    background-position spriteSize(-30) spriteSize(-125) 
+    width spriteSize(33)
+    height spriteSize(38)
+    top spriteSize((hei*2 - 38)/2)
+  if num == 6
+    background-position spriteSize(-126) spriteSize(-125) 
+    width spriteSize(35)
+    height spriteSize(35)
+    top spriteSize((hei*2 - 35)/2)
+  if num == 7
+    background-position spriteSize(-221) spriteSize(-124) 
+    width spriteSize(33)
+    height spriteSize(33)
+    top spriteSize((hei*2 - 33)/2)
+  if num == 8
+    background-position spriteSize(-315) spriteSize(-123) 
+    width spriteSize(32)
+    height spriteSize(32)
+    top spriteSize((hei*2 - 32)/2)
+  if num == 9
+    background-position spriteSize(-30) spriteSize(-223) 
+    width spriteSize(34)
+    height spriteSize(30)
+    top spriteSize((hei*2 - 30)/2)
+  if num == 10
+    background-position spriteSize(-124) spriteSize(-223) 
+    width spriteSize(35)
+    height spriteSize(29)
+    top spriteSize((hei*2 - 29)/2)
+  if num == 11
+    background-position spriteSize(-219) spriteSize(-223) 
+    width spriteSize(37)
+    height spriteSize(24)
+    top spriteSize((hei*2 - 24)/2)
+  if num == 12
+    background-position spriteSize(-30) spriteSize(-313) 
+    width spriteSize(31)
+    height spriteSize(29)
+    top spriteSize((hei*2 - 29)/2)
