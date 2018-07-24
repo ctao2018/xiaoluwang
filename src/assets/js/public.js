@@ -3,9 +3,9 @@ $(function () {
 });
 
 //获取离顶部高度
-function getTop(e){
-  var offset=e.offsetTop;
-  if(e.offsetParent!=null) offset+=getTop(e.offsetParent);
+function getTop(e) {
+  var offset = e.offsetTop;
+  if (e.offsetParent != null) offset += getTop(e.offsetParent);
   return offset;
 }
 
@@ -77,27 +77,78 @@ var hideLoading = function () {
   })
 }
 
-// 设置全局flag 以防用户在触底之后频繁触底
-var reachFlag = true;
+
+/* 显示上拉加载loading提示 */
+var showReachLoading = function (elem) {
+  $(".show-null-reach").slideUp(function () {
+    $(".show-null-reach").remove()
+  })
+  var _html = "<div class='show-reach-loading'></div>";
+  var _el = $(_html);
+  elem.append(_el);
+  _el.html("<img src='front/images/icon/reach-loading.png'><span>正在加载...</span>");
+  window.addEventListener('click', function (ev) {
+    if ($(".show-reach-loading").length > 0) {
+      ev.stopPropagation();
+      ev.preventDefault();
+    }
+  }, true);
+}
+
+/* 关闭上拉加载loading提示 */
+var hideReachLoading = function () {
+  $(".show-reach-loading").slideUp(function () {
+    $(".show-reach-loading").remove()
+  })
+}
+
+/* 显示nodata提示 */
+var showNullReach = function (elem) {
+  var _html = "<div class='show-null-reach'></div>";
+  var _el = $(_html);
+  elem.append(_el);
+  _el.html("<span>- 暂无更多数据 -</span>");
+}
 
 /* 触底加载 */
-var onReachBottom = function (callback) {
-  $(document).scroll(function () {
-    var doc_hei = $(document).outerHeight(true);
-    var sr_top = $(window).scrollTop();
-    var win_hei = $(window).outerHeight(true);
-    if (win_hei + sr_top + 1 >= doc_hei ) {
-      if (!reachFlag) {
-        if (!$(".show-loading").length > 0 && !$(".show-tips").length > 0) {
-          showTips('暂无更多数据~')
+var onReachBottom = {
+  hasNextPage: true,
+  currPage: 1,
+  option: {
+    now: 0,
+    old: 0
+  },
+  init: function (elem, callback) {
+    var that = this;
+    $(document).scroll(function () {
+      that.option.now = $(this).scrollTop();
+
+      if (that.option.old < that.option.now) {
+        //下滚
+        var doc_hei = $(document).outerHeight(true);
+        var sr_top = $(window).scrollTop();
+        var win_hei = $(window).outerHeight(true);
+        if (win_hei + sr_top + 1 >= doc_hei) {
+          if (!that.hasNextPage) {
+            if (!$(".show-reach-loading").length > 0 && !$(".show-null-reach").length > 0) {
+              showNullReach($(elem))
+            }
+            return false
+          }
+          that.hasNextPage = false;
+          showReachLoading($(elem));
+          callback()
         }
-        return false
+      } else {
+        //上滚            
+
       }
-      reachFlag = false;
-      showLoading();
-      callback()
-    }
-  })
+      setTimeout(function () {
+        that.option.old = that.option.now;
+      }, 0)
+
+    })
+  }
 }
 
 // 时间戳格式化
@@ -108,17 +159,17 @@ var filter = {
     }
     return num
   },
-  setDate:function(date){
+  setDate: function (date) {
     var that = this;
     var d = new Date(parseInt(date));
     var r = {
-      year:d.getFullYear(),
-      month:that.zero(d.getMonth() + 1),
-      day:that.zero(d.getDate()),
-      hour:that.zero(d.getHours()),
-      minute:that.zero(d.getMinutes()),
-      second:that.zero(d.getSeconds()),
-      apm:d.getHours() < 12 ? '上午' : '下午'
+      year: d.getFullYear(),
+      month: that.zero(d.getMonth() + 1),
+      day: that.zero(d.getDate()),
+      hour: that.zero(d.getHours()),
+      minute: that.zero(d.getMinutes()),
+      second: that.zero(d.getSeconds()),
+      apm: d.getHours() < 12 ? '上午' : '下午'
     }
     return r;
   },
@@ -178,8 +229,8 @@ function showConfirm(str, cbAccept, cbCancel) {
 }
 
 
-$(function(){
-  $(".back-to").on('click',function(){
+$(function () {
+  $(".back-to").on('click', function () {
     window.history.back(-1);
     return false;
   })
