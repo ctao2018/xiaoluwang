@@ -1,4 +1,27 @@
 <div class="stading-back">
-    <div class="sb-box"></div>
+    <ul class="sb-zclist">
+        <% for(let idx in stabList) { %>
+        <li>
+            <div class="sb-listimg">
+                <img src="<%= stabList[idx].img %>" alt="">
+            </div>
+            <div class="sb-listtxt">   
+                <div>
+                    <span class="sb-fs28"><%= stabList[idx].name %></span>
+                    <div class="sb-tippage <%=stabList[idx].djlei%>"><%=stabList[idx].dengji%></div>
+                    <div class="sb-diwei"><%=stabList[idx].diwei%></div>
+                </div>
+                <div class="sb-fs28 sb-miaoshu"><%=stabList[idx].maioshu%></div>
+                <div class="sb-c99"><%=stabList[idx].time%></div>
+            </div>
+            <div class="sb-right">
+                <img src="./front/images/icon/more.png" alt="">
+            </div>
+        </li>
+        <% } %>
+    </ul>
+    <div class="sb-footbox">
+         <input type="text" placeholder="去发表一下高见吧">
+    </div>
 </div>
 
