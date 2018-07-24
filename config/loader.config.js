@@ -25,8 +25,8 @@ const loaderlist = {
       loader: 'url-loader',
       options: {
         limit: 50,
-        outputPath: 'front/images/',
-        publicPath: '../images',
+        outputPath: 'front/images/icon/',
+        publicPath: '../images/icon',
         name: '[name].[ext]'
       }
     }]
