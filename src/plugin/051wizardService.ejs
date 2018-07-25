@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  $(function () {
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+
+    // 绑定城市更多选择
+    $(".wsx-more").on('click',function(){
+      var el = $(".wsc-choose.wscc-hide");
+      if(!el.hasClass("active")){
+        if(el.hasClass("unactive")){
+          el.removeClass("unactive");
+          clearTimeout(timed);
+        }
+        el.addClass("active");
+      }else{
+        el.removeClass("active");
+        el.addClass("unactive");
+        var timed = setTimeout(function(){
+          el.removeClass("unactive");
+        },700)
+      }
+    })
+  })
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<a class="ws-item" href="'+res.link+'">'
+      +'<div class="wsi-top">'
+      +'<div class="wsi-img"><img src="'+res.pic+'"></div>'
+      +'<div class="wsi-info">'
+      +'<h3>'+res.title+'</h3>'
+      +'<div class="wsi-hulm">'
+      +'<div>'
+      +'<p class="h-name">'+res.name+'<span class="'+res.sex+'"></span></p>'
+      +'<p>'+res.level+'</p>'
+      +'</div>'
+      +'<div>'
+      +'<p>咨询：<i><em>￥</em>'+res.consult.price+'<em>起</em></i></p>'
+      +'<p>向导：<i><em>￥</em>'+res.guide.price+'<em>起</em></i></p>'
+      +'</div></div></div></div>'
+      +'<div class="wsi-bot">'
+      +'<p><span>向导服务：'+res.guide.count+'次</span><span>'+res.guide.score+'分（'+res.guide.comment+'条点评）</span></p>'
+      +'<p><span>咨询服务：'+res.consult.count+'次</span><span>'+res.consult.score+'分（'+res.consult.comment+'条点评）</span></p>'
+      +'</div></a>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.ws-section',function () {
+      $.ajax({
+        url: './front/mockdata/051wizardService.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".ws-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".ws-section"))
+          }
+        }
+      })
+    })
+  })
+</script>
