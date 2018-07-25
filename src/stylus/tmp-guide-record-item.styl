@@ -1,0 +1,35 @@
+@import './base'
+
+.guide-record-item
+  padding Rem(10) 0
+  background #fff
+  display flex
+  toMore(0)
+  botLine()
+  &:last-child
+    border 0
+  .gri-img
+    flex 0 0 Rem(105)
+    height Rem(80)
+    border-radius 3px
+    overflow hidden
+    display flex
+    justify-content center
+    align-items center
+    >img
+      max-width 100%
+      max-height 100%
+  .gri-info
+    flex 1 0 auto
+    margin-left Rem(20)
+    display flex
+    flex-flow column
+    justify-content space-between
+    >h3
+      max-width Rem(220)
+      line-height Rem(21)
+      color #333333
+      ellps()
+    .i-date
+      font-size Rem(13)
+      color #666

@@ -1,0 +1,125 @@
+<div class="wizard-doyen-detail">
+  <div class="wdd-headimg"><img src="./front/images/arno-head-img.png"></div>
+  <div class="wdd-head">
+    <h3>徒步向导：美丽丽江、向导全程陪同服务、品位慢生活</h3>
+    <p class="small">丽江古城，最美古城</p>
+    <div class="wddh-price">
+      <p>向导：<span><em>￥</em>298<em>起</em></span></p>
+      <p>咨询：<span><em>￥</em>98<em>起</em></span></p>
+    </div>
+    <div class="wddh-tips">
+      <p>保险出行  全程服务</p>
+      <p>向导区域：丽江 大理</p>
+    </div>
+  </div>
+  <!-- 达人信息 -->
+  <div class="wdd-doyen">
+    <div class="wddd-top">
+      <div class="wddd-img"><img src="http://placehold.it/300x300/09f/fff.png"></div>
+      <div class="wddd-info">
+        <div class="i-top">
+          <h3>鹿友大团长</h3>
+          <div>
+            <img class="level" src="http://placehold.it/50x50/ffdd20/fff.png">
+            <button type="button" onclick="followFunc.changeFollow(this)" class="follow followed">已关注</button>
+          </div>
+        </div>
+        <p class="i-level">A级旅游达人</p>
+        <p class="i-info">简介：时尚旅游达人，十三年漫漫旅行总行程三万六千里</p>
+      </div>
+    </div>
+    <div class="wddd-bot">
+      <p>
+        <span>向导服务：206次</span>
+        <span>5.0分（20条点评）</span>
+      </p>
+      <p>
+        <span>向导服务：206次</span>
+        <span>5.0分（20条点评）</span>
+      </p>
+    </div>
+    <div class="wddd-score"><a href="">可用积分</a></div>
+  </div>
+  <!-- 服务预约 -->
+  <div class="wdd-service-order">
+    <div class="wddso-choose">
+      <h3>选择向导服务<i>（当日23:59前可预订）</i></h3>
+      <p>可选5个套餐</p>
+    </div>
+    <p class="wddso-tips">本地达人陪游服务，让您体验不一样的风景</p>
+    <div class="wddso-new">
+      <span>最新咨询：</span>
+      <p><img src="http://placehold.it/80x80/09f/fff.png"></p>
+      <p><img src="http://placehold.it/80x80/09f/fff.png"></p>
+    </div>
+  </div>
+  <div class="wdd-service-order">
+    <div class="wddso-choose">
+      <h3>选择向导服务<i>（当日23:59前可预订）</i></h3>
+      <p>可选5个套餐</p>
+    </div>
+    <p class="wddso-tips">本地达人陪游服务，让您体验不一样的风景</p>
+    <div class="wddso-new">
+      <span>最新咨询：</span>
+      <p><img src="http://placehold.it/80x80/09f/fff.png"></p>
+      <p><img src="http://placehold.it/80x80/09f/fff.png"></p>
+    </div>
+  </div>
+  <div class="wdd-confirm-timed">
+    <p>下单后，向导达人确认订单时长为30分钟内,</p>
+    <p>确认率100%</p>
+  </div>
+  <!-- 评论 -->
+  <div class="wdd-comment">
+    <%= tcm({str:'服务点评'}) %>
+    <div class="wddc-wrap page-tabbox">
+      <ul class="wddc-tab-curr">
+        <li class="active" data-tabto="0">向导服务</li>
+        <li data-tabto="1">咨询服务</li>
+      </ul>
+      <div data-tabbox="0">
+        <%= comment({type:'guide'})+comment({type:'guide'})+comment({type:'guide'}) %>
+      </div>
+      <div data-tabbox="1">
+        <%= comment({type:'consult'})+comment({type:'consult'})+comment({type:'consult'}) %>
+      </div>
+    </div>
+  </div>
+  <!-- 向导记录 -->
+  <div class="wdd-record">
+    <%= tcm({str:'向导记录'}) %>
+    <div class="wddr-section">
+      <%= guideRecord()+guideRecord()+guideRecord() %>
+    </div>
+  </div>
+  <!-- 具体说明 -->
+  <div class="wdd-illustrate">
+    <div class="wddi-wrap page-tabbox">
+      <ul class="wddi-tab-curr">
+        <li class="active" data-tabto="0">行程介绍</li>
+        <li data-tabto="1">图文详情</li>
+        <li data-tabto="2">费用说明</li>
+        <li data-tabto="3">预订须知</li>
+      </ul>
+      <div class="wddi-rich" data-tabbox="0">
+        0
+      </div>
+      <div class="wddi-rich" data-tabbox="1">
+        1
+      </div>
+      <div class="wddi-rich" data-tabbox="2">
+        2
+      </div>
+      <div class="wddi-rich" data-tabbox="3">
+        3
+      </div>
+    </div>
+  </div>
+  <!-- 底部按钮 -->
+  <div class="wdd-foot fix-footer">
+    <button type="button" onclick="collectFunc.changeCollect(this)" class="btn-collect"><span>收藏</span></button>
+    <button type="button" class="btn-consult">咨询向导</button>
+    <button type="button" class="btn-order">立即预订</button>
+  </div>
+</div>
+

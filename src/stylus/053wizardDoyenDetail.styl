@@ -1,0 +1,277 @@
+@import './base'
+
+.wizard-doyen-detail
+  margin-top Rem(-45)
+  .wdd-headimg
+    img
+      max-width 100%
+  .wdd-head
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    >h3
+      font-size Rem(31/2)
+      color #333333
+      line-height Rem(24)
+      font-weight 600
+    .small
+      font-size Rem(13)
+      color #666666
+      line-height Rem(20)
+      margin Rem(10) 0
+    .wddh-price
+      display flex
+      >p
+        font-size Rem(12)
+        color #666666
+        >span
+          font-size Rem(18)
+          color $theme-color
+          >em
+            font-size Rem(11)
+            margin 0 Rem(2)
+        &~p
+          margin-left Rem(20)
+    .wddh-tips
+      display flex
+      justify-content space-between
+      font-size Rem(13)
+      color #666666
+      margin-top Rem(10)
+  .wdd-doyen
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    .wddd-top
+      display flex
+    .wddd-img
+      flex 0 0 Rem(50)
+      height Rem(50)
+      display flex
+      justify-content center
+      align-items center
+      border-radius 100%
+      overflow hidden
+      margin-right Rem(20)
+      >img
+        max-width 100%
+        max-height 100%
+    .wddd-info
+      flex 1 0 auto
+      .i-top
+        display flex
+        justify-content space-between
+        align-items center
+        >h3
+          flex 1 1 auto
+          font-size Rem(16)
+          color #333333
+          line-height Rem(24)
+          max-width Rem(180)
+          font-weight 600
+          ellp()
+        >div
+          display flex
+          align-items center
+        .level
+          max-height Rem(16)
+        .follow
+          height Rem(20)
+          padding 0 Rem(10)
+          border 0
+          background $theme-color
+          color #fff
+          font-size Rem(14)
+          margin-left Rem(15)
+          border-radius 3px
+          &.followed
+            opacity .6
+      .i-level
+        color #666
+        line-height Rem(24)
+      .i-info
+        color #666
+        line-height Rem(24)
+        max-width Rem(280)
+        ellp()
+    .wddd-bot
+      border-top 1px solid #dfdfdf
+      border-bottom 1px solid #dfdfdf
+      margin-top Rem(10)
+      padding Rem(10) 0
+      >p
+        font-size Rem(13)
+        color #666666
+        &~p
+          margin-top Rem(10)
+        >span:last-child
+          margin-left Rem(15)
+          padding-left Rem(5)
+          position relative
+          &:before
+            content ''
+            display block
+            width 1px
+            height Rem(8)
+            background #666
+            position absolute
+            left 0px
+            top 0px
+            bottom 0px
+            margin auto
+    .wddd-score
+      padding Rem(15) 0 Rem(5)
+      text-align center
+      display flex 
+      justify-content center
+      >a
+        color $theme-color
+        padding-left Rem(20)
+        getBg('score-point')
+        background-size Rem(15) auto
+        background-position left center
+  .wdd-service-order
+    margin-bottom Rem(10)
+    .wddso-choose
+      padding Rem(10)
+      background #fff
+      toMore()
+      h3
+        color #333333
+        margin-bottom Rem(10)
+        font-weight 600
+        i
+          font-size Rem(12)
+          color #666
+          font-weight normal
+      p
+        font-size Rem(12)
+        color #666
+    .wddso-tips
+      padding Rem(15) Rem(10)
+      line-height Rem(20)
+      font-size Rem(13)
+      color #666666
+    .wddso-new
+      display flex
+      align-items center
+      padding Rem(10)
+      background #fff
+      >p
+        flex 0 0 Rem(30)
+        height Rem(30)
+        border-radius 100%
+        overflow hidden
+        display flex
+        justify-content center
+        align-items center
+        margin-left Rem(10)
+        >img
+          max-width 100%
+          max-height 100%
+  .wdd-confirm-timed
+    padding Rem(10) 0
+    margin-bottom Rem(10)
+    background #fff
+    text-align center
+    color $theme-color
+    line-height Rem(28)
+  .wdd-comment
+    margin-bottom Rem(10)
+    .wddc-wrap
+      background #fff
+      padding Rem(10)
+      .wddc-tab-curr
+        padding Rem(20) 0
+        display flex
+        justify-content space-around
+        align-items center
+        >li
+          line-height Rem(30)
+          padding 0 Rem(20)
+          border 1px solid $theme-color
+          color $theme-color
+          border-radius 3px
+          &.active
+            background $theme-color
+            color #fff
+  .wdd-record
+    background #fff
+    margin-bottom Rem(10)
+    .wddr-section
+      padding 0 Rem(10)
+  .wdd-illustrate
+    margin-bottom Rem(10)
+    background #fff
+    .wddi-tab-curr
+      display flex
+      justify-content space-around
+      botLine()
+      >li
+        line-height Rem(38)
+        font-size Rem(15)
+        color #333333
+        font-weight 600
+        border-bottom 2px solid transparent
+        &.active
+          color $theme-color
+          border-color $theme-color
+    .wddi-rich
+      padding Rem(10)
+      line-height Rem(22)
+      color #666
+      >img
+        max-width 100%
+  .wdd-foot
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 6
+    width 100%
+    display flex
+    .btn-collect
+      flex 0 0 Rem(75)
+      height Rem(50)
+      border 0
+      background #fff
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(12)
+      color #666666
+      &:before
+        content ''
+        display block
+        width Rem(20)
+        height Rem(18)
+        getBg('collect-sprites')
+        background-size Rem(25) Rem(46)
+        background-position Rem(-3) Rem(-25)
+        margin-bottom Rem(2)
+      &.collected:before
+        background-position Rem(-3) Rem(-2)
+    .btn-consult,.btn-order
+      flex 1 1 Rem(150)
+      height Rem(50)
+      border 0
+      color #fff
+    .btn-consult
+      background #ffac7a
+    .btn-order
+      background $theme-color
+.dialog-guide-service
+  position fixed
+  bottom 0px
+  left 0px
+  z-index 99
+  width 100%
+  height 80%
+  background #fff
+  display flex
+  flex-flow column
+  .taocan
+    flex 1 1 Rem(200)
+    overflow auto
+    line-height Rem(40)
+    max-height Rem(200)

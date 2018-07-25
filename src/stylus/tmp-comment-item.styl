@@ -1,0 +1,81 @@
+@import './base'
+
+.comment-item
+  padding Rem(10) 0
+  background #fff
+  botLine()
+  &:last-child
+    border 0
+  .ci-top
+    display flex
+    align-items center
+    >h3
+      flex 0 0 Rem(110)
+      font-size Rem(15)
+      color #333333
+      margin-right Rem(10)
+      font-weight 600
+      ellp()
+    .t-score
+      flex 1 0 auto
+      color $theme-color
+    .t-date
+      font-size Rem(10)
+      color #666666
+  .ci-level
+    font-size Rem(13)
+    color #666
+    margin Rem(10) 0
+  .ci-scores
+    display flex
+    flex-flow row wrap
+    padding Rem(5) 0
+    font-size Rem(13)
+    color #666
+    >p
+      height Rem(20)
+      flex 0 0 50%
+      display flex
+      align-items center
+    .commont-star
+      margin-left Rem(10)
+  .ci-cont
+    font-size Rem(13)
+    color #333
+    line-height Rem(24)
+  .ci-imgs
+    display flex
+    align-items center
+    margin-top Rem(5)
+    .ci-img
+      flex 0 0 Rem(45)
+      height Rem(45)
+      display flex
+      justify-content center
+      align-items center
+      border-radius 3px
+      overflow hidden
+      &~.ci-img
+        margin-left Rem(5)
+      >img
+        max-width 100%
+        max-height 100%
+.commont-star
+  flex 1 0 auto
+  display flex
+  align-items center
+  >i
+    flex 0 0 Rem(22/2)
+    height Rem(23/2)
+    getBg('star-on')
+    background-size cover
+    background-position center
+    ~i
+      margin-left Rem(2)
+  >em
+    flex 0 0 Rem(22/2)
+    height Rem(23/2)
+    margin-left Rem(2)
+    getBg('star-off')
+    background-size cover
+    background-position center
