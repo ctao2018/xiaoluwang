@@ -1,0 +1,63 @@
+@import './base'
+.photo-release
+    .pr-alert
+        width 100%
+        padding: Rem(20) 0
+        background-color #fff
+        color #333
+        position fixed
+        top 0
+        left 0
+        text-align center
+        z-index 55
+        box-shadow: 0 0 8px #999
+        font-size: Rem(17)
+        .pr-close-alert
+            color: #666
+            font-size: Rem(30)
+            padding-top: Rem(10)
+            text-align: center
+    .pr-menu-list
+        background-color: #fff
+        font-size: 0
+        border-bottom 1px solid #e6e6e6
+        li
+            font-size: Rem(14)
+            display: inline-block
+            width 25%
+            text-align: center
+            a
+                padding: Rem(10) 0
+                display: inline-block
+                color #666
+            .pr-on
+                border-bottom 1px solid $theme-color
+                color $theme-color
+
+    .pr-section
+        background-color #fff
+        margin-top Rem(10)
+        .pr-item
+            display block
+            padding Rem(10)
+            .pr-img
+                width 100%
+                max-height Rem(130)
+                border-radius 8px
+                overflow hidden
+                display flex
+                justify-content center
+                align-items center
+                img
+                    max-width 100%
+                    max-height 100%
+            .pr-txt
+                padding Rem(15) 0
+                .pr-txt-title
+                    color #333
+                    font-weight: bold
+                    font-size: Rem(14)
+                    margin-bottom: Rem(10)
+                .pr-txt-ms
+                    color #999
+                    ellp()
