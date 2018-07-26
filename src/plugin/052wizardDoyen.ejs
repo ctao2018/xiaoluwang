@@ -1,0 +1,103 @@
+<script>
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<a class="wizard-item" href="' + res.link + '">' +
+      '<div class="wsi-top">' +
+      '<div class="wsi-img"><img src="' + res.pic + '"></div>' +
+      '<div class="wsi-info">' +
+      '<h3>' + res.title + '</h3>' +
+      '<div class="wsi-hulm">' +
+      '<div>' +
+      '<p class="h-name">' + res.name + '<span class="' + res.sex + '"></span></p>' +
+      '<p>' + res.level + '</p>' +
+      '</div>' +
+      '<div>' +
+      '<p>咨询：<i><em>￥</em>' + res.consult.price + '<em>起</em></i></p>' +
+      '<p>向导：<i><em>￥</em>' + res.guide.price + '<em>起</em></i></p>' +
+      '</div></div></div></div>' +
+      '<div class="wsi-bot">' +
+      '<p><span>向导服务：' + res.guide.count + '次</span><span>' + res.guide.score + '分（' + res.guide.comment +
+      '条点评）</span></p>' +
+      '<p><span>咨询服务：' + res.consult.count + '次</span><span>' + res.consult.score + '分（' + res.consult.comment +
+      '条点评）</span></p>' +
+      '</div></a>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.wd-section', function () {
+      $.ajax({
+        url: './front/mockdata/051wizardService.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".wd-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+          onReachBottom.currPage = res.currPage; //获取当前页数
+          if (!onReachBottom.hasNextPage) {
+            showNullReach($(".wd-section"))
+          }
+        }
+      })
+    })
+  })
+
+  //绑定筛选事件
+  $(function () {
+    $(".wdf-sort").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).siblings().removeClass("active up down");
+        if ($(el).hasClass("up")) {
+          $(el).removeClass("up").addClass("down");
+          if ($(el).is("#w-level")) {
+            console.log("等级-从高到低");
+          } else if ($(el).is("#w-price")) {
+            console.log("价格-从高到低");
+          }
+        } else {
+          $(el).removeClass("down").addClass("up")
+          if ($(el).is("#w-level")) {
+            console.log("等级-从低到高");
+          } else if ($(el).is("#w-price")) {
+            console.log("价格-从低到高");
+          }
+        }
+      })
+    })
+  })
+
+  // 绑定数据筛选下拉
+  $(function () {
+    $(".wdf-mult").on("click", function (e) {
+      if ($(".wdf-multlist").is(":hidden")) {
+        $(".wdf-mult").addClass("active");
+        $(".wdf-multlist").fadeIn();
+      } else {
+        $(".wdf-mult").removeClass("active");
+        $(".wdf-multlist").fadeOut();
+      }
+      e.stopPropagation();
+      $(document).on("click", function (e) {
+        $(".wdf-multlist").fadeOut();
+        e.stopPropagation();
+      });
+    })
+    $(".wdf-multlist").on('click', function (e) {
+      e.preventDefault()
+    })
+    $(".wdf-multlist li").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".wdf-mult").text($(el).text());
+        $(".wdf-multlist").fadeOut();
+        $(".wdf-mult").removeClass("active");
+        // 选择结束
+        // do something
+      })
+    })
+  })
+</script>
