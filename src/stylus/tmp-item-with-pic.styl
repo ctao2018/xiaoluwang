@@ -1,15 +1,16 @@
 @import './base'
 
-.guide-record-item
-  display block
+a.item-with-pic
+  toMore(0)
+
+.item-with-pic
   padding Rem(10) 0
   background #fff
   display flex
-  toMore(0)
   botLine()
   &:last-child
     border 0
-  .gri-img
+  .iwp-img
     flex 0 0 Rem(105)
     height Rem(80)
     border-radius 3px
@@ -20,7 +21,7 @@
     >img
       max-width 100%
       max-height 100%
-  .gri-info
+  .iwp-info
     flex 1 0 auto
     margin-left Rem(20)
     display flex
@@ -34,3 +35,12 @@
     .i-date
       font-size Rem(13)
       color #666
+.price-normal
+  font-size Rem(12)
+  color #666666
+  >span
+    font-size Rem(18)
+    color $theme-color
+    >em
+      font-size Rem(11)
+      margin 0 Rem(2)

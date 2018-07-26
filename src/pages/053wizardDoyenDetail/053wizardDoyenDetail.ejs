@@ -1,5 +1,5 @@
 <div class="wizard-doyen-detail">
-  <div class="wdd-headimg"><img src="./front/images/arno-head-img.png"></div>
+  <div class="wdd-headimg"><%= scrollWall %></div>
   <div class="wdd-head">
     <h3>徒步向导：美丽丽江、向导全程陪同服务、品位慢生活</h3>
     <p class="small">丽江古城，最美古城</p>
@@ -42,7 +42,7 @@
   </div>
   <!-- 服务预约 -->
   <div class="wdd-service-order">
-    <div class="wddso-choose">
+    <div class="wddso-choose" onclick="showGuideDialog('guide')">
       <h3>选择向导服务<i>（当日23:59前可预订）</i></h3>
       <p>可选5个套餐</p>
     </div>
@@ -54,8 +54,8 @@
     </div>
   </div>
   <div class="wdd-service-order">
-    <div class="wddso-choose">
-      <h3>选择向导服务<i>（当日23:59前可预订）</i></h3>
+    <div class="wddso-choose" onclick="showGuideDialog('consult')">
+      <h3>选择咨询服务<i>（当日23:59前可预订）</i></h3>
       <p>可选5个套餐</p>
     </div>
     <p class="wddso-tips">本地达人陪游服务，让您体验不一样的风景</p>
@@ -119,7 +119,8 @@
   <div class="wdd-foot fix-footer">
     <button type="button" onclick="collectFunc.changeCollect(this)" class="btn-collect"><span>收藏</span></button>
     <button type="button" class="btn-consult">咨询向导</button>
-    <button type="button" class="btn-order">立即预订</button>
+    <button type="button" class="btn-order" onclick="showGuideDialog('guide')">立即预订</button>
   </div>
 </div>
 
+<%= dialogForGuide %>

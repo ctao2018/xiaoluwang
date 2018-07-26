@@ -1,16 +1,4 @@
-<link rel="stylesheet" href="front/swiper/swiper.min.css">
-<script src="front/swiper/swiper.min.js"></script>
 <script>
-  $(function () {
-    // 初始化轮播
-    var mySwiper = new Swiper('.swiper-container', {
-      autoplay: true,
-      pagination: {
-        el: '.swiper-pagination',
-        bulletElement: 'li',
-      },
-    });
-  })
   function showGuideDialog(type) {
     var elem = ".dialog-guide-service." + type;
     dropFunc.show(elem);
@@ -33,5 +21,14 @@
       })
     })
   })
-  
+
+  $(function(){
+    $(".more-by-click").on("click",function(){
+      if(!$(".commfor-guide").is(":hidden")){
+        console.log('加载向导评论')
+      }else{
+        console.log('加载咨询评论')
+      }
+    })
+  })
 </script>
