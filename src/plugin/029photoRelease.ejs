@@ -1,0 +1,44 @@
+
+<script>
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<a class="pr-item" href="'+res.link+'">'
+        +'<div class="pr-img">'
+        +'<img src="'+res.pic+'" alt="">'
+        +'</div>'
+        +'<div class="pr-txt">'
+        +'<p class="pr-txt-title">'+res.title+'</p>'
+        +'<p class="pr-txt-ms">'+res.miaoshu+'</p>'
+        +'</div></a>'
+    return _html;
+  }
+
+  $(function () {
+
+    setTimeout(function(){
+        $(".pr-alert").hide()
+    },1500)
+    $(".pr-close-alert").on("click",function(){
+        $(".pr-alert").hide()
+    })
+    // 初始化上拉加载
+    onReachBottom.init('.pr-section',function () {
+      $.ajax({
+        url: './front/mockdata/029photoRelease.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".pr-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".pr-section"))
+          }
+        }
+      })
+    })
+  })
+</script>
