@@ -1,0 +1,241 @@
+@import './base'
+
+.man-regiment
+  .mr-menu-list
+      background-color: #fff
+      font-size: 0
+      border-bottom 1px solid #e6e6e6
+      li
+          font-size: Rem(14)
+          display: inline-block
+          width 25%
+          text-align: center
+          a
+              padding: Rem(10) 0
+              display: inline-block
+              color #666
+          .pr-on
+              border-bottom 1px solid $theme-color
+              color $theme-color
+  .mr-gocity
+    padding 0 Rem(10)
+    height Rem(50)
+    background-color #fff
+    margin-bottom Rem(10)
+    line-height: Rem(50)
+    .mr-dingwei
+      float right
+      color: #999
+      span
+        display: inline-block
+        vertical-align: middle
+    img
+      height Rem(15)
+      display: inline-block
+      vertical-align: middle
+      margin 0 Rem(3) 
+    input 
+      border: 0
+  .mr-scroll-wall
+    .swiper-pagination-bullet
+      background #fff
+      opacity 1
+      transition .3s
+    .swiper-pagination-bullet-active
+        background $theme-color
+  .mr-city-wrap
+    position relative
+    background #fff
+    line-height Rem(30)
+    .mrc-choose
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      align-items center
+      padding Rem(10) Rem(75) Rem(10) Rem(10)
+      color #666666
+      font-size Rem(15)
+      botLine()
+      &.mrc-hide
+        visibility hidden
+        z-index -99
+        background #fff
+        position absolute
+        top 100%
+        left 0px
+        width 100%
+        box-sizing border-box
+        justify-content flex-start
+        padding Rem(10) 0
+        span
+          padding 0 Rem(10)
+        &.active
+          z-index 2
+          visibility visible
+          animation emersion .7s
+        &.unactive
+          z-index 2
+          visibility visible
+          animation unemersion .7s
+    .mr-more
+      position absolute
+      right Rem(10)
+      top Rem(10.5)
+      color #999999
+      getBg('more-xs')
+      padding-right Rem(15)
+      background-position right center
+      background-size Rem(19/2) auto
+  .mr-scenery
+    display flex
+    flex-flow row wrap
+    padding Rem(10) Rem(10) 0 Rem(10)
+    background #fff
+    >a
+      line-height Rem(30)
+      padding 0 Rem(10)
+      margin 0 Rem(10) Rem(10) 0
+      background #eff3f6
+      color #666666
+      border-radius 3px
+  .mr-section
+    .mr-item
+      display block
+      padding Rem(10)
+      margin-top Rem(10)
+      background #fff
+      .mri-top
+        display flex
+        padding-bottom Rem(10)
+        botLine()
+      .mr-botBox
+        display flex
+        justify-content space-between
+        >div
+          >p
+            margin-top Rem(8)
+            color: #666
+            font-size: Rem(13)
+        .mr-ztBox
+          margin-top Rem(10)
+          .mr-ztbtn
+            background-color: $theme-color
+            text-align: center
+            font-size: Rem(14)
+            height Rem(55/2)
+            line-height: Rem(55/2)
+            padding 0 Rem(14)
+            border-radius: Rem(2)
+            display: block
+            color #fff
+      .mri-img
+        flex 0 0 Rem(130)
+        display flex
+        justify-content center
+        align-items center
+        margin-right Rem(20)
+        border-radius Rem(4)
+        overflow hidden
+        position relative
+        >img
+          max-width 100%
+          max-height 100%
+        .mr-tiply
+          height Rem(35/2)
+          line-height: Rem(35/2)
+          border-radius Rem(35/2)
+          padding Rem(5/2) Rem(15/2)
+          font-size: Rem(12)
+          background-color: rgba(0,0,0,0.5)
+          color #fff
+          position absolute
+          top Rem(15/2)
+          left Rem(15/2)
+      .mri-info
+        display flex
+        flex-flow column
+        >h3
+          color #333333
+          line-height Rem(21)
+      .mri-hulm
+        display flex
+        justify-content space-between
+        margin-top Rem(10)
+        line-height Rem(21)
+        p
+          color #666666
+          font-size Rem(12)
+          i
+            font-size Rem(15)
+            color #ff0000
+            em
+              margin-left Rem(3)
+              font-size Rem(11)
+        .mr-heaImg
+          width Rem(40)
+          height Rem(40)
+          border-radius 50%
+          border 1px solid #f3f3f3  
+          overflow hidden
+          display flex
+          justify-content center
+          align-items center
+          >img
+            max-width 100%
+            max-height 100%
+        .mr-jp
+          width Rem(16)
+          height Rem(15)
+          overflow hidden
+          float right
+          display flex
+          align-items center
+          .mr-jpIcon
+            getBg('jinpai')
+            width Rem(21)
+            height Rem(21)
+            background-size Rem(25/2) auto
+            background-position center
+        .mr-name
+          color #333333
+          font-size Rem(14)
+          font-weight 600
+          display flex
+          align-items center
+          max-width Rem(90)
+          ellp()
+          .female,.man
+            width Rem(21)
+            height Rem(21)
+            margin-left Rem(5)
+          .female
+            getBg('female')
+            background-size Rem(25/2) auto
+            background-position center
+          .man
+            getBg('man')
+            background-size Rem(25/2) auto
+            background-position center
+      .mri-bot
+        >p
+          margin-top Rem(10)
+          font-size Rem(13)
+          color #666666
+          >span:last-child
+            margin-left Rem(15)
+            padding-left Rem(5)
+            position relative
+            &:before
+              content ''
+              display block
+              width 1px
+              height Rem(8)
+              background #666
+              position absolute
+              left 0px
+              top 0px
+              bottom 0px
+              margin auto
+
+
+    

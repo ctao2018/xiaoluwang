@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  $(function () {
+
+
+    // 点击顶部选择
+    $(".mr-menu-list li").on("click",function(){
+        $(".mr-menu-list li a").removeClass("pr-on")
+        $(this).find("a").addClass("pr-on");
+    })
+
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+
+    // 绑定城市更多选择
+    $(".mr-more").on('click',function(){
+      var el = $(".mrc-choose.mrc-hide"); 
+      if(!el.hasClass("active")){
+        if(el.hasClass("unactive")){
+          el.removeClass("unactive");
+          clearTimeout(timed);
+        }
+        el.addClass("active");
+      }else{
+        el.removeClass("active");
+        el.addClass("unactive");
+        var timed = setTimeout(function(){
+          el.removeClass("unactive");
+        },50)
+      }
+    })
+  })
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="mr-item">'
+        +'<div class="mri-top">'
+            +'<div class="mri-img">'
+                +'<img src="'+res.pic+'">'
+                +'<div class="mr-tiply">'+res.tipTitle+'</div>'
+                +'</div>'
+                +'<div class="mri-info">'
+                    +'<h3>'+res.title+'</h3>'
+                    +'<div class="mri-hulm">'
+                        +'<div class="mr-heaImg">'
+                            +'<img src="'+res.picHead+'" alt="">'
+                            +'</div>'
+                            +'<div>'
+                                +'<p class="mr-name">'+res.name+'</p>'
+                                +'<p>'+res.level+'</p>'
+                                +'</div>'
+                                +'<div>'
+                        +'<p><i><em>￥</em>'+res.money+'<em>起</em></i></p>'
+                        +'<div class="mr-jp"><span class="mr-jpIcon"></span></div>'
+                    +'</div>'
+                +'</div>'
+                +'</div>'
+            +'</div>'
+            +'<div class="mr-botBox">'
+                +'<div>'
+                    +'<p>出发地：'+res.gocity+'</p>'
+                    +'<p>出团时间：'+res.gotime+'</p>'
+                +'</div>'
+                +'<div>'
+                    +'<p>团位：'+res.tuanwei+'位</p>'
+                    +'<p>剩余：'+res.shenyu+'位</p>'
+                +'</div>'
+                +'<div class="mr-ztBox">'
+                    +'<a href="'+res.link+'" class="mr-ztbtn">去组团</a>'
+                +'</div>'
+            +'</div>'
+        +'</div>'
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.mr-section',function () {
+      $.ajax({
+        url: './front/mockdata/030manRegiment.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".mr-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".mr-section"))
+          }
+        }
+      })
+    })
+  })
+</script>
