@@ -87,6 +87,9 @@ var showReachLoading = function (elem) {
   var _el = $(_html);
   elem.append(_el);
   _el.html("<img src='front/images/icon/reach-loading.png'><span>正在加载...</span>");
+  $("html,body").animate({
+    scrollTop: $("html")[0].scrollHeight
+  }, 0);
   window.addEventListener('click', function (ev) {
     if ($(".show-reach-loading").length > 0) {
       ev.stopPropagation();
@@ -183,6 +186,18 @@ var filter = {
   }
 }
 
+function showDrop(){
+  var _drop = "<div class='bg-drop'></div>";
+  var _dl = $(_drop);
+  $("body").append(_dl);
+}
+
+function showDrop(){
+  $(".bg-drop").fadeOut(function(){
+    $(".bg-drop").remove();
+  });
+}
+
 // 确认框
 function showConfirm(str, cbAccept, cbCancel) {
   var _drop = "<div class='bg-drop'></div>";
@@ -228,10 +243,61 @@ function showConfirm(str, cbAccept, cbCancel) {
   });
 }
 
-
+// 返回
 $(function () {
   $(".back-to").on('click', function () {
     window.history.back(-1);
     return false;
+  })
+})
+
+// 如果无底部，则将内容区的padding-bottom清空
+$(function () {
+  if ($(".fix-footer").length <= 0) {
+    $(".page-main").css("paddingBottom", 0)
+  }
+})
+
+// tab切换方法
+function initTabSelect(elem, callback) {
+  $(elem).each(function (i, el) {
+    var taTto = $(el).find("[data-tabto]");
+    taTto.each(function (k, sl) {
+      if ($(sl).hasClass("active")) {
+        // 回显
+        var idx = $(this).data("tabto");
+        $(this).addClass("active").siblings("[data-tabto]").removeClass("active");
+        $("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
+        $("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
+      }
+      $(sl).unbind("click").on("click", function () {
+        // 绑定点击切换事件
+        var idx = $(this).data("tabto");
+        $(this).addClass("active").siblings("[data-tabto]").removeClass("active");
+        $("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
+        $("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
+        if (callback) {
+          // 向回调中传入被点击的对象和被显示的对象
+          callback($(this), $("[data-tabbox=" + idx + "]"))
+        }
+      })
+    })
+  })
+}
+
+$(function () {
+  initTabSelect(".page-tabbox");
+})
+
+// 生成评论的星星
+$(function () {
+  $("[data-star]").each(function (i, el) {
+    var num = $(el).data("star");
+    for (var k = 0; k < num; k++) {
+      $(el).append("<i></i>")
+    }
+    for (var j = 0; j < 5-num; j++) {
+      $(el).append("<em></em>")
+    }
   })
 })
