@@ -34,6 +34,8 @@ $nav-btn(w = 45,h = 45)
     color #fff
     box-sizing border-box
   .lt-btn-box,.lt-btn-box
+    position relative
+    z-index 2
     display flex
     align-items center
   .back-to//返回
@@ -81,6 +83,15 @@ $nav-btn(w = 45,h = 45)
       abs(0,0,0,0)
       margin auto
       $headerSprite(15)
+  .nav-op-msg
+    $nav-btn()
+    font-size 0
+    &:after
+      content ''
+      display block
+      abs(0,0,0,0)
+      margin auto
+      $headerSprite(17)
   .nav-addr//地址
     position relative
     padding 0 Rem(10)
