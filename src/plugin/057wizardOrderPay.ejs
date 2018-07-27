@@ -1,0 +1,29 @@
+<script>
+  function initTiemd(_date){
+    var invStr = setInterval(function(){
+      var _now = new Date();
+      var _time = _now.getTime();
+      var timeDif = Math.floor((_date - _time)/1000);
+      if(timeDif <= 0){
+        $(".wopp-timed .th").text("--");
+        $(".wopp-timed .tm").text("--");
+        $(".wopp-timed .ts").text("--");
+        clearInterval(invStr);
+        return false
+      }
+      var hour = Math.floor(timeDif/(60*60));
+      var minute = Math.floor(timeDif%(60*60)/60);
+      var second = Math.floor(timeDif%60);
+      hour = hour < 10 ? "0" + hour : hour;
+      minute = minute < 10 ? "0" + minute : minute;
+      second = second < 10 ? "0" + second : second;
+      $(".wopp-timed .th").text(hour);
+      $(".wopp-timed .tm").text(minute);
+      $(".wopp-timed .ts").text(second);
+    },1000);
+  }
+
+  $(function(){
+    initTiemd(1535352451000)
+  })
+</script>

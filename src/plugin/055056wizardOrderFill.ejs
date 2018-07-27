@@ -1,3 +1,11 @@
 <script>
-  
+  $(function(){
+    $(".wofp-info").on("click",function(){
+      if($(".wof-detail").is(":hidden")){
+        $(".wof-detail").slideDown()
+      }else{
+        $(".wof-detail").slideUp()
+      }
+    })
+  })
 </script>
