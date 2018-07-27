@@ -261,17 +261,123 @@
     .btn-order
       background $theme-color
 .dialog-guide-service
+  visibility hidden
   position fixed
-  bottom 0px
+  bottom -10px
   left 0px
-  z-index 99
+  z-index -10
   width 100%
-  height 80%
+  height 85%
   background #fff
   display flex
   flex-flow column
-  .taocan
-    flex 1 1 Rem(200)
-    overflow auto
-    line-height Rem(40)
-    max-height Rem(200)
+  justify-content flex-start
+  padding-bottom Rem(50)
+  box-sizing border-box
+  overflow auto
+  transition-duration .3s
+  transition-property bottom
+  &.active
+    visibility visible
+    z-index 199
+    bottom 0px
+  .dgs-top
+    padding 0 Rem(10)
+    botLine()
+  .dgs-service
+    padding Rem(10)
+    botLine()
+    flex 0 0 auto
+    >h3
+      font-size Rem(15)
+      font-weight 600
+      color #333
+      margin-bottom Rem(5)
+    p
+      font-size Rem(12)
+      line-height Rem(18)
+      color #666
+  .dgs-meal
+    padding Rem(10)
+    flex 1 1 auto
+    display flex
+    flex-flow column
+    min-height Rem(200)
+    >h3
+      flex 0 0 auto
+      font-size Rem(15)
+      font-weight 600
+      color #333
+      margin-bottom Rem(5)
+    .dgs-scroll
+      overflow auto
+      display flex
+      flex-flow column
+      align-items flex-start
+      p
+        flex 0 0 auto
+        line-height Rem(25)
+        padding Rem(5) Rem(15) Rem(5) Rem(5)
+        border 1px solid $theme-color
+        color $theme-color
+        border-radius 3px
+        margin-top Rem(5)
+        transition-duration .3s
+        transition-property background,color
+        &.active
+          background $theme-color
+          color #fff
+  .dgs-date
+    padding Rem(10)
+    flex 0 0 auto
+    >h3
+      font-size Rem(15)
+      font-weight 600
+      color #333
+      margin-bottom Rem(5)
+    .dgsd-list
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      >a
+        flex 0 0 23%
+        margin-top Rem(5)
+        display flex
+        flex-flow column
+        justify-content center
+        align-items center
+        padding Rem(5) 0
+        border 1px solid #e6e6e6
+        color #989898
+        font-size Rem(10)
+        border-radius 3px
+        transition-duration .3s
+        transition-property border-color
+        &.active
+          border-color $theme-color
+        >i
+          color $theme-color
+          margin-top Rem(5)
+  .dgs-pay
+    position fixed
+    bottom 0px
+    left 0px
+    width 100%
+    height Rem(50)
+    border 0
+    background $theme-color
+    color #fff
+  .dgs-close
+    position absolute
+    top Rem(5)
+    right Rem(5)
+    width Rem(30)
+    height Rem(30)
+    font-size 0
+    border 0
+    getBg('dgs-close')
+    background-size Rem(15)
+    background-position center
+  .iwp-info >h3
+    padding-right Rem(15)
+    box-sizing border-box

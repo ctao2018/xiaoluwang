@@ -51,8 +51,9 @@ var alphaScroll = {
     $("html").addClass("alpha");
   },
   removeTo: function () {
+    var that = this;
     $("html").removeClass("alpha");
-    $(window).scrollTop(this.flagTop);
+    $(window).scrollTop(that.flagTop);
   }
 }
 
@@ -186,20 +187,37 @@ var filter = {
   }
 }
 
-function showDrop(){
-  var _drop = "<div class='bg-drop'></div>";
-  var _dl = $(_drop);
-  $("body").append(_dl);
-}
-
-function showDrop(){
-  $(".bg-drop").fadeOut(function(){
-    $(".bg-drop").remove();
-  });
+var dropFunc = {
+  elem: '',
+  show: function (el) {
+    var _drop = "<div class='bg-drop'></div>";
+    var _dl = $(_drop);
+    this.elem = _dl;
+    $(el).before(_dl);
+    alphaScroll.addTo();
+    $(".body-main").addClass("fix-main");
+  },
+  hide: function () {
+    var _dl = this.elem;
+    _dl.fadeOut(function () {
+      _dl.remove();
+    });
+    $(".body-main").removeClass("fix-main");
+    alphaScroll.removeTo();
+  }
 }
 
 // 确认框
-function showConfirm(str, cbAccept, cbCancel) {
+function showConfirm(str, cbAccept, cbCancel, btnOpt) {
+  if (typeof cbCancel != 'function') {
+    btnOpt = cbCancel
+  }
+  if (btnOpt == undefined) {
+    btnOpt = {
+      confirm: '确认',
+      cancel: '取消'
+    }
+  }
   var _drop = "<div class='bg-drop'></div>";
   var _html = "<div class='show-confirm'></div>";
   var _el = $(_html);
@@ -207,9 +225,9 @@ function showConfirm(str, cbAccept, cbCancel) {
   $("body").append(_el);
   $("body").append(_dl);
   var h_cont = "<div class='sc-cont'>" + str + "</div>";
-  var h_btn = "<div>" +
-    "<button type='button' class='btn-accept'>确定</button>" +
-    "<button type='button' class='btn-cancel'>取消</button>" +
+  var h_btn = "<div style='text-align:center'>" +
+    "<button type='button' class='btn-accept'>" + btnOpt.confirm + "</button>" +
+    (btnOpt.cancel != '' ? "<button type='button' class='btn-cancel'>" + btnOpt.cancel + "</button>" : "") +
     "</div>"
   _el.append(h_cont);
   _el.append(h_btn);
@@ -289,15 +307,101 @@ $(function () {
   initTabSelect(".page-tabbox");
 })
 
-// 生成评论的星星
+function scaleImg(ev) {
+  var winWid = document.documentElement.clientWidth;
+  var winHgt = document.documentElement.clientHeight;
+  var ntWid = ev.naturalWidth;
+  var ntHgt = ev.naturalHeight;
+  var _domDark = "<div class='img-scale-dark'></div>";
+  var _domWrap = "<div class='img-scale-wrap'></div>";
+  var _domImg = "<img src='" + $(ev).attr("src") + "'/>";
+  var _domDel = "<button type='button'>点击此处关闭</button>";
+  var _elemDark = $(_domDark);
+  var _elemWrap = $(_domWrap);
+  var _elemImg = $(_domImg);
+  var _elemDel = $(_domDel);
+  $("body").append(_elemDark);
+  $("body").append(_elemWrap);
+  $(_elemWrap).append(_elemImg);
+  $(_elemWrap).append(_elemDel);
+  _elemDark.css({
+    "display": "none",
+    "position": "fixed",
+    "zIndex": "998",
+    "left": "0",
+    "top": "0",
+    "width": "100%",
+    "height": "100%",
+    "background": "rgba(102,102,102,.7)"
+  }).fadeIn(300);
+  var boxWid, boxHgt, point = .8;
+  if (ntWid <= (winWid * point) && ntHgt <= (winHgt * point)) {
+    boxWid = ntWid;
+    boxHgt = ntHgt;
+    // console.log("小图")
+  } else if (ntWid > (winWid * point) && ntHgt > (winHgt * point)) {
+    if (ntHgt > ntWid) {
+      boxHgt = (winHgt * point);
+      boxWid = boxHgt * (ntWid / ntHgt);
+    } else {
+      boxWid = (winWid * point);
+      boxHgt = boxWid * (ntHgt / ntWid);
+    };
+    // console.log("大图")
+  } else if (ntWid >= (winWid * point) && ntHgt <= (winHgt * point)) {
+    boxWid = (winWid * point);
+    boxHgt = boxWid * (ntHgt / ntWid);
+    // console.log("横图")
+  } else if (ntWid < (winWid * point) && ntHgt > (winHgt * point)) {
+    boxHgt = (winHgt * point);
+    boxWid = boxHgt * (ntWid / ntHgt);
+    // console.log("竖图")
+  } else {
+    boxWid = 300;
+    boxHgt = 300
+  };
+  _elemWrap.css({
+    "display": "none",
+    "position": "fixed",
+    "zIndex": "999",
+    "left": "0",
+    "top": "0",
+    "bottom": "0",
+    "right": "0",
+    "margin": "auto",
+    "width": boxWid,
+    "height": boxHgt
+  }).fadeIn(500);
+  _elemImg.css({
+    "width": "100%",
+    "height": "auto"
+  });
+  _elemDel.css({
+    "position": "absolute",
+    "zIndex": "999",
+    "left": "0",
+    "bottom": "-30px",
+    "width": boxWid,
+    "height": "30px",
+    "background": "rgba(255,119,46,.8)",
+    "color": "#fff",
+    "border": "0",
+    "outline": "none"
+  });
+  _elemDel.on("click", function () {
+    _elemDark.fadeOut(function () {
+      _elemDark.remove();
+    });
+    _elemWrap.fadeOut(function () {
+      _elemWrap.remove();
+    });
+  })
+}
+
 $(function () {
-  $("[data-star]").each(function (i, el) {
-    var num = $(el).data("star");
-    for (var k = 0; k < num; k++) {
-      $(el).append("<i></i>")
-    }
-    for (var j = 0; j < 5-num; j++) {
-      $(el).append("<em></em>")
-    }
+  $(".scale-img img").each(function (i, el) {
+    $(el).on('click', function () {
+      scaleImg(el)
+    })
   })
 })

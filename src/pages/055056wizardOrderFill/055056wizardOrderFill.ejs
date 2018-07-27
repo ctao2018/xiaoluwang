@@ -1,0 +1,44 @@
+<div class="wizard-order-fill">
+  <div class="wof-top">
+    <h3>徒步向导：美丽丽江、向导全程陪同服务，品位慢生活，享受大自然美同服务、品位慢生活</h3>
+    <div class="woft-info">
+      <p>套餐：【爱丽江】向导服务8小时</p>
+      <p>目的地：杭州，2018年4月20日出发</p>
+    </div>
+  </div>
+  <div class="wof-form">
+    <div class="woff-line">
+      <label>出行人</label>
+      <input type="text" class="woff-inp" readonly placeholder="只需选择一个出行人">
+      <a href="" class="woff-more">选择</a>
+    </div>
+    <div class="woff-line">
+      <label>联系手机</label>
+      <input type="text" class="woff-inp" placeholder="接收确认短信">
+    </div>
+    <div class="woff-line">
+      <label>微信号</label>
+      <input type="text" class="woff-inp" placeholder="方便及时联系（选填）">
+    </div>
+  </div>
+  <div class="wof-remarks">
+    <%= tcm({str:'预定备注',more:false,num:false}) %>
+    <div class="wofr-erea">
+      <textarea placeholder="选填，特殊要求建议与向导沟通后达到一致"></textarea>
+    </div>
+  </div>
+  <div class="wof-invoice">
+    <%= tcm({str:'发票信息',more:false,num:false}) %>
+    <div class="wof-form">
+      <a class="woff-line" href="">
+        <label>发票</label>
+      </a>
+    </div>
+  </div>
+  <div class="wof-form">
+    <a class="woff-line" href="">
+      <label>优惠券</label>
+      <span class="small">暂无可用优惠券</span>
+    </a>
+  </div>
+</div>
