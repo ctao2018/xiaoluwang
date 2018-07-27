@@ -27,6 +27,13 @@
       <textarea placeholder="选填，特殊要求建议与向导沟通后达到一致"></textarea>
     </div>
   </div>
+  <div class="wof-secure">
+    <%= tcm({str:'保险',more:false,num:false}) %>
+    <div class="wofs-box">
+      <p class="wofs-info">安详天乐“乐享当地”旅行保险境内计划</p>
+      <label class="wofs-price"><span>￥10元/人</span> <input type="checkbox" class="p-point"></label>
+    </div>
+  </div>
   <div class="wof-invoice">
     <%= tcm({str:'发票信息',more:false,num:false}) %>
     <div class="wof-form">
@@ -40,5 +47,26 @@
       <label>优惠券</label>
       <span class="small">暂无可用优惠券</span>
     </a>
+    <div class="woff-line jut-btw">
+      <p>使用积分<small>（账户可用积分165）</small></p>
+      <input type="checkbox" class="p-switch">
+    </div>
+  </div>
+  <label class="wof-rule"><input type="checkbox" class="p-hook" checked><span>点击支付表示已预订并同意</span><a href="">《预订须知和退改规则》</a></label>
+  <div class="wof-detail">
+    <h3>订单明细</h3>
+    <div class="wofd-box">
+      <p><span>订单金额</span><i><em>￥</em>107.00</i></p>
+      <p><span>保险</span><i><em>￥</em>107.00</i></p>
+      <p><span>税费（售价已包含）</span><i><em>￥</em>107.00</i></p>
+      <p><span>积分</span><i><em>￥</em>107.00</i></p>
+      <p><span>汇游余额</span><i>-<em>￥</em>107.00</i></p>
+      <p><span>优惠券</span><i>-<em>￥</em>107.00</i></p>
+    </div>
+  </div>
+  <div class="wof-pay fix-footer">
+    <p class="wofp-price">应付总额：<i><em>￥</em>1096</i></p>
+    <button type="button" class="wofp-info">明细</button>
+    <button type="button" class="wofp-pay">去支付</button>
   </div>
 </div>

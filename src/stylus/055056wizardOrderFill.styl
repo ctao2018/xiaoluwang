@@ -34,9 +34,16 @@
       botLine()
       &:last-child
         border 0
+      &.jut-btw
+        justify-content space-between
       >label
         line-height Rem(30)
         flex 0 0 Rem(70)
+        font-size Rem(15)
+        color #333
+      >p
+        line-height Rem(30)
+        flex 1 0 auto
         font-size Rem(15)
         color #333
       .woff-inp
@@ -46,6 +53,8 @@
       .woff-more
         font-size 0
         beMore(0)
+      small
+        color #666
   .wof-remarks
     margin Rem(10) 0
     background #fff
@@ -58,5 +67,90 @@
         line-height Rem(25)
         height Rem(50)
         resize none
+  .wof-secure
+    margin Rem(10) 0
+    background #fff
+    .wofs-box
+      display flex
+      justify-content space-between
+      align-items center
+      padding Rem(10)
+      .wofs-info
+        line-height Rem(25)
+        color #666
+        margin-right Rem(30)
+      .wofs-price
+        flex 0 0 auto
+        display flex
+        align-items center
+        color $theme-color
   .wof-invoice
     margin-bottom Rem(10)
+  .wof-rule
+    display flex
+    align-items center
+    padding Rem(15) Rem(10)
+    margin-bottom Rem(30)
+    font-size Rem(13)
+    color #333
+    >a
+      color #666
+  .wof-detail
+    display none
+    position fixed
+    bottom Rem(50)
+    left 0px
+    width 100%
+    background #fff
+    z-index 10
+    box-shadow 0 -3px 5px rgba(0,0,0,.1)
+    >h3
+      line-height Rem(40)
+      text-align center
+      font-weight 600
+      botLine()
+    .wofd-box
+      padding Rem(10)
+      >p
+        display flex
+        align-items center
+        justify-content space-between
+        padding Rem(10) 0
+        >span
+          color #666
+        >i
+          color $theme-color
+          >em
+            font-size Rem(12)
+            margin 0 Rem(3)
+  .wof-pay
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 9
+    background #fff
+    height Rem(50)
+    display flex
+    justify-content space-between
+    align-items center
+    width 100%
+    box-shadow 0 -3px 5px rgba(0,0,0,.1)
+    .wofp-price
+      font-size Rem(15)
+      color #333333
+      margin-left Rem(10)
+      >i
+        font-size Rem(15)
+        color $theme-color
+        >em
+          font-size Rem(11)
+          margin 0 Rem(2)
+    .wofp-info
+      background transparent
+      border 0
+    .wofp-pay
+      height Rem(50)
+      padding 0 Rem(35)
+      background $theme-color
+      color #fff
+      border 0

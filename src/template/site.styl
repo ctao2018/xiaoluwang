@@ -27,9 +27,12 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder
   /* Internet Explorer 10+ */   
   color: #CBCBCB
   
-input[type="button"],input[type="submit"],input[type="reset"],textarea
+input[type="button"],input[type="submit"],input[type="reset"],textarea,input[type="radio"],input[type="checkbox"]
   -webkit-appearance none
 
+input,button,select, textarea,a
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+  outline none
 .btn
   border: 0
 
@@ -192,10 +195,96 @@ input[type='checkbox'].p-switch,input[type='radio'].p-switch
     transition-property box-shadow,left,background
     box-sizing border-box
   &:checked:before
-    background #31cd31
+    border-color $theme-color
+    background $theme-color
   &:checked:after
     box-shadow 0 0 5px rgba(0,0,0,.5)
     left Rem(21)
+
+input[type='checkbox'].p-point,input[type='radio'].p-point
+  display inline-block
+  width Rem(14)
+  height Rem(14)
+  vertical-align middle
+  position relative
+  cursor pointer
+  overflow hidden
+  box-sizing border-box
+  margin 0 0 0 Rem(5)
+  &:before
+    content ""
+    display block
+    width Rem(14)
+    height Rem(14)
+    background #fff
+    border 1px solid #b3b3b3
+    border-radius 100%
+    box-sizing border-box
+    transition .3s
+  &:after
+    content ""
+    display block
+    width Rem(6)
+    height Rem(6)
+    border-radius 100%
+    background #fff
+    position absolute
+    abs(0,0,0,0)
+    margin auto
+    transition .3s
+    transition-property background
+    box-sizing border-box
+  &:checked:after
+    background $theme-color
+
+input[type='checkbox'].p-hook,input[type='radio'].p-hook
+  display inline-block
+  width Rem(14)
+  height Rem(14)
+  vertical-align middle
+  position relative
+  cursor pointer
+  overflow hidden
+  margin 0 Rem(3)
+  &:before
+    content ""
+    display block
+    width Rem(14)
+    height Rem(14)
+    background #fff
+    border 1px solid #b3b3b3
+    box-sizing border-box
+    transition .3s
+  &:after
+    content ""
+    display block
+    width Rem(5)
+    height Rem(9)
+    border-bottom 1px solid transparent
+    border-right 1px solid transparent
+    background transparent
+    transform rotate(40deg)
+    position absolute
+    abs(-3,0,0,0)
+    margin auto
+    transition .3s
+    transition-property background
+    box-sizing border-box
+  &:checked:before
+    border-color $theme-color
+    background $theme-color
+  &:checked:after
+    border-color $theme-color
+  &.fill
+    &:before
+      border-radius 100%
+    &:checked:before
+      border-color $theme-color
+      background $theme-color
+    &:checked:after
+      border-color #fff
+
+
 
 // 弹窗背景
 .bg-drop

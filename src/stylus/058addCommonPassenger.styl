@@ -1,0 +1,68 @@
+@import './base'
+
+.add-common-passenger
+  .acp-name
+    background #fff
+  .acp-box
+    padding 0 Rem(10)
+    background #fff
+  .acp-line
+    display flex
+    height Rem(50)
+    justify-content flex-start
+    align-items center
+    botLine()
+    &:last-child
+      border 0
+    .acp-label
+      flex 0 0 Rem(90)
+      font-size Rem(15)
+      color #333
+      >i
+        display block
+        font-size Rem(12)
+        color #999999
+        line-height Rem(18)
+    .acp-text
+      flex 1 1 auto
+      >input[type=text]
+        width 100%
+        border 0
+        height Rem(50)
+    .acp-turn
+      padding 0
+      height Rem(25)
+      flex 0 0 Rem(55)
+      background #f5f5f5
+      color #999999
+      border-radius 3px
+      border 0
+      margin-left Rem(15)
+    .slc-box
+      flex 1 0 auto
+      toMore(0)
+    .slc-curr
+      width 100%
+      border 0
+      height Rem(50)
+    .acp-radio
+      display flex
+      align-items center
+      margin-right Rem(20)
+      input[type=radio]
+        margin 0 Rem(5) 0 0
+  .acp-tips
+    padding Rem(10)
+    display flex
+    justify-content space-between
+    align-items center
+    line-height Rem(25)
+    font-size Rem(13)
+    color #999999
+    .a-icon
+      width Rem(11)
+      height Rem(11)
+      getBg('qus-help')
+      background-size cover
+  .acp-otherinfo
+    margin-top Rem(10)

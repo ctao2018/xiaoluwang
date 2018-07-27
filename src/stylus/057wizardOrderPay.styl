@@ -1,0 +1,82 @@
+@import './base'
+
+.wizard-order-pay
+  .wop-top
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    >h3
+      font-size Rem(17)
+      color #333
+      font-weight 600
+      line-height Rem(28)
+      padding 0 0 Rem(10)
+      botLine()
+    .wopp-status
+      display flex
+      justify-content center
+      align-items center
+      padding Rem(35) 0
+      >img
+        width Rem(65/2)
+        height Rem(65/2)
+      >span
+        margin-left Rem(15)
+        color $theme-color
+        font-size Rem(17)
+    .wopp-tips
+      color #333
+      font-size Rem(13)
+      line-height Rem(21)
+    .wopp-timed
+      display flex
+      align-items center
+      padding Rem(10) 0
+      color #666
+      >i
+        flex 0 0 Rem(45/2)
+        line-height Rem(45/2)
+        border-radius 3px
+        background #cfcfcf
+        color #fff
+        text-align center
+      >span
+        margin 0 Rem(5)
+  .wop-info
+    background #fff
+    padding 0 Rem(10)
+    margin-bottom Rem(10)
+  .wop-line
+    display flex
+    justify-content space-between
+    align-items center
+    font-size Rem(15)
+    padding Rem(10) 0
+    line-height Rem(30)
+    botLine()
+    &:last-child
+      border 0
+    .wop-price
+      color $theme-color
+  .wop-apyway
+    background #fff
+    padding 0 Rem(10)
+    margin-bottom Rem(10)
+    .wopa-way
+      flex 1 0 auto
+      display flex
+      align-items center
+      >img
+        flex 0 0 Rem(30)
+        height Rem(30)
+        margin-right Rem(10)
+  .wop-paybtn
+    display block
+    margin Rem(35) auto
+    width Rem(355)
+    height Rem(45)
+    border-radius 3px
+    background $theme-color
+    color #fff
+    font-size Rem(17)
+    border 0

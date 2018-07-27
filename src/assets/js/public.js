@@ -285,18 +285,18 @@ function initTabSelect(elem, callback) {
         // 回显
         var idx = $(this).data("tabto");
         $(this).addClass("active").siblings("[data-tabto]").removeClass("active");
-        $("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
-        $("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
+        $(el).find("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
+        $(el).find("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
       }
       $(sl).unbind("click").on("click", function () {
         // 绑定点击切换事件
         var idx = $(this).data("tabto");
         $(this).addClass("active").siblings("[data-tabto]").removeClass("active");
-        $("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
-        $("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
+        $(el).find("[data-tabbox=" + idx + "]").show().siblings("[data-tabbox]").hide();
+        $(el).find("[data-tabbox=" + idx + "]").siblings("[data-tabbox]").removeClass("active");
         if (callback) {
           // 向回调中传入被点击的对象和被显示的对象
-          callback($(this), $("[data-tabbox=" + idx + "]"))
+          callback($(this), $(el).find("[data-tabbox=" + idx + "]"))
         }
       })
     })
@@ -405,3 +405,65 @@ $(function () {
     })
   })
 })
+
+
+var mockSelect = function (callback) {
+  var _btn = $(".slc-curr");
+
+  /* 绑定点击事件 */
+  _btn.each(function (i, el) {
+    var initVal = $(el).data("source");
+    if(initVal>-8){
+      $(el).siblings(".slc-list").children("li").each(function(k,ml){
+        if($(ml).data("source") == initVal){
+          $(el).html($(ml).html())
+        }
+      })
+    };
+    $(el).unbind("click").on("click", function (m) {
+      // console.log(_items.length)
+      var _list = $(el).siblings(".slc-list");
+      var _items = _list.children("li");
+      if (_list.is(":hidden")) {
+        $(".slc-list").slideUp();
+        $(el).parent(".slc-box").removeClass("active");
+        $(el).parent(".slc-box").addClass("active");
+        _list.stop(true, false).slideDown();
+        // 调用绑定事件
+        reBindDataChange($(el), _list, _items, callback)
+      } else {
+        $(el).parent(".slc-box").removeClass("active");
+        _list.stop(true, false).slideUp()
+      }
+      $(document).unbind("click").on("click", function () {
+        $(el).parent(".slc-box").removeClass("active");
+        _list.stop(true, false).slideUp()
+      });
+      m.stopPropagation();
+    });
+  })
+}
+
+/* 绑定下拉菜单选项的点击事件 */
+var reBindDataChange = function (_btn, _list, _items, callback) {
+  _items.each(function (k, ml) {
+    $(ml).unbind("click").on("click", function () {
+      var t_data = $(ml).data("source");
+      var t_text = $(ml).html();
+      _btn.val(t_text);
+      _btn.data("source", t_data);
+      if(_btn.siblings(":hidden").length>0){
+        _btn.siblings(":hidden").val(t_data)
+      }
+      _list.stop(true, false).slideUp();
+      _btn.parent(".slc-box").removeClass("active");
+      $(ml).addClass("active").siblings().removeClass("active");
+      if (callback) {
+        callback(_btn,t_data)
+      }
+    })
+  })
+  _list.unbind("click").on("click", function (m) {
+    m.stopPropagation();
+  });
+}
