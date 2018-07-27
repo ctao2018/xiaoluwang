@@ -1,0 +1,18 @@
+{
+  "hasNextPage":false,
+  "currPage":1,
+  "pages":[{
+    "link":"#",
+    "pic":"./front/images/l-manpage01.png",
+    "title":"new深圳励志冒险探索全能特训7日研学营",
+    "name":"鹿友大团长",
+    "level":"A级旅游达人",
+    "gocity": "深圳" ,
+    "money": "98.00",
+    "gotime": "2018年5月20日",
+    "tuanwei": 30,
+    "shenyu": 8,
+    "picHead": "./front/images/l-manHea01.png",
+    "tipTitle": "三日游+3天游"
+  }]
+}
