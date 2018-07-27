@@ -1,0 +1,21 @@
+<div class="wizard-doyen-comment">
+  <div class="wddc-wrap page-tabbox">
+    <ul class="wddc-tab-curr">
+      <li class="active" data-tabto="0">向导服务</li>
+      <li data-tabto="1">咨询服务</li>
+    </ul>
+    <div class="commfor-guide" data-tabbox="0">
+      <%= comment({type:'guide'})+comment({type:'guide'})+comment({type:'guide'}) %>
+    </div>
+    <div class="commfor-consult"  data-tabbox="1">
+      <%= comment({type:'consult'})+comment({type:'consult'})+comment({type:'consult'}) %>
+    </div>
+    <button type="button" class="more-by-click">点击加载更多…</button>
+  </div>
+  <div class="wdd-foot fix-footer">
+    <button type="button" onclick="collectFunc.changeCollect(this)" class="btn-collect"><span>收藏</span></button>
+    <button type="button" class="btn-consult">咨询向导</button>
+    <button type="button" class="btn-order" onclick="showGuideDialog('guide')">立即预订</button>
+  </div>
+  <%= dialogForGuide %>
+</div>
