@@ -1,0 +1,105 @@
+<div class="man-detail">
+    <!-- 轮播 -->
+    <div class="md-headimg"><%= scrollWall %></div>
+    <div class="md-head">
+      <h3>澳门+澳门威尼斯人度假村+大三巴牌坊+百老汇一日游【自由行/跟团游、高端没事纯玩三套餐可选】</h3>
+      <p class="small">威马加湿器，用我清爽一夏天！</p>
+      <div class="mdh-price">
+        <p>￥<span>298</span>起</p>
+      </div>
+      <div class="mdh-tips">
+        <p>保险出行  全程服务</p>
+        <p>剩余：8/30位</p>
+      </div>
+      <div class="mdh-page">
+        <div>出发地：深圳</div>
+        <div class="mdh-cttime">
+          <p>出团时间：2018年5月18日</p>
+          <p>报名时间：<span>20</span>天<span>5</span>小时</p>
+        </div>
+      </div>
+      <div class="mdh-page">
+          <div class="mdh-btimg-title">报团人数</div>
+          <ul class="mdh-btimg-box">
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+            <li><img src="./front/images/l-mandetImg.png" alt=""></li>
+          </ul>
+          <a href="javascript:;" class="mdh-btlink">详细</a>
+      </div>
+      <!-- <div class="mdd-score"><a href="">可用积分</a></div> -->
+    </div>
+    <!-- 达人信息 -->
+    <div class="md-doyen">
+      <div class="mdd-top">
+        <div class="mdd-img"><img src="http://placehold.it/300x300/09f/fff.png"></div>
+        <div class="mdd-info">
+          <div class="i-top">
+            <h3>鹿友大团长</h3>
+            <div>
+              <img class="level" src="./front/images/icon/jinpai.png">
+              <button type="button" onclick="followFunc.changeFollow(this)" class="follow followed">已关注</button>
+            </div>
+          </div>
+          <p class="i-level">A级旅游达人</p>
+          <p class="i-info">简介：时尚旅游达人，十三年漫漫旅行总行程三万六千里</p>
+        </div>
+      </div>
+      <div>
+        
+      </div>
+    </div>
+    
+    <!-- 服务点评 -->
+    <div class="md-comment">
+      <%= tcm({str:'服务点评'}) %>
+      <div class="mdc-wrap page-tabbox">
+          <%= mandetails() + mandetails() + mandetails() %>
+      </div>
+    </div>
+    <!-- 带团记录 -->
+    <div class="md-record">
+      <%= tcm({str:'带团记录'}) %>
+      <div class="mdr-section">
+        <%= guideRecord()+guideRecord()+guideRecord() %>
+      </div>
+    </div>
+    
+    <!-- 具体说明 -->
+    <div class="md-illustrate">
+      <div class="mdi-wrap page-tabbox">
+        <ul class="mdi-tab-curr">
+          <li class="active" data-tabto="0">行程介绍</li>
+          <li data-tabto="1">图文详情</li>
+          <li data-tabto="2">费用说明</li>
+          <li data-tabto="3">预订须知</li>
+        </ul>
+        <div class="mdi-rich" data-tabbox="0">
+          0
+        </div>
+        <div class="mdi-rich" data-tabbox="1">
+          1
+        </div>
+        <div class="mdi-rich" data-tabbox="2">
+          2
+        </div>
+        <div class="mdi-rich" data-tabbox="3">
+          3
+        </div>
+      </div>
+    </div>
+    <!-- 底部按钮 -->
+    <div class="md-foot fix-footer">
+      <button type="button" class="btn-service"><span>客服</span></button>
+      <button type="button" class="btn-shop"><span>商家</span></button> 
+      <button type="button" onclick="collectFunc.changeCollect(this)" class="btn-collect"><span>收藏</span></button>
+      <a href="javascript:;;" class="btn-order">立即报团</button>
+    </div>
+  </div>
+  
+  <%= dialogForGuide %>

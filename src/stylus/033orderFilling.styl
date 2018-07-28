@@ -1,0 +1,70 @@
+
+@import './base'
+
+.order-filling
+  .of-title
+    padding Rem(10)
+    background #fff
+    >h3
+      font-size Rem(31/2)
+      color #333333
+      line-height Rem(24)
+      font-weight 600
+  .of-page
+    margin-top Rem(10)
+    background-color #fff
+    .ofp-title
+      color #333
+      font-size Rem(15)
+      height Rem(50)
+      line-height Rem(50)
+      position relative
+      font-weight bold
+      padding-right Rem(10)
+      padding-left Rem(45/2)
+      &:after
+        content: ''
+        position absolute
+        height Rem(25/2)
+        width Rem(2)
+        background-color $theme-color
+        left Rem(10)
+        top Rem(37/2)
+    .ofp-bot
+      botLine()
+    .ofp-page
+      height Rem(50)
+      line-height Rem(50)
+      padding 0 Rem(10)
+      display flex
+      justify-content space-between
+      .ofp-mans
+        color #333
+        em
+          color $theme-color
+        span
+         color #666
+         font-size: Rem(13)
+         margin-left: Rem(5)
+      .ofp-moneytxt
+          color: $theme-color
+          font-size: Rem(13)
+      .of-jisuan
+        float right
+        font-size 0
+        margin-left Rem(10)
+        div
+          display: inline-block
+          vertical-align: middle
+          border: 1px solid #fe8545
+          height: Rem(55/2)
+          line-height Rem(55/2)
+          color #fe8545
+          text-align center
+          width Rem(55/2)
+          font-size: Rem(20)
+        .l-ordNum
+          width Rem(40)
+          background-color: $theme-color
+          color #fff
+          font-size: Rem(13)

@@ -1,0 +1,270 @@
+
+@import './base'
+
+.man-detail
+  margin-top Rem(-45)
+  .md-headimg
+    img
+      max-width 100%
+  .md-head
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    >h3
+      font-size Rem(31/2)
+      color #333333
+      line-height Rem(24)
+      font-weight 600
+    .small
+      font-size Rem(13)
+      color #666666
+      line-height Rem(20)
+      margin Rem(10) 0
+    .mdh-price
+      display flex
+      >p
+        font-size Rem(12)
+        color $theme-color
+        >span
+          font-size Rem(19)
+          color $theme-color
+          margin: 0 Rem(2)
+        &~p
+          margin-left Rem(20)
+    .mdh-tips
+      display flex
+      justify-content space-between
+      font-size Rem(13)
+      color #666666
+      margin-top Rem(10)
+      padding-bottom Rem(15)
+      botLine()
+    .mdh-page
+      padding-top Rem(10)
+      color #666
+      .mdh-cttime
+        margin-top Rem(10)
+        display flex
+        justify-content space-between
+        padding-bottom Rem(10)
+        botLine()
+        p
+          height Rem(45/2)
+          line-height: Rem(45/2)
+        span
+          background-color: #ffac81
+          color: #fff
+          min-width Rem(20)
+          display: inline-block
+          text-align: center
+          font-size: Rem(13)
+          margin: 0 Rem(2)
+          border-radius: Rem(2)
+      .mdh-btimg-title
+        display inline-block
+        vertical-align: middle
+        height Rem(65/2)
+        line-height: Rem(65/2)
+      .mdh-btimg-box
+        display inline-block
+        vertical-align: middle
+        padding-left: Rem(10)
+        overflow hidden
+        height Rem(65/2)
+        line-height: Rem(65/2)
+        width Rem(235)
+        li
+          width Rem(55/2)
+          height Rem(55/2)
+          border-radius: 50%
+          overflow hidden
+          display flex
+          justify-content center
+          align-items center
+          float left
+          margin-left Rem(5)
+          margin-bottom Rem(5)
+          img
+            max-width 100%
+            max-height: 100%
+      .mdh-btlink
+        color: #666
+        padding-right: 1.071428571428571rem
+        position: relative
+        toMore()
+        &:after
+          right 0
+  .md-doyen
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    .mdd-top
+      display flex
+    .mdd-img
+      flex 0 0 Rem(50)
+      height Rem(50)
+      display flex
+      justify-content center
+      align-items center
+      border-radius 100%
+      overflow hidden
+      margin-right Rem(20)
+      >img
+        max-width 100%
+        max-height 100%
+    .mdd-info
+      flex 1 0 auto
+      .i-top
+        display flex
+        justify-content space-between
+        align-items center
+        >h3
+          flex 1 1 auto
+          font-size Rem(16)
+          color #333333
+          line-height Rem(24)
+          max-width Rem(180)
+          font-weight 600
+          ellp()
+        >div
+          display flex
+          align-items center
+        .level
+          max-height Rem(16)
+        .follow
+          height Rem(22)
+          line-height Rem(22)
+          padding 0 Rem(10)
+          border 0
+          background $theme-color
+          color #fff
+          font-size Rem(14)
+          margin-left Rem(15)
+          border-radius 3px
+          &.followed
+            opacity .6
+      .i-level
+        color #666
+        line-height Rem(24)
+      .i-info
+        color #666
+        line-height Rem(24)
+        max-width Rem(280)
+        ellp()
+    .md-comment
+    margin-bottom Rem(10)
+    .mdc-wrap
+      background #fff
+      padding Rem(10)
+      .mdc-tab-curr
+        padding Rem(20) 0
+        display flex
+        justify-content space-around
+        align-items center
+        >li
+          line-height Rem(30)
+          padding 0 Rem(20)
+          border 1px solid $theme-color
+          color $theme-color
+          border-radius 3px
+          &.active
+            background $theme-color
+            color #fff
+  .md-comment
+    margin-bottom Rem(10)
+    .mdc-wrap
+      background #fff
+      padding Rem(10)
+      .mdc-tab-curr
+        padding Rem(20) 0
+        display flex
+        justify-content space-around
+        align-items center
+        >li
+          line-height Rem(30)
+          padding 0 Rem(20)
+          border 1px solid $theme-color
+          color $theme-color
+          border-radius 3px
+          &.active
+            background $theme-color
+            color #fff
+  .md-illustrate
+    margin-bottom Rem(10)
+    background #fff
+    .mdi-tab-curr
+      display flex
+      justify-content space-around
+      botLine()
+      >li
+        line-height Rem(38)
+        font-size Rem(15)
+        color #333333
+        font-weight 600
+        border-bottom 2px solid transparent
+        &.active
+          color $theme-color
+          border-color $theme-color
+    .mdi-rich
+      padding Rem(10)
+      line-height Rem(22)
+      color #666
+      >img
+        max-width 100%
+  .md-record
+    background #fff
+    margin-bottom Rem(10)
+    .mdr-section
+      padding 0 Rem(10)
+  .md-foot
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 6
+    width 100%
+    display flex
+    button
+      flex 0 0 Rem(75)
+      height Rem(50)
+      border 0
+      background #fff
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(12)
+      color #666666
+      &:before
+        content ''
+        display block
+        width Rem(20)
+        height Rem(18)
+        margin-bottom Rem(2)
+    .btn-collect
+      &:before
+        getBg('l-collect')
+        background-size Rem(25) Rem(46)
+        background-position Rem(-3) Rem(-26)
+      &.collected:before
+        background-position Rem(-3) Rem(-3)
+    .btn-service
+      &:before
+        getBg('customer-service')
+        background-size cover
+        margin-bottom Rem(2)
+    .btn-shop
+      &:before
+        getBg('shop')
+        background-size cover
+        margin-bottom Rem(2)
+    .btn-consult,.btn-order
+      flex 1 1 Rem(150)
+      height Rem(50)
+      border 0
+      color #fff
+    .btn-consult
+      background #ffac7a
+    .btn-order
+      background $theme-color
+      text-align: center
+      line-height: Rem(50)
