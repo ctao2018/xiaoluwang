@@ -1,0 +1,64 @@
+
+@import './base'
+.travels-box
+  .tb-bot
+    border-bottom 1px solid #dcdcdc
+    .tb-img
+      width 100%
+      max-height Rem(130)
+      display flex
+      justify-content: space-between
+      align-items: center
+      overflow hidden
+      border-radius: Rem(4)
+      position relative
+      img
+        max-width 100%
+        max-height 100%
+      .tb-tipstime
+        position absolute
+        bottom Rem(10)
+        right Rem(10)
+        background-color: rgba(0,0,0,0.5)
+        color: #ffffff
+        padding: Rem(5) Rem(15/2)
+        border-radius: Rem(30)
+        font-size: Rem(13)
+    .tb-txt
+      padding: Rem(15) 0
+      ellp()
+  .tb-foot-flex
+    display flex
+    justify-content space-between
+    align-items: center
+    padding Rem(10) 0
+    color: #666
+    font-size: Rem(13)
+    >div:last-child
+      text-align right 
+    .tb-dianz
+      height Rem(30)
+      border 0
+      background #fff
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(12)
+      color #666666
+      position relative
+      padding-left: Rem(30)
+      &:before
+        content ''
+        display block
+        width Rem(20)
+        height Rem(18)
+        getBg('collect-sprites')
+        background-size Rem(25) Rem(46)
+        background-position Rem(-3) Rem(-25)
+        position absolute
+        left 0
+        top: 50%
+        margin-top Rem(-9)
+      &.collected:before
+        background-position Rem(-3) Rem(-2)

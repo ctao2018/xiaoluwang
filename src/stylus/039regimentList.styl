@@ -1,0 +1,122 @@
+
+@import './base'
+
+.regiment-list
+  .rl-fixtop
+    position fixed
+    top Rem(45)
+    left 0px
+    z-index 2
+    display flex
+    width 100%
+    height Rem(40)
+    justify-content space-around
+    align-items center
+    background #fff
+    color #666666
+    font-size Rem(15)
+    botLine()
+    .rlf-mult
+      position relative
+      padding-right Rem(20)
+      &:after
+        content ''
+        display block
+        position absolute
+        abs(0,0,0,auto)
+        margin auto
+        width Rem(15)
+        height Rem(10)
+        getBg('mult-sprites')
+        background-size Rem(20) Rem(30)
+        background-position Rem(-2) Rem(-2)
+        transition .3s
+      &.active
+        color $theme-color
+        &:after
+          background-position-y Rem(-17)
+    .rlf-sort
+      position relative
+      padding-right Rem(10)
+      &:after
+        content ''
+        display block
+        position absolute
+        abs(0,0,0,auto)
+        margin auto
+        width Rem(6)
+        height Rem(12)
+        getBg('sort-sprites')
+        background-size Rem(11) Rem(50)
+        background-position Rem(-2) Rem(-19)
+        transition .3s
+      &.up,&.down
+        color $theme-color
+      &.up:after
+        background-position-y Rem(-36)
+      &.down:after
+        background-position-y Rem(-3)
+    .rlf-multlist
+      display none
+      position absolute
+      top 100%
+      left 0px
+      z-index 3
+      width 100%
+      background #fff
+      text-align center
+      line-height Rem(40)
+      padding Rem(5) 0
+      border-top 1px solid #e6e6e6
+      box-shadow 0 3px 5px rgba(0,0,0,.1)
+      li.active
+        color $theme-color
+  .rl-luyouList
+    margin-top Rem(40)
+    .rl-secbox
+      padding 0 Rem(5)
+      position relative      
+      background-color #fff
+      a
+        color: #333
+        border-bottom 1px solid #dfdfdf
+        height Rem(60)
+        display block
+        padding: Rem(10) Rem(5)
+      .rl-item-img
+        width Rem(50)
+        height Rem(50)
+        border-radius 50%
+        overflow hidden
+        justify-content space-between
+        align-items center
+        position absolute
+        left Rem(5)
+        top 50%
+        margin-top Rem(-25)
+        img
+          max-width 100%
+          max-height 100%
+      .rl-item-txt
+        margin-left Rem(70)
+        font-size: Rem(15)
+        .rlt-page
+          height Rem(45)
+          .rlt-leble
+            color #999
+            margin-left Rem(5)
+            font-size: Rem(14)
+        .rlt-jianjie
+          ellp()
+          color #999
+      .rlt-jpicon
+        position absolute
+        width Rem(15)
+        height Rem(15)
+        justify-content space-between
+        align-items: center
+        right: Rem(10)
+        top 20%
+        img
+          max-width 100%
+          max-height 100%

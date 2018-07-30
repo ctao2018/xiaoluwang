@@ -1,0 +1,99 @@
+<script>
+
+
+// 上拉加载html拼接方法
+function getHtmlTemp(res) {
+  var _html = '<div class="rl-secbox">'+
+      '<a href="javascript:;">'+
+        '<div class="rl-item-img">'+
+          '<img src="'+res.pic+'" alt="">'+
+        '</div>'+
+        '<div class="rl-item-txt">'+
+          '<div class="rlt-page">'+
+            '<span>'+res.name+'</span>'+
+            '<span class="rlt-leble">'+res.level+'</span>'+
+          '</div>'+
+          '<p class="rlt-jianjie">'+res.jianjie+'</p>'+
+        '</div>'+
+        '<div class="rlt-jpicon"><img src="./front/images/icon/jinpai.png" alt=""></div>'+
+      '</a>'+
+    '</div>'
+  return _html;
+}
+
+$(function () {
+  // 初始化上拉加载
+  onReachBottom.init('.rl-section', function () {
+    $.ajax({
+      url: './front/mockdata/039regimentList.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".rl-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+        }
+        hideReachLoading();
+        onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+        onReachBottom.currPage = res.currPage; //获取当前页数
+        if (!onReachBottom.hasNextPage) {
+          showNullReach($(".rl-section"))
+        }
+      }
+    })
+  })
+})
+
+  //绑定筛选事件
+  $(function () {
+    $(".rlf-sort").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).siblings().removeClass("active up down");
+        if ($(el).hasClass("up")) {
+          $(el).removeClass("up").addClass("down");
+          if ($(el).is("#w-level")) {
+            console.log("等级-从高到低");
+          } else if ($(el).is("#w-price")) {
+            console.log("价格-从高到低");
+          }
+        } else {
+          $(el).removeClass("down").addClass("up")
+          if ($(el).is("#w-level")) {
+            console.log("等级-从低到高");
+          } else if ($(el).is("#w-price")) {
+            console.log("价格-从低到高");
+          }
+        }
+      })
+    })
+  })
+  // 绑定数据筛选下拉
+  $(function () {
+    $(".rlf-mult").on("click", function (e) {
+      if ($(".rlf-multlist").is(":hidden")) {
+        $(".rlf-mult").addClass("active");
+        $(".rlf-multlist").fadeIn();
+      } else {
+        $(".rlf-mult").removeClass("active");
+        $(".rlf-multlist").fadeOut();
+      }
+      e.stopPropagation();
+      $(document).on("click", function (e) {
+        $(".rlf-multlist").fadeOut();
+        e.stopPropagation();
+      });
+    })
+    $(".rlf-multlist").on('click', function (e) {
+      e.preventDefault()
+    })
+    $(".rlf-multlist li").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".rlf-mult").text($(el).text());
+        $(".rlf-multlist").fadeOut();
+        $(".rlf-mult").removeClass("active");
+        // 选择结束
+        // do something
+      })
+    })
+  })
+</script>
