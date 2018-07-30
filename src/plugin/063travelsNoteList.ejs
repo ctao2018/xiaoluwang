@@ -1,0 +1,56 @@
+<script>
+  $(function(){
+    $("#sort-list").on("click",function(){
+      if($(this).hasClass("down")){
+        // 改为从大到小
+        $(this).removeClass("down").text('倒序')
+      }else{
+        // 改为从小到大
+        $(this).addClass("down").text('正序')
+      }
+    })
+  })
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="travels-note-item">'
+      +'<a class="tni-link" href="'+ res.link +'">'
+      +'<div class="tni-img">'
+      +'<img src="'+ res.pic +'">'
+      +'<span class="tni-date">'+ res.date +'</span>'
+      +'</div>'
+      +'<h3 class="tni-title">'+ res.title +'</h3>'
+      +'</a>'
+      +'<div class="tni-info">'
+      +'<div class="tnii-view">'
+      +'<p>浏览数：'+ res.view +'</p>'
+      +'<p class="likes" onclick="likedFunc.changeLiked(this)"><i class="icon"></i> '+ res.like +'</p>'
+      +'</div>'
+      +'<a href="'+ res.link +'" class="tni-msg">留言</a>'
+      +'</div>'
+      +'</div>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.br-body',function () {
+      $.ajax({
+        url: './front/mockdata/063travelsNoteList.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".br-body .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".br-body"))
+          }
+        }
+      })
+    })
+  })
+</script>
