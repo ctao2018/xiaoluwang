@@ -1,0 +1,61 @@
+<script>
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="halt-item">'
+      +'<a class="hi-link" href="'+ res.link +'">'
+      +'<div class="hi-img">'
+      +'<img src="'+ res.pic +'">'
+      +'</div>'
+      +'<h3 class="hi-title">'+ res.addrs +'</h3>'
+      +'</a>'
+      +'<div class="hi-info">'
+      +'<p class="i-cont">'+ res.info +'</p>'
+      +'<p class="likes" onclick="likedFunc.changeLiked(this)"><i class="icon"></i> '+ res.likes +'</p>'
+      +'</div>'
+      +'</div>';
+    return _html;
+  }
+
+  function getSectionTemp(data){
+    var _html = '<div class="hd-section" data-year="'+ data.year +'" data-month="'+ data.month +'">'
+      +'<h3>'+ data.year +'年'+ data.month +'月（'+ data.total +'）</h3>'
+      +'<div class="hd-items"></div>'
+      +'</div>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.hd-body', function () {
+      $.ajax({
+        url: './front/mockdata/062haltDynamic.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            if($("[data-year="+ pages[i].year +"]").length<=0 || $("[data-month="+ pages[i].month +"]").length<=0){
+              // 如果此数据为该月份第一条数据，则新增该月份dom结构
+              var t_el = $(getSectionTemp(pages[i]));
+              $(".hd-body").append(t_el);
+            }
+          }
+          var sections = $(".hd-section");// 遍历所有月份的dom结构
+          for (var i = 0; i < pages.length; i++) {
+            for (var j = 0; j < sections.length; j++) {
+              if(pages[i].year == $(sections[j]).data('year') && pages[i].month == $(sections[j]).data('month') ){
+                // 向对应的年份-月份的dom中新增新数据
+                $(sections[j]).find(".hd-items").append(getHtmlTemp(pages[i]))
+              }
+            }
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+          onReachBottom.currPage = res.currPage; //获取当前页数
+          if (!onReachBottom.hasNextPage) {
+            showNullReach($(".hd-body"))
+          }
+        }
+      })
+    })
+  })
+</script>

@@ -1,0 +1,91 @@
+@import './base'
+@import './sprite'
+
+.account-header
+  margin-top Rem(-45)
+  min-height Rem(200)
+  background #fff url('../assets/images/icon/acc-head-bg.png') center top no-repeat
+  background-size 100% auto
+  botLine()
+  
+.account-center
+  .account-header
+    display flex
+    flex-flow column
+    justify-content flex-end
+    align-items center
+    .ah-icon
+      width Rem(70)
+      flex 0 0 Rem(70)
+      border Rem(6) solid rgba(255,255,255,.4)
+      background rgba(255,255,255,.7)
+      border-radius 100%
+      overflow hidden
+      display flex
+      justify-content center
+      align-items center
+      >img
+        max-width 100%
+        max-height 100%
+    .ah-info
+      line-height Rem(26)
+      text-align center
+      >h3
+        font-size Rem(15)
+        color #333
+        font-weight 600
+      >p
+        font-size Rem(13)
+        color #999999
+    .ah-sign
+      padding Rem(11) 0 
+      line-height Rem(30)
+      text-align center
+      font-size Rem(15)
+      color #333
+      >a
+        color #333
+        margin 0 Rem(3)
+        vertical-align middle
+  .ac-section
+    background #fff
+    margin-bottom Rem(10)
+    .acs-header
+      display flex
+      justify-content space-between
+      align-items center
+      padding Rem(10)
+      line-height Rem(30)
+      botLine()
+      >h3
+        position relative
+        font-size Rem(15)
+        color #333333
+        font-weight 600
+        padding-left Rem(30)
+        &:after
+          content ''
+          display block
+      .h-orders:after
+        $accSectionSprite(3)
+        abs(0,auto,0,2)
+        margin auto
+      .h-wallet:after
+        $accSectionSprite(1)
+        abs(0,auto,0,0)
+        margin auto
+      .h-redbag:after
+        $accSectionSprite(2)
+        abs(0,auto,0,2)
+        margin auto
+      .h-ident
+        line-height Rem(45/2)
+        padding 0 Rem(10)
+        border-radius 20px
+        background $theme-color
+        color #fff
+        font-size Rem(13)
+      .h-more
+        color #999999
+        padding-right Rem(10)
+        toMore(0)

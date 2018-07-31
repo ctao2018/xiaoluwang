@@ -31,11 +31,19 @@
     display flex
     justify-content space-between
     align-items: center
-    padding Rem(10) 0
+    padding-top Rem(10)
     color: #666
     font-size: Rem(13)
     >div:last-child
       text-align right 
+    .tbf-page
+      >div
+        display inline-block
+        height Rem(25)
+        line-height: Rem(25)
+        margin-right: Rem(20)
+        &:last-child
+          margin-right 0
     .tb-dianz
       height Rem(30)
       border 0
@@ -53,12 +61,18 @@
         display block
         width Rem(20)
         height Rem(18)
-        getBg('collect-sprites')
+        getBg('l-collect')
         background-size Rem(25) Rem(46)
-        background-position Rem(-3) Rem(-25)
+        background-position Rem(-3) Rem(-26)
         position absolute
         left 0
         top: 50%
         margin-top Rem(-9)
       &.collected:before
-        background-position Rem(-3) Rem(-2)
+        background-position-y Rem(-3)
+    .tb-kefu
+      width Rem(15)
+      height Rem(29/2)
+      getBg('leave-word')
+      background-size cover
+      font-size 0

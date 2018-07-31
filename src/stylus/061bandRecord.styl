@@ -1,0 +1,44 @@
+@import './base'
+
+.band-record
+  padding-top Rem(40)
+  .br-head
+    position fixed
+    top Rem(45)
+    left 0px
+    width 100%
+    z-index 5
+    display flex
+    align-items center
+    justify-content space-around
+    height Rem(40)
+    background #fff
+    botLine()
+    >h3
+      color $theme-color
+      font-weight 600
+    .br-sort
+      position relative
+      border 0
+      padding-right Rem(15)
+      background #fff
+      &:after
+        content ''
+        display block
+        abs(3,0,0,auto)
+        margin auto
+        width Rem(9)
+        height Rem(6)
+        getBg('icon-sort')
+        background-position 0 Rem(-8)
+        background-size Rem(9) Rem(14)
+        transition .3s background-position
+      &.down:after
+        background-position 0 0
+  .br-body
+    .item-with-pic
+      padding Rem(10)
+      &:after
+        display none !important
+    .travels-note-item
+      padding Rem(10) Rem(10) 0

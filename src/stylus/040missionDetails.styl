@@ -1,0 +1,146 @@
+
+@import './base'
+
+.missinon-details
+  margin-top Rem(-45)
+  .md-pagebox
+    padding: 0 Rem(6)
+    background-color: #fff
+    .mdp-title
+      display flex
+      justify-content space-between
+      line-height: Rem(20)
+      padding-top Rem(20)
+      font-size: 0
+      >div
+        font-size: Rem(15)
+        display inline-block
+        vertical-align middle
+        width 33.3333%
+        text-align: center
+        &:first-child
+          text-align left
+      .md-jnpai
+        text-align: right 
+        img
+          width Rem(33/2)
+          height Rem(33/2)
+      .mbpt-name
+        color: #333
+        font-size: Rem(15)
+      .mbpt-lable
+        color: #999
+        font-size Rem(14)
+    .follow
+      width Rem(60)
+      height Rem(20)
+      line-height Rem(20)
+      border: 0
+      background-color: $theme-color
+      color: #fff
+      text-align: center
+      font-size: Rem(14)
+    .md-miaoshu
+      padding: Rem(10) 0 Rem(15) 0
+      color: #666
+      line-height Rem(18)
+      border-bottom 1px solid #dcdcdc
+      font-size Rem(13)
+    .md-gocity
+      text-align center
+      color $theme-color
+      padding Rem(35/2) 0
+      .md-gocity-icon
+        display inline-block
+        vertical-align bottom
+        margin-right Rem(4)
+        getBg("gocity")
+        background-size cover
+        width Rem(33/2)
+        height Rem(15)
+  .md-centerBox
+    margin-top Rem(10)
+    background-color #fff
+    .mdc-page
+      font-size: 0
+      padding Rem(10)
+      padding-bottom 0
+      border-bottom 1px solid #dcdcdc
+      span
+        display inline-block
+        vertical-align middle
+        font-size: Rem(14)
+        color #666
+        background-color #eff3f6
+        padding Rem(15/2) Rem(25/2)
+        border-radius Rem(15)
+        margin-bottom Rem(10)
+        margin-right: Rem(15)
+    .mdc-page-box
+        padding Rem(10)
+        p
+          color: #666
+          margin-bottom Rem(10)
+          font-size: Rem(13)
+          span
+            margin-right Rem(20)
+    .mdc-titlebox
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: Rem(15) Rem(10) Rem(15) Rem(25)
+      border-bottom 1px solid #dcdcdc
+      position relative
+      &:after
+        content: ''
+        position absolute
+        height Rem(15)
+        width Rem(2)
+        background-color: $theme-color
+        left Rem(10)
+        top: Rem(15)
+      >div
+        span
+          color #999
+          font-size: Rem(13)
+      .mdc-link
+        color: #666
+        padding-right: Rem(15)
+        position: relative
+        toMore()
+        font-size: Rem(14)
+        &:after
+          right 0
+    .mdc-list
+      padding: Rem(10)
+  .md-likes
+    position fixed
+    right Rem(10)
+    top 30%
+    z-index 3
+    >li
+      display flex
+      flex-flow column
+      align-items center
+      justify-content center
+      padding Rem(5)
+      background rgba(0,0,0,.5)
+      color #fff
+      font-size Rem(10)
+      border-radius 5px
+      margin-bottom Rem(10)
+      transition .3s background
+      &.active
+        background rgba(255, 119, 46,.8)
+    .md-collect i
+      width Rem(31/2)
+      height Rem(32/2)
+      getBg('d-collect')
+      background-size cover
+      margin-bottom Rem(5)
+    .md-liked i
+      width Rem(30/2)
+      height Rem(30/2)
+      getBg('d-likes')
+      background-size cover
+      margin-bottom Rem(5)

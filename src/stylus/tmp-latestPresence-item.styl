@@ -1,0 +1,54 @@
+@import './base'
+
+.last-item
+  background #fff
+  padding Rem(10) 0
+  .li-link
+    display block
+  .li-img
+    position relative
+    display flex
+    justify-content center
+    align-items center
+    >img
+      max-width 100%
+      border-radius 5px
+  .li-title
+    line-height Rem(20)
+    padding Rem(10) 0
+    color #333
+    font-weight 600
+  .li-info
+    display flex
+    align-items center
+    justify-content space-between
+    color #666
+    .i-cont
+      flex 0 0 Rem(250)
+      ellp()
+    .li-dianz
+      height Rem(30)
+      border 0
+      background #fff
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(12)
+      color #666666
+      position relative
+      padding-left: Rem(30)
+      &:before
+        content ''
+        display block
+        width Rem(20)
+        height Rem(18)
+        getBg('l-collect')
+        background-size Rem(25) Rem(46)
+        background-position Rem(-3) Rem(-26)
+        position absolute
+        left 0
+        top: 50%
+        margin-top Rem(-9)
+      &.collected:before
+        background-position-y Rem(-3)

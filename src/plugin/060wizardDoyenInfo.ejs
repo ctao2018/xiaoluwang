@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  $(function () {
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+  })
+
+  $(function(){
+    // 悬浮收藏
+    $(".wl-collect").on("click",function(){
+      if($(this).hasClass("active")){
+        // 取消
+        $(this).removeClass("active")
+      }else{
+        // 收藏
+        $(this).addClass("active")
+      }
+    })
+
+    // 悬浮点赞
+    $(".wl-liked").on("click",function(){
+      if($(this).hasClass("active")){
+        // 取消
+        $(this).removeClass("active")
+      }else{
+        // 点赞
+        $(this).addClass("active")
+      }
+    })
+  })
+</script>

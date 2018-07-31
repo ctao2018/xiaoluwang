@@ -1,0 +1,65 @@
+<div class="wizard-doyen-info">
+  <div class="wdi-scroll">
+    <%= scrollWall %>
+  </div>
+  <div class="wdi-info">
+    <div class="wdii-top">
+      <h3>鹿友大团长</h3>
+      <button type="button" class="follow" onclick="followFunc.changeFollow(this)">关注</button>
+      <img class="it-level" src="./front/images/icon/jinpai.png" alt="A级">
+    </div>
+    <p class="wdii-level">A级旅游达人</p>
+    <p class="wdii-info">暴走古城墙、寻找失意的老城南、探秘隐藏在巷子里的十里秦淮起点、走进被遗忘的百年老火车站...哪里有真正南京的味道，哪里就有他们的身影。走进最有南京特色的街巷、角落</p>
+    <a href="" class="wdii-link">
+      <img src="./front/images/icon/icon-departure.png" alt="">
+      <span>出发地达人</span>
+    </a>
+  </div>
+  <div class="wdi-vitae">
+    <ul class="wdiv-badges">
+      <li>鹿网推荐</li>
+      <li>旅游专家</li>
+      <li>微博达人</li>
+    </ul>
+    <div class="wdiv-info">
+      <p>达人经验：10年</p>
+      <p>带团次数：126次</p>
+      <p>带团出没地：
+        <span>大理</span>
+        <span>张家界</span>
+        <span>凤凰</span>
+        <span>上海</span>
+      </p>
+    </div>
+  </div>
+  <div class="wdi-section">
+    <%= tcm({str:'带团记录'}) %>
+    <div class="wdis-wrap">
+      <% for(var i=0;i<3;i++){ %>
+      <%= itemWithPic({islink:true,date:true,isRecord:true,addrs:true,str:'丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部'}) %>
+      <% } %>
+    </div>
+  </div>
+  <div class="wdi-section">
+    <%= tcm({str:'游记',num:false}) %>
+    <div class="wdis-wrap">
+      <%= travelsNote() %>
+    </div>
+  </div>
+  <div class="wdi-section">
+    <%= tcm({str:'最新驻足',num:false}) %>
+    <div class="wdis-wrap">
+      <%= haltItem() %>
+    </div>
+  </div>
+  <ul class="wid-likes">
+    <li class="wl-collect">
+      <i></i>
+      <span>1719</span>
+    </li>
+    <li class="wl-liked">
+      <i></i>
+      <span>1719</span>
+    </li>
+  </ul>
+</div>
