@@ -1,0 +1,42 @@
+<div class="ravels-list">
+  <ul class="rl-menu-list">
+    <li><a href="javascript:;;" class="active">精选游记</a></li>
+    <li><a href="javascript:;;">最新游记</a></li>
+    <li><a href="javascript:;;">本地游</a></li>
+  </ul>
+  <div class="rl-box">
+    <% for(var i =0;i<3;i++){%>
+    <div class="rlb-page">
+      <div class="rlb-page-img">
+        <div class="rlbp-img">
+            <img src="./front/images/l-photoR02.png" alt="">
+        </div>
+        <!-- 收藏 -->
+        <div class="rlb-zan" onclick="shoucFun.changeCollect(this)"></div>
+        <div class="rlb-tips">
+            <div class="rlb-imgbox">
+              <div class="rlb-img">
+                <img src="./front/images/l-mandetImg.png" alt="">
+              </div>
+              <div class="rlb-namesbox">
+                  <p>鹿友大团长</p>
+                  <p>A级旅游达人</p>
+              </div>
+            </div>
+            <div class="rlb-times">2018年5月10日</div>
+        </div>
+      </div>
+      <div class="rlb-txt">
+        <p>丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部——绝美古城春游</p>
+      </div>
+      <div class="rlb-foot-tip">
+        <div>
+          <span>大理游</span>
+          <span class="rlbf-span">点赞：8980次</span>
+        </div>
+        <div>一级旅游达人</div>
+      </div>
+    </div>
+    <%} %>
+  </div>
+</div>
