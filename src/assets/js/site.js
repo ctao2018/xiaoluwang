@@ -12,7 +12,7 @@ $(function () {
 })
 
 var followFunc = {
-  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  elem: '', //当前点击的元素的对象，可通过此对象获取ID，类型，等信息
   changeFollow: function (elem) {
     var that = this;
     that.elem = $(elem);
@@ -44,7 +44,7 @@ var followFunc = {
 }
 
 var collectFunc = {
-  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  elem: '', //当前点击的元素的对象，可通过此对象获取ID，类型，等信息
   changeCollect: function (elem) {
     var that = this;
     that.elem = $(elem);
@@ -76,7 +76,7 @@ var collectFunc = {
 }
 
 var likedFunc = {
-  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  elem: '', //当前点击的元素的对象，可通过此对象获取ID，类型，等信息
   changeLiked: function (elem) {
     var that = this;
     that.elem = $(elem);
@@ -104,3 +104,16 @@ var likedFunc = {
     //  do something
   }
 }
+
+$(function () {
+  if ($(".bg-opacity").length > 0) {
+    $(window).scroll(function (e) {
+      var _top = $(this).scrollTop()
+      if (_top > 100) {
+        $(".bg-opacity").addClass("in-scroll")
+      }else{
+        $(".bg-opacity").removeClass("in-scroll")
+      }
+    })
+  }
+})
