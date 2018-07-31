@@ -12,7 +12,7 @@ $(function () {
 })
 
 var followFunc = {
-  elem: '',
+  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
   changeFollow: function (elem) {
     var that = this;
     that.elem = $(elem);
@@ -38,12 +38,13 @@ var followFunc = {
   callback: function (status) {
     //  true为关注
     //  false为取消
+    //  this.elem 为 当前点击的对象
     //  do something
   }
 }
 
 var collectFunc = {
-  elem: '',
+  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
   changeCollect: function (elem) {
     var that = this;
     that.elem = $(elem);
@@ -69,6 +70,37 @@ var collectFunc = {
   callback: function (status) {
     //  true为关注
     //  false为取消
+    //  this.elem 为 当前点击的对象
+    //  do something
+  }
+}
+
+var likedFunc = {
+  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  changeLiked: function (elem) {
+    var that = this;
+    that.elem = $(elem);
+    if (that.elem.hasClass("liked")) {
+      that.unLiked();
+    } else {
+      that.toLiked();
+    }
+  },
+  toLiked: function () {
+    var that = this;
+    that.elem.addClass("liked")
+    that.callback(true);
+    showTips('+1');
+  },
+  unLiked: function () {
+    var that = this;
+    that.elem.removeClass("liked")
+    that.callback(false);
+  },
+  callback: function (status) {
+    //  true为关注
+    //  false为取消
+    //  this.elem 为 当前点击的对象
     //  do something
   }
 }

@@ -1,0 +1,110 @@
+@import './base'
+
+.wizard-doyen-info
+  .wdi-scroll
+    margin-top Rem(-45)
+  .wdi-info
+    padding Rem(10)
+    background #fff
+    .wdii-top
+      display flex
+      align-items center
+      justify-content space-between
+      margin-top Rem(5)
+      >h3
+        flex 0 0 Rem(150)
+        ellp()
+        font-size Rem(15)
+        color #333333
+      .follow
+        background $theme-color
+        color #fff
+        height Rem(25)
+        padding 0 Rem(15)
+        border 0
+        border-radius 3px
+        &.followed
+          opacity .8
+      .it-level
+        flex 0 0 Rem(15)
+        height Rem(15)
+    .wdii-level
+      color #666
+      font-size Rem(13)
+      line-height Rem(25)
+    .wdii-info
+      color #666
+      line-height Rem(20)
+      font-size Rem(13)
+      padding Rem(15) 0
+      botLine()
+      ellps(3)
+    .wdii-link
+      display flex
+      justify-content center
+      align-items center
+      padding Rem(15) 0 Rem(5)
+      font-size Rem(15)
+      color $theme-color
+      >img
+        flex 0 0 Rem(33/2)
+        height Rem(15)
+        margin-right Rem(10)
+  .wdi-vitae
+    margin-top Rem(10)
+    background #fff
+    .wdiv-badges
+      padding 0 Rem(10) Rem(10)
+      display flex
+      flex-flow row wrap
+      align-items center
+      botLine()
+      >li
+        line-height Rem(30)
+        padding 0 Rem(15)
+        border-radius 20px
+        color #666666
+        background #eff3f6
+        margin Rem(10) Rem(20) 0 0
+    .wdiv-info
+      padding Rem(10)
+      color #666
+      line-height Rem(25)
+      >p>span
+        margin-right Rem(10)
+  .wdi-section
+    margin-top Rem(10)
+    background #fff
+    .wdis-wrap
+      padding 0 Rem(10)
+  .wid-likes
+    position fixed
+    right Rem(10)
+    top 30%
+    z-index 3
+    >li
+      display flex
+      flex-flow column
+      align-items center
+      justify-content center
+      padding Rem(5)
+      background rgba(0,0,0,.5)
+      color #fff
+      font-size Rem(10)
+      border-radius 5px
+      margin-bottom Rem(10)
+      transition .3s background
+      &.active
+        background rgba(255, 119, 46,.8)
+    .wl-collect i
+      width Rem(31/2)
+      height Rem(32/2)
+      getBg('d-collect')
+      background-size cover
+      margin-bottom Rem(5)
+    .wl-liked i
+      width Rem(30/2)
+      height Rem(30/2)
+      getBg('d-likes')
+      background-size cover
+      margin-bottom Rem(5)
