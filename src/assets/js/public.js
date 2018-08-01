@@ -4,15 +4,15 @@ $(function () {
 
 //获取离顶部高度
 function getTop(e) {
-  var offset = e.offsetTop;
-  if (e.offsetParent != null) offset += getTop(e.offsetParent);
+  var offset                           = e.offsetTop;
+  if  (e.offsetParent != null) offset += getTop(e.offsetParent);
   return offset;
 }
 
 /* 短信验证码 */
 var getMsgCode = function (elem) {
-  var el = $(elem);
-  var count = 60;
+  var el       = $(elem);
+  var count    = 60;
   var msgTimed = setInterval(function () {
     el.prop("disabled", true);
     el.text(count + 's');
@@ -29,7 +29,7 @@ var getMsgCode = function (elem) {
 var showTips = function (msg, sec, callback) {
   var speed = sec != undefined ? sec : 2;
   var _html = "<div class='show-tips'></div>";
-  var _el = $(_html);
+  var _el   = $(_html);
   $("body").append(_el);
   _el.html("<p>" + msg + "</p >");
   var tipsTimed = setTimeout(function () {
@@ -46,7 +46,7 @@ var showTips = function (msg, sec, callback) {
 // 弹窗滚动优化
 var alphaScroll = {
   flagTop: 0,
-  addTo: function () {
+  addTo  : function () {
     this.flagTop = $(window).scrollTop();
     $("html").addClass("alpha");
   },
@@ -60,7 +60,7 @@ var alphaScroll = {
 /* 显示loading提示 */
 var showLoading = function () {
   var _html = "<div class='show-loading'></div>";
-  var _el = $(_html);
+  var _el   = $(_html);
   $("body").append(_el);
   _el.html("<img src='front/images/icon/icon-loading.png'><p>请稍等...</p>");
   window.addEventListener('click', function (ev) {
@@ -85,7 +85,7 @@ var showReachLoading = function (elem) {
     $(".show-null-reach").remove()
   })
   var _html = "<div class='show-reach-loading'></div>";
-  var _el = $(_html);
+  var _el   = $(_html);
   elem.append(_el);
   _el.html("<img src='front/images/icon/reach-loading.png'><span>正在加载...</span>");
   $("html,body").animate({
@@ -109,7 +109,7 @@ var hideReachLoading = function () {
 /* 显示nodata提示 */
 var showNullReach = function (elem) {
   var _html = "<div class='show-null-reach'></div>";
-  var _el = $(_html);
+  var _el   = $(_html);
   elem.append(_el);
   _el.html("<span>- 暂无更多数据 -</span>");
 }
@@ -117,8 +117,8 @@ var showNullReach = function (elem) {
 /* 触底加载 */
 var onReachBottom = {
   hasNextPage: true,
-  currPage: 1,
-  option: {
+  currPage   : 1,
+  option     : {
     now: 0,
     old: 0
   },
@@ -130,7 +130,7 @@ var onReachBottom = {
       if (that.option.old < that.option.now) {
         //下滚
         var doc_hei = $(document).outerHeight(true);
-        var sr_top = $(window).scrollTop();
+        var sr_top  = $(window).scrollTop();
         var win_hei = $(window).outerHeight(true);
         if (win_hei + sr_top + 1 >= doc_hei) {
           if (!that.hasNextPage) {
@@ -165,15 +165,15 @@ var filter = {
   },
   setDate: function (date) {
     var that = this;
-    var d = new Date(parseInt(date));
-    var r = {
-      year: d.getFullYear(),
-      month: that.zero(d.getMonth() + 1),
-      day: that.zero(d.getDate()),
-      hour: that.zero(d.getHours()),
+    var d    = new Date(parseInt(date));
+    var r    = {
+      year  : d.getFullYear(),
+      month : that.zero(d.getMonth() + 1),
+      day   : that.zero(d.getDate()),
+      hour  : that.zero(d.getHours()),
       minute: that.zero(d.getMinutes()),
       second: that.zero(d.getSeconds()),
-      apm: d.getHours() < 12 ? '上午' : '下午'
+      apm   : d.getHours() < 12 ? '上午'   : '下午'
     }
     return r;
   },
@@ -190,9 +190,9 @@ var filter = {
 var dropFunc = {
   elem: '',
   show: function (el) {
-    var _drop = "<div class='bg-drop'></div>";
-    var _dl = $(_drop);
-    this.elem = _dl;
+    var _drop     = "<div class='bg-drop'></div>";
+    var _dl       = $(_drop);
+        this.elem = _dl;
     $(el).before(_dl);
     alphaScroll.addTo();
     $(".body-main").addClass("fix-main");
@@ -207,7 +207,6 @@ var dropFunc = {
   }
 }
 
-// 确认框
 function showConfirm(str, cbAccept, cbCancel, btnOpt) {
   if (typeof cbCancel != 'function') {
     btnOpt = cbCancel
@@ -215,17 +214,17 @@ function showConfirm(str, cbAccept, cbCancel, btnOpt) {
   if (btnOpt == undefined) {
     btnOpt = {
       confirm: '确认',
-      cancel: '取消'
+      cancel : '取消'
     }
   }
   var _drop = "<div class='bg-drop'></div>";
   var _html = "<div class='show-confirm'></div>";
-  var _el = $(_html);
-  var _dl = $(_drop);
+  var _el   = $(_html);
+  var _dl   = $(_drop);
   $("body").append(_el);
   $("body").append(_dl);
   var h_cont = "<div class='sc-cont'>" + str + "</div>";
-  var h_btn = "<div style='text-align:center'>" +
+  var h_btn  = "<div style='text-align:center'>" +
     "<button type='button' class='btn-accept'>" + btnOpt.confirm + "</button>" +
     (btnOpt.cancel != '' ? "<button type='button' class='btn-cancel'>" + btnOpt.cancel + "</button>" : "") +
     "</div>"
@@ -308,30 +307,30 @@ $(function () {
 })
 
 function scaleImg(ev) {
-  var winWid = document.documentElement.clientWidth;
-  var winHgt = document.documentElement.clientHeight;
-  var ntWid = ev.naturalWidth;
-  var ntHgt = ev.naturalHeight;
-  var _domDark = "<div class='img-scale-dark'></div>";
-  var _domWrap = "<div class='img-scale-wrap'></div>";
-  var _domImg = "<img src='" + $(ev).attr("src") + "'/>";
-  var _domDel = "<button type='button'>点击此处关闭</button>";
+  var winWid    = document.documentElement.clientWidth;
+  var winHgt    = document.documentElement.clientHeight;
+  var ntWid     = ev.naturalWidth;
+  var ntHgt     = ev.naturalHeight;
+  var _domDark  = "<div class='img-scale-dark'></div>";
+  var _domWrap  = "<div class='img-scale-wrap'></div>";
+  var _domImg   = "<img src='" + $(ev).attr("src") + "'/>";
+  var _domDel   = "<button type='button'>点击此处关闭</button>";
   var _elemDark = $(_domDark);
   var _elemWrap = $(_domWrap);
-  var _elemImg = $(_domImg);
-  var _elemDel = $(_domDel);
+  var _elemImg  = $(_domImg);
+  var _elemDel  = $(_domDel);
   $("body").append(_elemDark);
   $("body").append(_elemWrap);
   $(_elemWrap).append(_elemImg);
   $(_elemWrap).append(_elemDel);
   _elemDark.css({
-    "display": "none",
-    "position": "fixed",
-    "zIndex": "998",
-    "left": "0",
-    "top": "0",
-    "width": "100%",
-    "height": "100%",
+    "display"   : "none",
+    "position"  : "fixed",
+    "zIndex"    : "998",
+    "left"      : "0",
+    "top"       : "0",
+    "width"     : "100%",
+    "height"    : "100%",
     "background": "rgba(102,102,102,.7)"
   }).fadeIn(300);
   var boxWid, boxHgt, point = .8;
@@ -361,32 +360,32 @@ function scaleImg(ev) {
     boxHgt = 300
   };
   _elemWrap.css({
-    "display": "none",
+    "display" : "none",
     "position": "fixed",
-    "zIndex": "999",
-    "left": "0",
-    "top": "0",
-    "bottom": "0",
-    "right": "0",
-    "margin": "auto",
-    "width": boxWid,
-    "height": boxHgt
+    "zIndex"  : "999",
+    "left"    : "0",
+    "top"     : "0",
+    "bottom"  : "0",
+    "right"   : "0",
+    "margin"  : "auto",
+    "width"   : boxWid,
+    "height"  : boxHgt
   }).fadeIn(500);
   _elemImg.css({
-    "width": "100%",
+    "width" : "100%",
     "height": "auto"
   });
   _elemDel.css({
-    "position": "absolute",
-    "zIndex": "999",
-    "left": "0",
-    "bottom": "-30px",
-    "width": boxWid,
-    "height": "30px",
+    "position"  : "absolute",
+    "zIndex"    : "999",
+    "left"      : "0",
+    "bottom"    : "-30px",
+    "width"     : boxWid,
+    "height"    : "30px",
     "background": "rgba(255,119,46,.8)",
-    "color": "#fff",
-    "border": "0",
-    "outline": "none"
+    "color"     : "#fff",
+    "border"    : "0",
+    "outline"   : "none"
   });
   _elemDel.on("click", function () {
     _elemDark.fadeOut(function () {
@@ -413,16 +412,16 @@ var mockSelect = function (callback) {
   /* 绑定点击事件 */
   _btn.each(function (i, el) {
     var initVal = $(el).data("source");
-    if(initVal>-8){
-      $(el).siblings(".slc-list").children("li").each(function(k,ml){
-        if($(ml).data("source") == initVal){
+    if (initVal > -8) {
+      $(el).siblings(".slc-list").children("li").each(function (k, ml) {
+        if ($(ml).data("source") == initVal) {
           $(el).html($(ml).html())
         }
       })
     };
     $(el).unbind("click").on("click", function (m) {
       // console.log(_items.length)
-      var _list = $(el).siblings(".slc-list");
+      var _list  = $(el).siblings(".slc-list");
       var _items = _list.children("li");
       if (_list.is(":hidden")) {
         $(".slc-list").slideUp();
@@ -452,18 +451,81 @@ var reBindDataChange = function (_btn, _list, _items, callback) {
       var t_text = $(ml).html();
       _btn.val(t_text);
       _btn.data("source", t_data);
-      if(_btn.siblings(":hidden").length>0){
+      if (_btn.siblings(":hidden").length > 0) {
         _btn.siblings(":hidden").val(t_data)
       }
       _list.stop(true, false).slideUp();
       _btn.parent(".slc-box").removeClass("active");
       $(ml).addClass("active").siblings().removeClass("active");
       if (callback) {
-        callback(_btn,t_data)
+        callback(_btn, t_data)
       }
     })
   })
   _list.unbind("click").on("click", function (m) {
     m.stopPropagation();
   });
+}
+
+var fullDownLoading = {
+  $elem: '',
+  $count:0,
+  $inv:'',
+  init : function (elem) {
+    var _html = "<div class='show-pulldown-loading'></div>";
+    var _el   = $(_html);
+    $(elem).prepend(_el);
+    _el.html("<img src='front/images/icon/reach-loading.png'><span>正在刷新...</span>");
+    this.$elem = _el;
+  },
+  show: function () {
+    var that = this;
+    that.$elem.addClass("active");
+    that.$inv = setInterval(function(){
+      that.$count++
+    },100)
+  },
+  hide: function () {
+    var that = this;
+    clearInterval(that.$inv)
+    if(that.$count<=5){
+      that.$inv = setTimeout(function(){
+        that.$elem.removeClass("active");
+        clearTimeout(that.$inv);
+        that.$count = 0
+      },100*(5-that.$count))
+    }else{
+      that.$elem.removeClass("active")
+    }
+  }
+}
+
+function onPullDownRefresh(elem, callback) {
+  var $elem = $(elem);
+  var $flag = true;
+  var oldY, nowY;
+  // 添加加载提示dom
+  fullDownLoading.init(elem);
+  // 添加加载提示dom
+  $elem.on("touchstart", function (e) {
+    var touch     = e.originalEvent.targetTouches[0];
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    if (scrollTop > 0) {
+      $flag = false;
+    } else {
+      $flag = true;
+    }
+    oldY = touch.pageY;
+  })
+  $elem.on("touchend", function (e) {
+    if (!$flag || $(".show-pulldown-loading.active").length>0) {
+      return false
+    }
+    var touch = e.originalEvent.changedTouches[0];
+        nowY  = touch.pageY
+    if (nowY - oldY >= 80) {
+      fullDownLoading.show();
+      callback()
+    }
+  })
 }

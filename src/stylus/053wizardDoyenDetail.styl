@@ -335,29 +335,17 @@
       font-weight 600
       color #333
       margin-bottom Rem(5)
-    .dgsd-list
-      display flex
-      flex-flow row wrap
-      justify-content space-between
-      >a
-        flex 0 0 23%
-        margin-top Rem(5)
-        display flex
-        flex-flow column
-        justify-content center
-        align-items center
-        padding Rem(5) 0
-        border 1px solid #e6e6e6
-        color #989898
-        font-size Rem(10)
-        border-radius 3px
-        transition-duration .3s
-        transition-property border-color
-        &.active
-          border-color $theme-color
-        >i
-          color $theme-color
-          margin-top Rem(5)
+    .depart-text
+      height Rem(30)
+      width Rem(120)
+      padding 0 Rem(10)
+      margin-top Rem(10)
+      border 1px solid $theme-color
+      background #fff
+      color $theme-color
+      border-radius 3px
+      &::-webkit-input-placeholder
+        color: $theme-color
   .dgs-pay
     position fixed
     bottom 0px

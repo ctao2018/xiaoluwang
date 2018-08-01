@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="./front/laydate/laydate.js"></script>
 <script src="front/swiper/swiper.min.js"></script>
 <script>
   $(function () {
@@ -20,18 +21,33 @@
       dropFunc.hide();
     })
     $(elem).find(".dgs-pay").unbind("click").on("click", function () {
-      var mealIdx = $(".dialog-guide-service .dgs-scroll>p.active").data("id");
-      var dateIdx = $(".dialog-guide-service .dgsd-list>a.active").data("id");
-      console.log('您选择了' + type + '服务\n套餐id为' + mealIdx + '\n出发日期id为' + dateIdx);
+      var mealIdx = $(elem).find(".dgs-scroll>p.active").data("id");
+      var dateIdx = $(elem).find(".depart-text").val();
+      console.log('您选择了' + type + '服务\n套餐id为' + mealIdx + '\n出发日期为' + dateIdx);
     })
   }
 
   $(function () {
-    $(".dialog-guide-service .dgs-scroll>p,.dialog-guide-service .dgsd-list>a").each(function (i, el) {
+    $(".dialog-guide-service .dgs-scroll>p").each(function (i, el) {
       $(el).on("click", function () {
         $(el).addClass("active").siblings().removeClass("active");
       })
     })
+  })
+
+  $(function(){
+    laydate.render({
+      elem: '#depart-date1',
+      showBottom: false,
+      theme: '#ff772e',
+      min:0
+    });
+    laydate.render({
+      elem: '#depart-date2',
+      showBottom: false,
+      theme: '#ff772e',
+      min:0
+    });
   })
   
 </script>

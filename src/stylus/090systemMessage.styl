@@ -1,0 +1,40 @@
+@import './base'
+
+.system-message
+  flex 1 0 auto
+  background #fff
+  .sm-header
+    display flex
+    justify-content space-around
+    align-items center
+    botLine()
+    >li
+      line-height Rem(40)
+      font-size Rem(15)
+      color #666666
+      border-bottom 2px solid transparent
+      &.active
+        color $theme-color
+        border-color $theme-color
+  .sm-items
+    padding Rem(10)
+  .sm-item
+    position relative
+    padding Rem(10) 0
+    background #fff
+    line-height Rem(25)
+    botLine()
+    >h3
+      color #333
+      font-weight 600
+      padding-right Rem(60)
+      ellp()
+    >p
+      font-size Rem(13)
+      color #666
+      ellp()
+    .i-status
+      position absolute
+      top Rem(10)
+      right Rem(10)
+      color $theme-color
