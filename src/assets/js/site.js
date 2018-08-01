@@ -169,7 +169,7 @@ var shoucFun = {
     //  do something
   }
 }
-}
+
 
 $(function () {
   if ($(".bg-opacity").length > 0) {
