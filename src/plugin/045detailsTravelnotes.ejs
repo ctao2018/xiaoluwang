@@ -1,0 +1,47 @@
+<script>
+
+  $(function(){
+    // 菜单
+    $(".dt-menus").on("click",function(){
+      $(this).addClass("active")
+      $(".dt-menubox").addClass("active")
+    })
+    $(".dtm-zhizh").on("click",function(){
+      $(".dt-menus").removeClass("active")
+      $(".dt-menubox").removeClass("active")
+    })
+  })
+
+   // 上拉加载html拼接方法
+   function getHtmlTemp(res) {
+    var _html = '<a href="'+res.link+'" class="dts-list">'+
+        '<div class="dtsl-img">'+
+          '<img src="'+res.pic+'" alt="">'+
+        '</div>'+
+        '<div class="dtsl-txt">'+res.miaoshu+'</div></a>'
+    return _html;
+  }
+
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.dts-list-box',function () {
+      $.ajax({
+        url: './front/mockdata/045detailsTravelnotes.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".dts-list-box .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".dts-list-box"))
+          }
+        }
+      })
+    })
+  })
+</script>

@@ -1,0 +1,205 @@
+
+@import './base'
+
+.details-travelnotes
+  .dt-banner
+    display flex
+    justify-content center
+    align-items: center
+    max-height: Rem(175)
+    position relative
+    overflow hidden
+    img
+      max-width 100%
+      max-height 100%
+    .dt-zanbox
+      position absolute
+      right Rem(10)
+      top Rem(10)
+      display block
+      width Rem(21)
+      height Rem(18)
+      getBg('l-collect')
+      background-size Rem(25) Rem(46)
+      background-position Rem(-2) Rem(-26)
+      &.collected
+        background-position-y Rem(-3)
+  .dt-page
+    padding: 0 Rem(10)
+    background-color #fff
+    margin-bottom Rem(10)
+    .dtp-txt
+      line-height Rem(20)
+      font-size: Rem(15)
+      padding Rem(15) 0
+      border-bottom 1px solid #dcdcdc
+    .dtp-miaos
+      display flex
+      justify-content space-between
+      align-items: center
+      padding Rem(15) 0
+      .dtpm-box
+        color #666
+        font-size Rem(13)
+        p
+          display inline-block
+          vertical-align middle
+        .dtpm-zan
+          margin-left Rem(25)
+          i
+            display inline-block
+            vertical-align text-top
+            width Rem(21)
+            height Rem(18)
+            getBg('l-collect')
+            background-size Rem(25) Rem(46)
+            background-position Rem(-2) Rem(-26)
+            &.collected
+              background-position-y Rem(-3)
+      .dtpm-wx
+        display block
+        width Rem(15)
+        height Rem(29/2)
+        getBg('leave-word')
+        background-size cover
+        font-size 0
+    .dtp-lybox
+      padding Rem(10) 0
+      border-bottom 1px solid #dcdcdc
+      .mdd-top
+        display flex
+      .mdd-img
+        flex 0 0 Rem(50)
+        height Rem(50)
+        display flex
+        justify-content center
+        align-items center
+        border-radius 100%
+        overflow hidden
+        margin-right Rem(20)
+        >img
+          max-width 100%
+          max-height 100%
+      .mdd-info
+        flex 1 0 auto
+        .i-top
+          display flex
+          justify-content space-between
+          align-items center
+          >h3
+            flex 1 1 auto
+            font-size Rem(16)
+            color #333333
+            line-height Rem(24)
+            max-width Rem(180)
+            font-weight 600
+            ellp()
+          >div
+            display flex
+            align-items center
+          .level
+            max-height Rem(16)
+          .follow
+            height Rem(22)
+            line-height Rem(22)
+            padding 0 Rem(10)
+            border 0
+            background $theme-color
+            color #fff
+            font-size Rem(14)
+            margin-left Rem(15)
+            border-radius 3px
+            &.followed
+              opacity .6
+        .i-level
+          color #666
+          line-height Rem(24)
+        .i-info
+          color #666
+          line-height Rem(24)
+          max-width Rem(280)
+          ellp()
+    .dtp-lytxt
+      display flex
+      justify-content space-between
+      align-items: center
+      color #666
+      padding Rem(15) 0
+      font-size: Rem(14)
+  .dt-section
+    background-color #fff
+    .dts-title
+      padding: Rem(35/2) Rem(10)
+      border-bottom 1px solid #dcdcdc
+      p
+        border-left Rem(2) solid $theme-color
+        padding-left: Rem(10)
+    .dts-list
+      padding Rem(10)
+      display block
+      color #333
+      .dtsl-img
+        display flex
+        justify-content center
+        align-items: center
+        overflow hidden
+        border-radius: Rem(4)
+        height Rem(125)
+        background-color #eee
+        img
+          max-width 100%
+          // max-height 100%
+      .dtsl-txt
+        padding: Rem(10) Rem(5)
+        line-height Rem(18)
+  .dt-menus
+    position fixed
+    bottom Rem(100)
+    left Rem(10)
+    transition 0.3s
+    &.active
+      left Rem(-40)
+    img    
+      width Rem(40)
+      height Rem(40)
+  .dt-menubox
+    position fixed
+    width 100%
+    height 100%
+    top: 0
+    left 0
+    display none
+    transition 0.3s
+    &.active
+      display block
+      .dt-menulist
+        left 0
+    .dtm-zhizh
+      position absolute
+      width 100%
+      height 100%
+      background-color rgba(0,0,0,0.5)
+      top: 0
+      left 0
+    .dt-menulist
+      position absolute
+      height 100%
+      background-color #fff
+      width 70%
+      left -70%
+      top: Rem(45)
+      transition 0.3s
+      a
+        display block
+        height Rem(50)
+        line-height Rem(50)
+        padding-left Rem(25)
+        color: #333
+        border-bottom 1px solid #dcdcdc
+      .dtm-title
+        height Rem(165/2)
+        line-height: Rem(165/2)
+        text-align center
+        border-bottom 1px solid #dcdcdc
+        color: #000
+        font-size Rem(18)

@@ -1,11 +1,4 @@
-<script>
-  $(function(){
-    // 点击顶部选择
-    $(".rl-menu-list li").on("click",function(){
-      $(".rl-menu-list li a").removeClass("active")
-      $(this).find("a").addClass("active");
-    })
-    
+<script>   
     // 上拉加载html拼接方法
   function getHtmlTemp(res) {
     var _html = '<div class="rlb-page">'+
@@ -41,28 +34,111 @@
     return _html;
   }
 
-  $(function () {
-    // 初始化上拉加载
-    onReachBottom.init('.rl-box',function () {
-      $.ajax({
-        url: './front/mockdata/044ravelsList.json',
-        type: 'GET',
-        success: function (res) {
-          var pages = res.pages;
-          for (var i = 0; i < pages.length; i++) {
-            $(".rl-box .show-reach-loading").before(getHtmlTemp(pages[i]))
-          }
-          hideReachLoading();
-          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
-          onReachBottom.currPage = res.currPage;//获取当前页数
-          if(!onReachBottom.hasNextPage){
-            showNullReach($(".rl-box"))
-          }
+  function getHtmlTempzx(res) {
+    var _htmlzx = '<a href="'+res.link+'" class="rlbl-page">'+
+        '<div class="rlb-page-img">'+
+            '<img src="'+res.pic+'" alt="">'+
+          '<div class="rlbi-tips">'+res.city+'</div>'+
+          '<div class="rlbi-miaoshu">'+
+              '<div class="rlb-imgbox">'+
+                '<div class="rlb-img">'+
+                  '<img src="'+res.tophead+'" alt="">'+
+                '</div>'+
+                '<div class="rlb-namesbox">'+
+                    '<p>'+res.name+'</p>'+
+                    '<p>'+res.leave+'</p>'+
+                '</div>'+
+              '</div>'+
+          '</div>'+
+          '<div class="rlbi-zan" onclick="shoucFun.changeCollect(this)"></div>'+
+        '</div>'+
+        '<div class="rlb-page-txt">'+
+          '<p class="rlbp-mxs">'+res.miaoshu+'</p>'+
+        '</div>'+
+        '<div class="rlb-page-shul">'+
+          '<p>点赞：'+res.zanshu+'次</p>'+
+          '<p>'+res.times+'</p>'+
+        '</div>'+
+      '</a>';
+
+    return _htmlzx;
+  }
+
+  // 精选游记
+  function getyouji(){
+    $.ajax({
+      url: './front/mockdata/044ravelsList.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".rlba-box").append(getHtmlTemp(pages[i]))
         }
-      })
+        hideReachLoading();
+        onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+        onReachBottom.currPage = res.currPage;//获取当前页数
+        if(!onReachBottom.hasNextPage){
+          showNullReach($(".rlba-box"))
+        }
+      }
+    })
+  }
+
+  // 最新游记
+  function getnewyouji(){
+    console.log(22)
+    $.ajax({
+      url: './front/mockdata/044ravelsListzx.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          $(".rlb-list").append(getHtmlTempzx(pages[i]))
+        }
+        hideReachLoading();
+        onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+        onReachBottom.currPage = res.currPage;//获取当前页数
+        if(!onReachBottom.hasNextPage){
+          showNullReach($(".rlb-list"))
+        }
+      }
+    })
+  }
+  // 点击顶部选择
+  $(".rl-menu-list li").on("click",function(){
+    $(".rl-menu-list li a").removeClass("active")
+    $(this).find("a").addClass("active");
+    onReachBottom.hasNextPage = true;
+    onReachBottom.currPage = 0
+    
+    if($(this).index()==0){
+      $(".rl-box").removeClass("active");
+      $(".rl-box").eq($(this).index()).addClass("active");
+      $(".rlba-box").html('');
+      getyouji()
+    }
+    if($(this).index() == 1){
+      $(".rl-box").removeClass("active");
+      $(".rl-box").eq($(this).index()).addClass("active");
+      $(".rlb-list").html('');
+      getnewyouji();
+    }
+  })
+  // 触底加载
+  $(function () {
+    onReachBottom.init('.rl-box',function(){
+      var elem;
+      if ($(".rl-box.active").index() == 1) {
+        elem = ".rlba-box";
+        getyouji();
+      } else {
+        elem = ".rlb-list";
+        getnewyouji();
+      }
     })
   })
+
     
 
-  })
+
 </script>
