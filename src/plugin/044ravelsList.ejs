@@ -1,0 +1,68 @@
+<script>
+  $(function(){
+    // 点击顶部选择
+    $(".rl-menu-list li").on("click",function(){
+      $(".rl-menu-list li a").removeClass("active")
+      $(this).find("a").addClass("active");
+    })
+    
+    // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="rlb-page">'+
+      '<div class="rlb-page-img">'+
+        '<div class="rlbp-img">'+
+            '<img src="'+res.pic+'" alt="">'+
+        '</div>'+
+        '<div class="rlb-zan" onclick="shoucFun.changeCollect(this)"></div>'+
+        '<div class="rlb-tips">'+
+            '<div class="rlb-imgbox">'+
+              '<div class="rlb-img">'+
+                '<img src="'+res.tophead+'" alt="">'+
+              '</div>'+
+              '<div class="rlb-namesbox">'+
+                  '<p>'+res.name+'</p>'+
+                  '<p>'+res.leave+'</p>'+
+              '</div>'+
+            '</div>'+
+            '<div class="rlb-times">'+res.times+'</div>'+
+        '</div>'+
+      '</div>'+
+      '<div class="rlb-txt">'+
+        '<p>'+res.miaoshu+'</p>'+
+      '</div>'+
+      '<div class="rlb-foot-tip">'+
+        '<div>'+
+          '<span>'+res.city+'</span>'+
+          '<span class="rlbf-span">点赞：'+res.zanshu+'次</span>'+
+        '</div>'+
+        '<div>'+res.bzdleave+'</div>'+
+      '</div>'+
+    '</div>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.rl-box',function () {
+      $.ajax({
+        url: './front/mockdata/044ravelsList.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".rl-box .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".rl-box"))
+          }
+        }
+      })
+    })
+  })
+    
+
+  })
+</script>

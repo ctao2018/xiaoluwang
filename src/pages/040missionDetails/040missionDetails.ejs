@@ -1,0 +1,82 @@
+<div class="missinon-details">
+  <!-- 轮播 -->
+  <div class="md-headimg"><%= scrollWall %></div>
+  <!-- 右侧点赞 -->
+  <div class="md-tipsright"></div>
+
+  <div class="md-pagebox">
+      <div class="mdp-title">
+        <div>
+          <p class="mbpt-name">鹿友大团长</p>
+          <p class="mbpt-lable">A级旅游达人</p>
+        </div>
+        <div>
+          <button class="follow followed" onclick="followFunc.changeFollow(this)">关注</button>
+        </div>
+        <div class="md-jnpai"><img src="./front/images/icon/jinpai.png" alt=""></div>
+      </div>
+      <div class="md-miaoshu">
+          暴走古城墙、寻找失意的老城南、探秘隐藏在巷子里的十里秦淮起点、走进被遗忘的百年老火车站...哪里有真正南京的味道，哪里就有他们的身影。走进最有南京特色的街巷、角落
+      </div>
+      <div class="md-gocity">
+        <i class="md-gocity-icon"></i> 出发地达人
+      </div>
+  </div>
+
+  <div class="md-centerBox">
+    <div class="mdc-page">
+      <span>鹿网推荐</span>
+      <span>旅游专家</span>
+      <span>微博达人</span>
+    </div>
+    <div class="mdc-page-box">
+      <p>达人经验：10年</p>
+      <p>带团次数：126次</p>
+      <p>带团出没地：<span>大理</span><span>张家界</span><span>凤凰</span><span>上海</span></p>
+    </div>
+  </div>
+
+  <!-- 带团记录 -->
+  <div class="md-centerBox">
+    <div class="mdc-titlebox">
+        <div>带团记录<span>（65）</span></div>
+        <a href="javascript:;;" class="mdc-link">更多</a>
+    </div>
+    <div class="mdc-list">
+      <%= mandetails()+mandetails() %>
+    </div>
+  </div>
+  <!-- 游记 -->
+  <div class="md-centerBox">
+    <div class="mdc-titlebox">
+        <div>游记</div>
+        <a href="javascript:;;" class="mdc-link">更多</a>
+    </div>
+    <div class="mdc-list">
+      <%= travels() %>
+    </div>
+  </div>
+
+  <!-- 最新驻足 -->
+  <div class="md-centerBox">
+    <div class="mdc-titlebox">
+        <div>最新驻足</div>
+        <a href="javascript:;;" class="mdc-link">更多</a>
+    </div>
+    <div class="mdc-list">
+      <%= latestPresence() %>
+    </div>
+  </div>
+
+  <!-- 悬浮点赞 -->
+  <ul class="md-likes">
+      <li class="md-collect">
+        <i></i>
+        <span>1719</span>
+      </li>
+      <li class="md-liked">
+        <i></i>
+        <span>1719</span>
+      </li>
+    </ul>
+</div>

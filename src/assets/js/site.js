@@ -103,6 +103,72 @@ var likedFunc = {
     //  this.elem 为 当前点击的对象
     //  do something
   }
+
+}
+
+
+var linkzan = {
+  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  changeLiked: function (elem) {
+    var that = this;
+    that.elem = $(elem);
+    if (that.elem.hasClass("collected")) {
+      that.unLiked();
+    } else {
+      that.toLiked();
+    }
+  },
+  toLiked: function () {
+    var that = this;
+    that.elem.addClass("collected")
+    that.callback(true);
+    showTips('+1');
+  },
+  unLiked: function () {
+    var that = this;
+    that.elem.removeClass("collected")
+    that.callback(false);
+  },
+  callback: function (status) {
+    //  true为关注
+    //  false为取消
+    //  this.elem 为 当前点击的对象
+    //  do something
+  }
+}
+
+
+var shoucFun = {
+  elem: '',//当前点击的元素的对象，可通过此对象获取ID，类型，等信息
+  changeCollect: function (elem) {
+    var that = this;
+    that.elem = $(elem);
+    if (that.elem.hasClass("collected")) {
+      showConfirm('确定取消收藏吗？', function () {
+        that.unCollect();
+      })
+    } else {
+      that.toCollect();
+    }
+  },
+  toCollect: function () {
+    var that = this;
+    that.elem.addClass("collected")
+    that.callback(true);
+    showTips('已添加至收藏');
+  },
+  unCollect: function () {
+    var that = this;
+    that.elem.removeClass("collected");
+    that.callback(false);
+  },
+  callback: function (status) {
+    //  true为关注
+    //  false为取消
+    //  this.elem 为 当前点击的对象
+    //  do something
+  }
+}
 }
 
 $(function () {

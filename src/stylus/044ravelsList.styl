@@ -1,0 +1,105 @@
+
+@import './base'
+
+.ravels-list
+  .rl-menu-list
+    background-color: #fff
+    font-size: 0
+    border-bottom 1px solid #e6e6e6
+    display flex
+    justify-content: space-between
+    li
+      font-size: Rem(14)
+      width 33.333%
+      text-align center
+      a
+        padding Rem(10) 0
+        display inline-block
+        color #666
+        &.active
+          border-bottom 1px solid $theme-color
+          color $theme-color
+  .rl-box
+    .rlb-page
+      background-color #fff
+      padding Rem(10)
+      margin-bottom Rem(10)
+      .rlb-page-img
+        position relative
+        .rlbp-img
+          max-height: Rem(175)
+          display flex
+          justify-content: space-between
+          align-items: center
+          border-radius: Rem(4) 
+          background-color #eee
+          overflow hidden
+          img
+            max-width 100%
+            max-height 100%
+        .rlb-tips
+          position absolute
+          bottom 0
+          left 0
+          width 100%
+          height Rem(50)
+          background-color rgba(0,0,0,0.4)
+          display flex
+          justify-content space-between
+          align-items: center
+          color: #fff
+          .rlb-times
+            padding-right Rem(10)
+            font-size: Rem(11)
+          .rlb-imgbox
+            padding-left Rem(10)
+            >div
+              display inline-block
+              vertical-align middle
+            .rlb-img
+              width Rem(35)
+              height Rem(35)
+              overflow hidden
+              border-radius: 50%
+              justify-content space-between
+              align-items: center
+              background-color: #eee
+              img
+                max-width 100%
+                max-height: 100%
+            .rlb-namesbox
+              padding-left Rem(10)
+              p
+                margin-bottom Rem(5)
+                &:last-child
+                  font-size Rem(11)
+        .rlb-zan
+          position absolute
+          width Rem(21)
+          height Rem(18)
+          right Rem(10)
+          top Rem(10)
+          display block
+          width Rem(21)
+          height Rem(18)
+          getBg('l-collect')
+          background-size Rem(25) Rem(46)
+          background-position Rem(-2) Rem(-26)
+          &.collected
+            background-position-y Rem(-3)
+      .rlb-txt
+        padding: Rem(15) Rem(5) Rem(10)
+        border-bottom 1px solid #dcddcd
+        p
+          color #333
+          line-height Rem(20)
+          width 80%
+      .rlb-foot-tip
+        display flex
+        justify-content space-between
+        align-items: center
+        padding Rem(15) Rem(5) Rem(5)
+        color: #999
+        font-size: Rem(13)
+        .rlbf-span
+          margin-left Rem(20)

@@ -1,0 +1,45 @@
+@import './base'
+
+.evaluation-people
+  .ep-box
+    padding 0 Rem(10)
+    background #fff
+  .ep-foot
+    position fixed
+    bottom 0px
+    left 0px
+    z-index 6
+    width 100%
+    display flex
+    .btn-collect
+      flex 0 0 Rem(75)
+      height Rem(50)
+      border 0
+      background #fff
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(12)
+      color #666666
+      &:before
+        content ''
+        display block
+        width Rem(20)
+        height Rem(18)
+        getBg('collect-sprites')
+        background-size Rem(25) Rem(46)
+        background-position Rem(-3) Rem(-25)
+        margin-bottom Rem(2)
+      &.collected:before
+        background-position Rem(-3) Rem(-2)
+    .btn-consult,.btn-order
+      flex 1 1 Rem(150)
+      height Rem(50)
+      border 0
+      color #fff
+    .btn-consult
+      background #ffac7a
+    .btn-order
+      background $theme-color
+
