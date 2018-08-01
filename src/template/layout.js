@@ -17,7 +17,8 @@ let pf = {
 	headerBg: 'bg-normal',
 	showTitle: true,
 	isHead: true,
-	isFoot: false
+	isFoot: false,
+	footType: 'account'
 }
 
 const moduleExports = {

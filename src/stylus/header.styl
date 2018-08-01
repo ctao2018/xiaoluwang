@@ -23,6 +23,10 @@ $nav-btn(w = 45,h = 45)
     background $theme-color
   &.bg-opacity
     background transparent
+    transition .3s background linear
+    &.in-scroll
+      background $theme-color
+      box-shadow 0 3px 5px rgba(0,0,0,.1)
   .nav-title
     position absolute
     top 0px

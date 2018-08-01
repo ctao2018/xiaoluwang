@@ -1,24 +1,22 @@
 <% if(isFoot){ %>
-<div class="page-footer fix-footer">
-  <a href="" class="f-item active">
-    <i class="f-icon c-dingdan active"></i>
-    <p class="f-name">菜单1</p>
-  </a>
-  <a href="" class="f-item">
-    <i class="f-icon c-zhong"></i>
-    <p class="f-name">菜单2</p>
-  </a>
-  <a href="" class="f-item">
-    <i class="f-icon c-fangzi"></i>
-    <p class="f-name">菜单3</p>
-  </a>
-  <a href="" class="f-item">
-    <i class="f-icon c-xinxi"></i>
-    <p class="f-name">菜单4</p>
-  </a>
-  <a href="" class="f-item red-point">
-    <i class="f-icon c-wode"></i>
-    <p class="f-name">菜单5</p>
-  </a>
-</div>
+  <% if(footType == "account"){ %>
+    <div class="page-footer acc-footer fix-footer">
+      <a href="" class="f-item item1">
+        <i class="f-icon"></i>
+        <p class="f-name">名品名店</p>
+      </a>
+      <a href="" class="f-item item2">
+        <i class="f-icon"></i>
+        <p class="f-name">旅游专区</p>
+      </a>
+      <a href="" class="f-item item3">
+        <i class="f-icon"></i>
+        <p class="f-name">旅游达人</p>
+      </a>
+      <a href="" class="f-item item4 active">
+        <i class="f-icon"></i>
+        <p class="f-name">个人中心</p>
+      </a>
+    </div>
+  <% } %>
 <% } %>

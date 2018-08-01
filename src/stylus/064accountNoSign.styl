@@ -89,3 +89,149 @@
         color #999999
         padding-right Rem(10)
         toMore(0)
+    .acs-orders
+      display flex
+      justify-content space-around
+      padding Rem(10) 0
+      .acso-item
+        display flex
+        flex-flow column
+        justify-content center
+        align-items center
+        font-size Rem(13)
+        line-height Rem(23)
+        color #333333
+        >i
+          width Rem(30)
+          flex 0 0 Rem(30)
+          position relative
+          &:after
+            content ''
+            display block
+            abs(0,0,0,0)
+            margin auto
+        &.dyk>i:after
+          $accOrderSprite(2)
+        &.dcx>i:after
+          $accOrderSprite(1)
+        &.dpj>i:after
+          $accOrderSprite(3)
+        &.sh>i:after
+          $accOrderSprite(4)
+    .acs-wallet
+      padding 0 Rem(10)
+      .acsw-balance
+        display flex
+        justify-content space-between
+        align-items center
+        padding Rem(10) Rem(5)
+        color #666666
+        line-height Rem(30)
+        botLine()
+        i
+          color $theme-color
+      .acsw-links
+        display flex
+        justify-content space-between
+        align-items center
+        padding Rem(10) Rem(5)
+        >a
+          padding-left Rem(25)
+          line-height Rem(30)
+          position relative
+          color #666
+          &:after
+            content ''
+            display block
+            abs(0,auto,0,0)
+            margin auto
+        .l-coupon:after
+          $accWalletSprite(1)
+        .l-consume:after
+          $accWalletSprite(2)
+        .l-transfer:after
+          $accWalletSprite(3)
+    .acs-redbag
+      .acsr-top
+        display flex
+        botLine()
+      .acsr-info
+        flex 1 0 auto
+        color #666666
+        padding Rem(10) Rem(20) Rem(10) Rem(10)
+        >h3
+          line-height Rem(28)
+          text-align center
+          max-width Rem(210)
+          margin 0 auto
+          ellp()
+        .i-data
+          font-size Rem(12)
+          line-height Rem(21)
+          getBg('icon-redbag')
+          background-size Rem(25)
+          background-position right center
+          i
+            color $theme-color
+      .acsr-share
+        flex 0 1 Rem(130)
+        display flex
+        flex-flow column
+        justify-content center
+        align-items center
+        color #666
+        border-left 1px solid #e6e6e6
+        >i
+          width Rem(36/2)
+          height Rem(31/2)
+          getBg('icon-share')
+          background-size cover
+          margin-bottom Rem(10)
+      .acsr-tips
+        font-size Rem(12)
+        color #999
+        padding Rem(10)
+        line-height Rem(20)
+  .ac-other
+    background #fff
+    display flex
+    flex-flow row wrap
+    .aco-item
+      flex 0 0 25%
+      display flex
+      flex-flow column
+      justify-content center
+      align-items center
+      font-size Rem(13)
+      color #333333
+      padding Rem(15) Rem(10)
+      box-sizing border-box
+      >i
+        width Rem(25)
+        flex 0 0 Rem(25)
+        margin-bottom Rem(5)
+        position relative
+        &:after
+          content ''
+          display block
+          abs(0,0,0,0)
+          margin auto
+      &.item1 i:after
+        $accInfoSprite(3)
+      &.item2 i:after
+        $accInfoSprite(6)
+      &.item3 i:after
+        $accInfoSprite(4)
+      &.item4 i:after
+        $accInfoSprite(1)
+      &.item5 i:after
+        $accInfoSprite(5)
+      &.item6 i:after
+        $accInfoSprite(2)
+  .ac-slogan
+    line-height Rem(30)
+    padding Rem(10) 0
+    text-align center
+    font-size Rem(13)
+    color #bbbbbb
+
