@@ -1,0 +1,55 @@
+<script>
+  // 如接口为同一个则无需 urldata ，直接在ajax中写死URL即可
+  var urlData = {
+    all   : "./front/mockdata/090systemMessage-1.json",
+    msg   : "./front/mockdata/090systemMessage-2.json",
+    score : "./front/mockdata/090systemMessage-3.json",
+    notice: "./front/mockdata/090systemMessage-4.json",
+    curr  : "./front/mockdata/090systemMessage-1.json"//默认all
+  }
+  var pageData = {
+    // 这里放置ajax的data参数
+  }
+
+  // 绑定点击事件，改变请求的参数
+  function changeTo(type){
+    $(event.target).addClass("active").siblings("li").removeClass("active");
+    urlData.curr = urlData[type];//切换接口，或者根据实际情况更改pageData中的参数
+    $(".sm-items").html("");// 切换后将容器清空
+    fullDownLoading.show(); // 显示刷新动画
+    getDataByAjax(pageData);// 加载新数据
+  }
+
+  // 拼接html结构
+  function getDomHtml(data) {
+    var _html = '<div class="sm-item">' +
+      '<h3>'+ data.title +'</h3>' +
+      '<p>'+ data.info +'</p>' +
+      '<span class="i-status">'+ data.type +'</span>' +
+      '</div>';
+    return _html;
+  }
+
+  // ajax请求
+  function getDataByAjax(pageData) {
+    $.ajax({
+      url: urlData.curr,
+      type: "GET",
+      data: pageData,
+      success: function (res) {
+        // console.log(res)
+        for (var i = 0; i < res.length; i++) {
+          $(".sm-items").prepend(getDomHtml(res[i]))
+        }
+        fullDownLoading.hide(); 
+      }
+    })
+  }
+
+  // 初始化下拉刷新方法，传入容器selector及回调函数
+  $(function () {
+    onPullDownRefresh('.sm-data-wrap', function () {
+      getDataByAjax(pageData)
+    })
+  })
+</script>

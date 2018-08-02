@@ -1,0 +1,44 @@
+@import './base'
+
+.doyen-message
+  .dm-item
+    position relative
+    padding Rem(10)
+    background #fff
+    display flex
+    align-items center
+    margin-bottom Rem(10)
+    .dmi-img
+      display flex
+      justify-content center
+      align-items center
+      flex 0 0 Rem(50)
+      height Rem(50)
+      margin-right Rem(15)
+      border-radius 100%
+      border 1px solid #e6e6e6
+      overflow hidden
+      >img
+        max-width 100%
+        max-height 100%
+    .dmi-info
+      max-width Rem(290)
+      position relative
+      display flex
+      flex-flow column
+      justify-content space-between
+      line-height Rem(25)
+      >h3
+        font-weight 600
+        color #333333
+        padding-right Rem(80)
+        ellp()
+      .i-cont
+        font-size Rem(13)
+        color #666666
+        ellp()
+    .dmi-date
+      position absolute
+      right Rem(10)
+      top Rem(10)
+      line-height Rem(25)
