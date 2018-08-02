@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  // 如接口为同一个则无需 urldata ，直接在ajax中写死URL即可
+  var urlData = {
+    hot   : "./front/mockdata/049offensiveStrategy-1.json",
+    guonei   : "./front/mockdata/049offensiveStrategy-2.json",
+    chuing : "./front/mockdata/049offensiveStrategy-3.json",
+    bendi: "./front/mockdata/049offensiveStrategy-4.json",
+    curr  : "./front/mockdata/049offensiveStrategy-1.json"//默认all
+  }
+  var pageData = {
+    // 这里放置ajax的data参数
+  }
+  // 绑定点击事件，改变请求的参数
+  function changeTo(type){
+    $(".mr-menu-list li a").removeClass("active")
+    $(event.target).addClass("active");
+    urlData.curr = urlData[type];//切换接口，或者根据实际情况更改pageData中的参数
+    $(".os-section").html("");// 切换后将容器清空
+    getDataByAjax(pageData);// 加载新数据
+  }
+
+  // 拼接html结构
+  function getDomHtml(data) {
+    var _html = '<div class="oss-pagebox">'+
+      '<div class="oss-page">'+
+        '<div class="ossp-img">'+
+          '<img src="'+data.pic+'" alt="">'+
+        '</div>'+
+        '<div class="ossp-txt">'+
+            '<div class="ossp-miaoshu">'+data.title+'</div>'+
+            '<div>'+data.shuliang+' 浏览</div>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+    return _html;
+  }
+  // ajax请求
+  function getDataByAjax(pageData) {
+    $.ajax({
+      url: urlData.curr,
+      type: "GET",
+      data: pageData,
+      success: function (res) {
+        for (var i = 0; i < res.pages.length; i++) {
+          $(".os-section").append(getDomHtml(res.pages[i]))
+        }
+      }
+    })
+  }
+
+  // 初始化下拉刷新方法，传入容器selector及回调函数
+  $(function () {
+    onPullDownRefresh('.os-section', function () {
+      getDataByAjax(pageData)
+    })
+  })
+
+  $(function () {
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+
+    // 绑定城市更多选择
+    $(".mr-more").on('click',function(){
+      var el = $(".mrc-choose.mrc-hide"); 
+      if(!el.hasClass("active")){
+        if(el.hasClass("unactive")){
+          el.removeClass("unactive");
+          clearTimeout(timed);
+        }
+        el.addClass("active");
+      }else{
+        el.removeClass("active");
+        el.addClass("unactive");
+        var timed = setTimeout(function(){
+          el.removeClass("unactive");
+        },50)
+      }
+    })
+  })
+
+   $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.os-section', function () {
+      $.ajax({
+        url: './front/mockdata/049offensiveStrategy-1.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".os-section").append(getDomHtml(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+          onReachBottom.currPage = res.currPage; //获取当前页数
+          if (!onReachBottom.hasNextPage) {
+            showNullReach($(".os-section"))
+          }
+        }
+      })
+    })
+  })
+  
+  
+
+</script>
