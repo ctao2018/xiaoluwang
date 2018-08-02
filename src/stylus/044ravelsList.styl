@@ -20,6 +20,9 @@
           border-bottom 1px solid $theme-color
           color $theme-color
   .rl-box
+    display none
+    &.active
+      display block
     .rlb-page
       background-color #fff
       padding Rem(10)
@@ -103,3 +106,101 @@
         font-size: Rem(13)
         .rlbf-span
           margin-left Rem(20)
+    .rlb-list
+      padding: Rem(10)
+      display flex
+      justify-content: space-between
+      align-items: center
+      flex-wrap wrap
+      .rlbl-page
+        width Rem(170)
+        background-color #fff
+        border-radius: Rem(5)
+        overflow hidden
+        margin-bottom Rem(10)
+        border: 1px solid #e6e6e6
+        .rlb-page-img
+          position relative
+          width 100%
+          height Rem(175)
+          justify-content center
+          align-items: center
+          display flex
+          background-color #ccc
+          img
+            // max-width 100%
+            max-height: 100%
+          .rlbi-tips
+            position absolute
+            top: Rem(10)
+            left Rem(10)
+            background-color rgba(0,0,0,0.4)
+            color: #fff
+            font-size: Rem(12)
+            padding Rem(5) Rem(10)
+            border-radius: Rem(20)
+          .rlbi-miaoshu
+            position absolute
+            bottom 0
+            left 0
+            width 100%
+            height Rem(50)
+            background-color rgba(0,0,0,0.5)
+            display flex
+            justify-content space-between
+            align-items: center
+            color: #fff
+            .rlb-times
+              padding-right Rem(10)
+              font-size: Rem(11)
+            .rlb-imgbox
+              padding-left Rem(10)
+              >div
+                display inline-block
+                vertical-align middle
+              .rlb-img
+                width Rem(35)
+                height Rem(35)
+                overflow hidden
+                border-radius: 50%
+                justify-content space-between
+                align-items: center
+                background-color: #eee
+                img
+                  max-width 100%
+                  max-height: 100%
+              .rlb-namesbox
+                padding-left Rem(10)
+                p
+                  margin-bottom Rem(2)
+                  &:last-child
+                    font-size Rem(11)
+          .rlbi-zan
+            position absolute
+            width Rem(21)
+            height Rem(18)
+            right Rem(10)
+            top Rem(10)
+            display block
+            width Rem(21)
+            height Rem(18)
+            getBg('l-collect')
+            background-size Rem(25) Rem(46)
+            background-position Rem(-2) Rem(-26)
+            &.collected
+              background-position-y Rem(-3)
+        .rlb-page-txt
+          padding Rem(10) 0
+          margin 0 Rem(5)
+          border-bottom 1px solid #dcdcdc
+          .rlbp-mxs
+            ellps(2)
+            line-height Rem(20)
+            color: #333
+        .rlb-page-shul
+          display flex
+          justify-content space-between
+          align-items: center
+          padding Rem(10) Rem(5) 
+          font-size: Rem(12)
+          color #666  

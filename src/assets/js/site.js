@@ -144,7 +144,7 @@ var shoucFun = {
     var that = this;
     that.elem = $(elem);
     if (that.elem.hasClass("collected")) {
-      showConfirm('确定取消收藏吗？', function () {
+      showConfirm('确定取消点赞吗？', function () {
         that.unCollect();
       })
     } else {
@@ -155,7 +155,7 @@ var shoucFun = {
     var that = this;
     that.elem.addClass("collected")
     that.callback(true);
-    showTips('已添加至收藏');
+    showTips('点赞成功');
   },
   unCollect: function () {
     var that = this;
