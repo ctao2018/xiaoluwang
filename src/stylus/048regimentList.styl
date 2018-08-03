@@ -1,0 +1,141 @@
+
+@import './base'
+.regiment-list
+  .rl-scroll-wall
+    .swiper-pagination-bullet
+      background #fff
+      opacity 1
+      transition .3s
+    .swiper-pagination-bullet-active
+        background $theme-color
+  .rl-city-wrap
+    position relative
+    background #fff
+    line-height Rem(30)
+    .rlc-choose
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      align-items center
+      padding Rem(10) Rem(75) Rem(10) Rem(10)
+      color #666666
+      font-size Rem(15)
+      &.rlc-hide
+        visibility hidden
+        z-index -99
+        background #fff
+        position absolute
+        top 100%
+        left 0px
+        width 100%
+        box-sizing border-box
+        justify-content flex-start
+        padding Rem(10) 0
+        span
+          padding 0 Rem(10)
+        &.active
+          z-index 2
+          visibility visible
+          animation emersion .7s
+        &.unactive
+          z-index 2
+          visibility visible
+          animation unemersion .7s
+    .rl-more
+      position absolute
+      right Rem(10)
+      top Rem(10.5)
+      color #999999
+      getBg('more-xs')
+      padding-right Rem(15)
+      background-position right center
+      background-size Rem(19/2) auto
+  .rl-scenery
+    display flex
+    flex-flow row wrap
+    padding Rem(10) Rem(10) 0 Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    >a
+      line-height Rem(30)
+      padding 0 Rem(10)
+      margin 0 Rem(10) Rem(10) 0
+      background #eff3f6
+      color #666666
+      border-radius 3px
+  .rl-section
+    .rls-listbox
+      margin-top Rem(10)
+      .rls-title
+        padding Rem(10)
+        background-color #fff
+        botLine()
+        >p
+          padding-left Rem(15)
+          border-left Rem(2) solid $theme-color
+      .rls-page 
+        padding: Rem(10)
+        background-color #fff
+        margin-bottom Rem(10)
+        .rlsp-goto
+          display flex
+          justify-content space-between
+          align-items flex-end
+          >div
+            p
+              margin-top Rem(10)
+              color: #666
+          .rlsp-ztbtn
+            background-color: $theme-color
+            text-align: center
+            font-size: Rem(14)
+            height Rem(55/2)
+            line-height: Rem(55/2)
+            padding 0 Rem(14)
+            border-radius: Rem(2)
+            display: block
+            color #fff
+        .rlsp-centant
+          padding: Rem(0) Rem(2) Rem(10)
+          botLine()
+          .rlspc-flexbox
+            display flex
+            justify-content: space-between
+            align-items: center
+            width 100%
+            &.rlspc-mt
+              margin-top Rem(10)
+            .rlspc-headbox
+              display flex
+              justify-content: space-between
+              align-items: center
+              .rlsp-headimg
+                width Rem(50)
+                height Rem(50)
+                overflow hidden
+                border-radius: 50%
+                img
+                  max-width 100%
+                  max-height: 100%
+              .rlsp-headtxt
+                margin-left Rem(15)
+                >p
+                  padding-bottom Rem(5)
+                  &.rlsp-name
+                    font-size: Rem(14)
+                    color: #333
+                  &.rlsp-leave
+                    font-size: Rem(12)
+                    color: #666
+            .rlsp-timetips
+              padding Rem(8) Rem(10)
+              background-color #f0f0f0
+              color: #666
+          .rlspc-miaoshu
+            width 70%
+            line-height Rem(20)
+            color: #666
+          .rlspc-nomy
+            text-align: right 
+            color: #ff0000
+            font-size: Rem(15)
