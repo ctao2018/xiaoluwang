@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  $(function () {
+
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+
+    // 绑定城市更多选择
+    $(".rl-more").on('click',function(){
+      var el = $(".rlc-choose.rlc-hide"); 
+      if(!el.hasClass("active")){
+        if(el.hasClass("unactive")){
+          el.removeClass("unactive");
+          clearTimeout(timed);
+        }
+        el.addClass("active");
+      }else{
+        el.removeClass("active");
+        el.addClass("unactive");
+        var timed = setTimeout(function(){
+          el.removeClass("unactive");
+        },50)
+      }
+    })
+
+  })
+
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html = '<div class="rls-listbox">'+
+      '<div class="rls-title">'+
+        '<p>'+res.mintitle+'</p>'+
+      '</div>';
+      for(var i = 0;i<res.palist.length;i++){
+        _html+='<div class="rls-page">'+
+        '<div class="rlsp-centant">'+
+          '<div class="rlspc-flexbox">'+
+            '<div class="rlspc-headbox">'+
+                '<div class="rlsp-headimg">'+
+                  '<img src="'+res.palist[i].pic+'" alt="">'+
+                '</div>'+
+                '<div class="rlsp-headtxt">'+
+                  '<p class="rlsp-name">'+res.palist[i].name+'</p>'+
+                  '<p class="rlsp-leave">'+res.palist[i].leave+'</p>'+
+                '</div>'+
+            '</div>'+
+            '<div class="">'+
+              '<div class="rlsp-timetips">'+res.palist[i].olddate+'天后出发</div>'+
+            '</div>'+
+          '</div>'+
+          '<div class="rlspc-flexbox rlspc-mt">'+
+            '<div class="rlspc-miaoshu">'+res.palist[i].miaoshu+'</div>'+
+            '<div class="rlspc-nomy ">￥'+res.palist[i].money+' 起</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="rlsp-goto">'+
+          '<div>'+
+              '<p>出发地：'+res.palist[i].city+'</p>'+
+              '<p>出团时间：'+res.palist[i].times+'</p>'+
+          '</div>'+
+          '<div>'+
+              '<p>剩余：'+res.palist[i].shenyu+'位</p>'+
+          '</div>'+
+          '<div>'+
+            '<a href="'+res.palist[i].link+'" class="rlsp-ztbtn">去组团</a>'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+      }
+      _html+='</div>';
+      
+    
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.rl-section',function () {
+      $.ajax({
+        url: './front/mockdata/048regimentList.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".rl-section .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".rl-section"))
+          }
+        }
+      })
+    })
+  })
+</script>
+  

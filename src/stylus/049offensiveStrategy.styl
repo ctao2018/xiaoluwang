@@ -1,0 +1,88 @@
+@import './base'
+.offensive-strategy
+  .mr-menu-list
+    background-color: #fff
+    font-size: 0
+    border-bottom 1px solid #e6e6e6
+    li
+      font-size: Rem(14)
+      display: inline-block
+      width 25%
+      text-align: center
+      a
+        padding: Rem(10) 0
+        display: inline-block
+        color #666
+        &.active
+          border-bottom 1px solid $theme-color
+          color $theme-color
+  .mr-city-wrap
+    position relative
+    background #fff
+    line-height Rem(30)
+    .mrc-choose
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      align-items center
+      padding Rem(10) Rem(75) Rem(10) Rem(10)
+      color #666666
+      font-size Rem(15)
+      botLine()
+      &.mrc-hide
+        visibility hidden
+        z-index -99
+        background #fff
+        position absolute
+        top 100%
+        left 0px
+        width 100%
+        box-sizing border-box
+        justify-content flex-start
+        padding Rem(10) 0
+        span
+          padding 0 Rem(10)
+        &.active
+          z-index 2
+          visibility visible
+          animation emersion .7s
+        &.unactive
+          z-index 2
+          visibility visible
+          animation unemersion .7s
+    .mr-more
+      position absolute
+      right Rem(10)
+      top Rem(10.5)
+      color #999999
+      getBg('more-xs')
+      padding-right Rem(15)
+      background-position right center
+      background-size Rem(19/2) auto
+  .os-section
+    .oss-pagebox
+      margin-top Rem(10)
+      .oss-page
+        padding Rem(10)
+        background-color #fff
+        .ossp-img
+          display flex
+          justify-content: space-between
+          align-items: center
+          height Rem(130)
+          overflow hidden
+          border-radius: Rem(4)
+          img
+            max-width 100%
+      .ossp-txt
+        display flex
+        justify-content space-between
+        align-items: center
+        padding Rem(10) Rem(5) 0
+        color: #666
+        font-size: Rem(13)
+        .ossp-miaoshu
+          width 65%
+          line-height Rem(20)
+          color: #333
+          font-size: Rem(14)

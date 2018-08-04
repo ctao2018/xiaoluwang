@@ -1,0 +1,55 @@
+{
+  "hasNextPage":false,
+  "currPage":1,
+  "pages":[{
+    "mintitle":"北京- 达人团",
+    "palist":[{
+      "link":"javascript:;;",
+      "pic":"../front/images/l-mandetImg.png",
+      "name":"鹿友大团长",
+      "leave":"A级旅游达人",
+      "city":"深圳",
+      "times":"2018年5月18日",
+      "shenyu":"8",
+      "money":"98.00",
+      "olddate":3,
+      "miaoshu":"new丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部绝美古城春光"
+    },{
+      "link":"javascript:;;",
+      "pic":"../front/images/l-mandetImg.png",
+      "name":"鹿友大团长",
+      "leave":"A级旅游达人",
+      "city":"深圳",
+      "times":"2018年5月18日",
+      "shenyu":"8",
+      "money":"98.00",
+      "olddate":3,
+      "miaoshu":"new2丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部绝美古城春光"
+    }]
+  },{
+    "mintitle":"海南- 达人团",
+    "palist":[{
+      "link":"javascript:;;",
+      "pic":"../front/images/l-mandetImg.png",
+      "name":"鹿友大团长",
+      "leave":"A级旅游达人",
+      "city":"深圳",
+      "times":"2018年5月18日",
+      "shenyu":"8",
+      "money":"98.00",
+      "olddate":3,
+      "miaoshu":"new丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部绝美古城春光"
+    },{
+      "link":"javascript:;;",
+      "pic":"../front/images/l-mandetImg.png",
+      "name":"鹿友大团长",
+      "leave":"A级旅游达人",
+      "city":"深圳",
+      "times":"2018年5月18日",
+      "shenyu":"8",
+      "money":"98.00",
+      "olddate":3,
+      "miaoshu":"new2丽江古城又名大研镇，坐落于玉龙雪山下丽江坝子中部绝美古城春光"
+    }]
+  }]
+}
