@@ -1,0 +1,61 @@
+<div class="order-list">
+  <ul class="ol-tab">
+    <li data-status="0" class="active">全部</li>
+    <li data-status="1">待付款</li>
+    <li data-status="2">待发货</li>
+    <li data-status="3">待收货</li>
+    <li data-status="4">待评价</li>
+  </ul>
+  <div class="order-list-items">
+    <%= 
+    orderItem({
+      num    : 2,
+      type   : 1,
+      hasDate: true,
+      hasInfo: false,
+      sattus : '待付款',
+      btn    : ['分享','去付款','取消订单']
+    })+
+    orderItem({
+      num    : 1,
+      type   : 1,
+      hasDate: false,
+      hasInfo: false,
+      sattus : '待发货',
+      btn    : ['分享','申请退款']
+    })+
+    orderItem({
+      num    : 1,
+      type   : 1,
+      hasDate: true,
+      hasInfo: false,
+      sattus : '待收货',
+      btn    : ['查看物流','确认收货']
+    })+
+    orderItem({
+      num    : 1,
+      type   : 1,
+      hasDate: false,
+      hasInfo: true,
+      sattus : '待评价',
+      btn    : ['分享','去评价']
+    })+
+    orderItem({
+      num    : 1,
+      type   : 2,
+      hasDate: false,
+      hasInfo: true,
+      sattus : '待评价',
+      btn    : ['分享','去评价']
+    })+
+    orderItem({
+      num    : 1,
+      type   : 1,
+      hasDate: true,
+      hasInfo: false,
+      sattus : '退款/售后',
+      btn    : ['查看详情']
+    })
+    %>
+  </div>
+</div>
