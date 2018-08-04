@@ -1,0 +1,18 @@
+@import './base'
+
+.order-list
+  .ol-tab
+    display flex
+    justify-content space-around
+    align-items center
+    background #fff
+    margin-bottom Rem(10)
+    botLine()
+    >li
+      line-height Rem(40)
+      font-size Rem(15)
+      color #666666
+      border-bottom 2px solid transparent
+      &.active
+        color $theme-color
+        border-color $theme-color

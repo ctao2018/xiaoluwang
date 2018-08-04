@@ -1,0 +1,86 @@
+@import './base'
+
+.comment-order
+  .co-top
+    display flex
+    background #fff
+    padding Rem(10)
+    margin-bottom Rem(10)
+    .cot-img
+      flex 0 0 Rem(100)
+      height Rem(100)
+      margin-right Rem(15)
+      display flex
+      justify-content center
+      align-items center
+      >img
+        max-width 100%
+        max-height 100%
+    .cot-info h3
+      font-size Rem(15)
+      color #333
+      line-height Rem(25)
+      margin-bottom Rem(10)
+  .commont-star
+    i,em
+      margin-right Rem(5)
+  .co-area
+    padding Rem(10)
+    background #fff
+    textarea
+      width 100%
+      height Rem(100)
+      line-height Rem(25)
+      border 0
+  .co-upload
+    padding Rem(10)
+    display flex
+    .up-img,.up-btn
+      position relative
+      flex 0 0 Rem(50)
+      height Rem(50)
+      border 1px solid #e6e6e6
+      margin 0 Rem(10) Rem(10) 0
+    .up-img
+      display flex
+      justify-content center
+      align-items center
+      >img
+        max-width 100%
+        max-height 100%
+      >i
+        display block
+        position absolute
+        right Rem(-15)
+        top Rem(-15)
+        width Rem(30)
+        height Rem(30)
+        getBg('upload-del')
+        background-size Rem(15)
+        background-position center
+    .up-btn
+      getBg('upload-img')
+      background-size Rem(40)
+      background-position center
+      >input[type=file]
+        position absolute
+        left 0px
+        top 0px
+        width 100%
+        height 100%
+        opacity 0
+  .co-stars
+    padding Rem(10)
+    background #fff
+    >h3
+      line-height Rem(30)
+      color #333
+      font-weight 600
+    .cos-line
+      display flex
+      align-items center
+      height Rem(30)
+      font-size Rem(13)
+      color #666
+      >label
+        margin-right Rem(20)
