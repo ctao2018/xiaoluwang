@@ -1,0 +1,56 @@
+<div class="ol-item">
+  <div class="ol-top">
+    <h3>小鹿网卖场店</h3>
+    <p class="t-status">待付款</p>
+  </div>
+  <% for(var i=0;i<num;i++){ %>
+  <a class="ol-mid" href="">
+    <div class="ol-img">
+      <img src="http://placehold.it/190x190/09f/fff.png">
+    </div>
+    <div class="ol-info <%= (type != 1)? 'pr-0' : '' %>">
+      <% if(type==1){ %>
+        <h3>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <p class="i-info">
+          <span>颜色：红色</span>
+          <span>长度：1米</span>
+          <span>类型：USB插口</span>
+        </p>
+        <p class="i-price">￥75</p>
+        <p class="i-num">X1</p>
+        <span class="i-series">12系列</span>
+      <% } %>
+      <% if(type==2){ %>
+        <h3><i class="i-type">向导订单</i>深圳中英街、深港环岛、地王观光、东部茶溪谷园博园休闲2天游</h3>
+        <div class="i-doyen">
+          <h3 class="female">何菲菲</h3>
+          <p>一级向导达人</p>
+        </div>
+        <div class="i-meal">
+          <label>套餐：</label>
+          <p>【游丽江】向导服务1天</p>
+        </div>
+      <% } %>
+    </div>
+  </a>
+  <% } %>
+  <div class="ol-bot">
+    <% if(!hasInfo){ %>
+      <p><%= hasDate ? '2018-08-02 14:15:12' : '' %></p>
+      <p>共1件商品  合计：￥75.00（运费 0.00）</p>
+    <% } %>
+    <% if(hasInfo){ %>
+      <div>
+        <p>出发时间：2018-08-02 14:15:12</p>
+        <p>行程天数：6天5晚</p>
+        <p>套餐包含：成人1 儿童1 房间1</p>
+      </div>
+      <p>合计：￥75.00（运费 0.00）</p>
+    <% } %>
+  </div>
+  <div class="ol-act">
+    <% for(var i=0;i<btn.length;i++){ %>
+      <button type="button" class="btn-normal"><%= btn[i] %></button>
+    <% } %>
+  </div>
+</div>

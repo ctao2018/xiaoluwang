@@ -1,0 +1,135 @@
+@import './base'
+
+.order-list-items
+  .ol-item
+    margin-bottom Rem(10)
+    .ol-top
+      display flex
+      justify-content space-between
+      align-items center
+      background #fff
+      color #666666
+      line-height Rem(25)
+      padding Rem(10)
+      >h3
+        padding-left Rem(25)
+        font-weight 600
+        getBg('icon-shop')
+        background-size Rem(14) auto
+        background-position left center
+      .t-status
+        font-weight 600
+    .ol-mid
+      display flex
+      background #f7f7f7
+      color #333
+      padding Rem(10)
+      position relative
+      .ol-img
+        flex 0 0 Rem(95)
+        height Rem(95)
+        margin-right Rem(15)
+        display flex
+        justify-content center
+        align-items center
+        >img
+          max-width 100%
+          max-height 100%
+      .ol-info
+        display flex
+        flex-flow column
+        justify-content space-between
+        line-height Rem(19)
+        padding-right Rem(90)
+        box-sizing border-box
+        &.pr-0
+          padding-right 0
+        >h3
+          font-size Rem(13)
+        .i-info
+          font-size Rem(13)
+          color #666666
+        .i-price
+          position absolute
+          top Rem(15)
+          right Rem(10)
+          line-height Rem(25)
+          font-size Rem(15)
+        .i-num
+          position absolute
+          top Rem(40)
+          right Rem(10)
+          line-height Rem(25)
+          font-size Rem(10)
+          color #666666
+        .i-series
+          position absolute
+          right Rem(10)
+          bottom Rem(10)
+          font-size Rem(13)
+          padding Rem(2) Rem(10)
+          border-radius 3px
+          color #fff
+          background #d7d7d7
+        .i-type
+          background $theme-color
+          color #fff
+          padding 0 Rem(5)
+          border-radius 30px
+          font-size Rem(10)
+          vertical-align text-bottom
+        .i-doyen
+          display flex
+          justify-content space-between
+          align-items center
+          font-size Rem(12)
+          >h3
+            position relative
+            padding-right Rem(20)
+            &:after
+              content ''
+              display block
+              width Rem(25/2)
+              height Rem(25/2)
+              abs(0,0,0,auto)
+              margin auto
+            &.female:after
+              getBg('female')
+              background-size cover
+            &.man:after
+              getBg('man')
+              background-size cover
+        .i-meal
+          display flex
+          align-items center
+          font-size Rem(12)
+          >p
+            font-size Rem(10)
+            padding Rem(2) Rem(5)
+            border-radius 3px
+            border 1px solid $theme-color
+            color $theme-color
+            margin-left Rem(12)
+    .ol-bot
+      display flex
+      justify-content space-between
+      background #fff
+      line-height Rem(20)
+      padding Rem(10)
+      font-size Rem(12)
+      color #333333
+      botLine()
+    .ol-act
+      display flex
+      justify-content flex-end
+      padding Rem(5) 0
+      background #fff
+      .btn-normal
+        height Rem(25)
+        padding 0 Rem(10)
+        border-radius 50px
+        color #333333
+        border 1px solid #d9d9d9
+        background #fff
+        margin-right Rem(10)
+      

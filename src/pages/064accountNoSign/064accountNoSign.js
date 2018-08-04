@@ -5,6 +5,7 @@ const pf = {
   pageTitle: '小鹿网',
   showTitle: false,
   isFoot: true,
+  footType: 'doyen',
   headerBg: 'bg-opacity',
   ltBtn1: 'nav-scan',
   ltStr1: '扫描',
