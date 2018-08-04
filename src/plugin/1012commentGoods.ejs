@@ -1,0 +1,35 @@
+<script>
+  $(function(){
+    var _wrap = $(".co-upload");
+    var _btn  = _wrap.find(".up-btn");
+    var _file = _btn.find(":file");
+    var _getHtml = function(pic){
+      return '<div class="up-img"><img src="'+ pic +'"><i></i></div>';
+    }
+    _file.on("change",function(){
+      var pic = 'http://placehold.it/300x300/09f/fff.png';
+      // AJAX返回pic路径
+      var $pic = $(_getHtml(pic));// 获取dom
+      _wrap.prepend($pic); // 将dom转为对象
+      var $flagBtn = function(){
+        if($('.up-img').length > 3){ // 上传达到规定数量则隐藏上传按钮
+          _btn.hide();
+        }else{
+          _btn.show();
+        }
+      }
+      var $removePic = function(){ // 创建删除方法
+        $pic.fadeOut(function(){
+          $pic.remove();
+          $flagBtn()
+        })
+      }
+      $pic.find("i").on('click',function(){ // 绑定删除方法
+        showConfirm('是否删除此图片？',function(){ // 弹出确认框，确认后删除
+          $removePic();
+        })
+      })
+      $flagBtn()
+    })
+  })
+</script>

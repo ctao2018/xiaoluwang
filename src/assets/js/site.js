@@ -1,12 +1,30 @@
 // 生成评论的星星
 $(function () {
-  $("[data-star]").each(function (i, el) {
+  var initStar = function(el){
     var num = $(el).data("star");
+    $(el).html("");
     for (var k = 0; k < num; k++) {
       $(el).append("<i></i>")
     }
     for (var j = 0; j < 5 - num; j++) {
       $(el).append("<em></em>")
+    }
+  };
+  var reBind = function(el){
+    var kids = $(el).children();
+    kids.each(function(n,ev){
+      $(ev).on("click",function(){
+        console.log(n)
+        $(el).data("star",n+1);
+        initStar(el);
+        reBind(el);
+      })
+    })
+  }
+  $("[data-star]").each(function (i, el) {
+    initStar(el);
+    if($(el).data("canuse")){
+      reBind(el);
     }
   })
 })
