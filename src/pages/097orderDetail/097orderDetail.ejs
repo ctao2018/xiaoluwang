@@ -1,0 +1,62 @@
+<div class="order-detai">
+  <div class="od-addrs">
+    <div class="oda-top">
+      <h3>收货人：李女士</h3>
+      <p>133 9999 0000</p>
+    </div>
+    <p>收货地址：深圳·宝安中心区·航城大道塘东光电研发大厦二层</p>
+  </div>
+  <a class="od-express" href="">
+    <h3>【深圳市】您的包裹已经由物流公司揽收</h3>
+    <p>2018-08-03 14:12:47</p>
+  </a>
+  <div class="order-list-items">
+    <%= 
+    orderItem({
+      num    : 2,
+      type   : 1,
+      hasDate: true,
+      hasInfo: false,
+      sattus : '待付款',
+      btn    : ['分享','取消订单','去付款']
+    })
+    %>
+  </div>
+  <div class="od-price-list">
+    <div class="opl-line">
+      <label>订单金额</label>
+      <p>￥307.00</p>
+    </div>
+    <div class="opl-line">
+      <label>运费（售价已包含）</label>
+      <p>￥0.00</p>
+    </div>
+    <div class="opl-line">
+      <label>税费（售价已包含）</label>
+      <p>￥0.00</p>
+    </div>
+    <div class="opl-line">
+      <label>积分</label>
+      <p>0</p>
+    </div>
+    <div class="opl-line">
+      <label>汇游余额</label>
+      <p>-￥8.00</p>
+    </div>
+    <div class="opl-line">
+      <label>优惠券</label>
+      <p>-￥3.00</p>
+    </div>
+    <h3 class="opl-total">
+      <span>共1件商品</span>
+      <span>合计：￥75.00</span>
+    </h3>
+  </div>
+  <div class="od-infos">
+      <p>订单编号：963258741321456987</p>
+      <p>交易流水号：20180424160356</p>
+      <p>创建时间：2018-04-24 16：03：12</p>
+      <p>付款时间：2018-04-24 16：04：36</p>
+      <p>发货时间：2018-04-25 10：45：27</p>
+  </div>
+</div>

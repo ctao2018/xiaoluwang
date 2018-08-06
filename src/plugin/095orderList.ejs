@@ -1,0 +1,59 @@
+<script>
+  // 注册全局变量，用于储存tab切换后的接口信息
+  var pageData = {
+    data:{
+      status:0,
+      currPage: 0,
+    }
+  }
+
+  // 拼接HTML
+  function getHtmlTemp(res) {
+    var _html = ''
+    return _html;
+  }
+
+  function getDataByAjax(pageData){
+    $.ajax({
+      url: './front/mockdata/051wizardService.json',
+      type: 'GET',
+      success: function (res) {
+        var pages = res.pages;
+        for (var i = 0; i < pages.length; i++) {
+          // 循环拼接DOM
+          $(".order-list-items .show-reach-loading").before(getHtmlTemp(pages[i]))
+        }
+        hideReachLoading();
+        onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
+        pageData.currPage = res.currPage; //获取当前页数
+        if (!onReachBottom.hasNextPage || res.pages.length <= 0) {
+          // 当接口返回无下一页数据，或者当前页数据为0时，显示无数据dom
+          showNullReach($(".order-list-items"))
+        }
+      }
+    })
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.order-list-items', function () {
+      getDataByAjax(pageData)
+    })
+  })
+
+  $(function(){
+    // TAB切换
+    $(".ol-tab li").each(function(i,el){
+      $(el).on("click",function(){
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".order-list-items").html('');// 清空下方容器
+        onReachBottom.hasNextPage = true;// 将上拉加载的判断变为true
+        pageData.data.status = $(el).data("status"); // 将全局变量pagedata中的状态改为当前选中状态
+        pageData.data.currPage = 0; // 将页数变为第一页
+        console.log('当前加载的是第'+ pageData.data.status +'个状态的，第'+ pageData.data.currPage +'页数据')
+        getDataByAjax(pageData) // 调用加载方法 加载当前状态的第一页数据
+      })
+    })
+  })
+
+</script>
