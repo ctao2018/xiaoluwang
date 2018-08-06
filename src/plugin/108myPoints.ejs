@@ -1,0 +1,34 @@
+<script>
+ // 上拉加载html拼接方法
+ function getHtmlTemp(res) {
+    var _html = '<div class="mpn-list">'+
+              '<p>'+res.times+'</p>'+
+              '<p>'+res.bianhua+'</p>'+
+              '<p>'+res.jili+'</p>'+
+              '<p>'+res.beizhu+'</p>'+
+            '</div>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.page-main',function () {
+      $.ajax({
+        url: './front/mockdata/108myPoints.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".mpn-section").append(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".mpn-section"))
+          }
+        }
+      })
+    })
+  })
+</script>
