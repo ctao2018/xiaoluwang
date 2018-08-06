@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="front/mobileSelect/mobileSelect.css">
+<script src="front/mobileSelect/mobileSelect.js"></script>
+<link rel="stylesheet" href="front/LArea/LArea.css">
+<script src="front/LArea/LArea.js"></script>
+<script src="front/LArea/LAreaData1.js"></script>
+<script>
+    /* 关联景点 */
+var scenicArr=['长城','故宫','天安门','博物馆','长安街','天坛','颐和园'];
+var mobileSelect1 = new MobileSelect({
+    trigger: '#scenic', 
+    title: '关联景点',  
+    wheels: [
+                {data: scenicArr}
+            ],
+    position:[0], //初始化定位 打开时默认选中的哪个 如果不填默认为0
+    transitionEnd:function(indexArr, data){
+        console.log(data);
+    },
+    callback:function(indexArr, data){
+        console.log(data);
+    }
+});
+
+
+
+</script>
