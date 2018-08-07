@@ -1,0 +1,50 @@
+@import './base'
+.recharge-recodrd
+  .rr-headerbox
+    position fixed
+    top Rem(45)
+    left 0
+    width 100%
+    display flex
+    justify-content space-between
+    align-items: center
+    botLine()
+    background-color: #fff
+    li
+      width 25%
+      height Rem(40)
+      line-height Rem(40)
+      text-align center
+      font-size Rem(15)
+      color: #666
+  .rr-section
+    padding-top Rem(40)
+    .rrs-box
+      display flex
+      justify-content center
+      align-items: center
+      background-color: #fff
+      margin-bottom Rem(5)
+      height Rem(45)
+      line-height Rem(45)
+      color: #666
+      font-size: Rem(13)
+      >p
+        width 25%
+        text-align: center
+    .rrs-hiddcz
+      padding Rem(75) 0
+      text-align center
+      color: #bbb
+      display none
+      &.active
+        display block
+      .rrsh-icon
+        width Rem(45)
+        height Rem(60)
+        display inline-block
+        getBg("l-recharge")
+        background-size cover
+      >p
+        padding-top Rem(10)
+      

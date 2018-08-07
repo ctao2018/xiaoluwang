@@ -1,0 +1,125 @@
+@import './base'
+
+.barter-detail
+  .bd-status
+    padding Rem(20) 0
+    line-height Rem(25)
+    font-size Rem(17)
+    background #fff
+    color #333
+    text-align center
+    margin-bottom Rem(10)
+  .bd-top
+    background #fff
+    margin-bottom Rem(10)
+  .bd-progress
+    padding Rem(10)
+    line-height Rem(25)
+    color #333
+    font-weight 600
+    botLine()
+  .bd-addrs
+    padding Rem(10)
+    background #fff
+    line-height Rem(21)
+    color #333
+    botLine()
+    .bda-top
+      display flex
+      justify-content space-between
+      align-items center
+      margin-bottom Rem(5)
+  .bd-tips
+    padding Rem(10)
+    line-height Rem(22)
+    font-size Rem(13)
+    color #666
+  .bd-act
+    display flex
+    justify-content flex-end
+    padding Rem(10)
+    .bd-btn
+      height Rem(30)
+      padding 0 Rem(15)
+      border-radius 50px
+      border 1px solid #d9d9d9
+      color #333
+      background #fff
+      margin-left Rem(10)
+  .bd-info
+    background #fff
+    >h3
+      line-height Rem(25)
+      padding Rem(10)
+    .bdi-cont
+      font-size Rem(13)
+      line-height Rem(26)
+      color #666666
+      padding Rem(10)
+  .bd-contact
+    display flex
+    background #fff
+    border-top 1px solid #e6e6e6
+    .bdc-btn
+      flex 0 0 50%
+      line-height Rem(50)
+      text-align center
+      box-sizing border-box
+      color #333
+      display flex
+      justify-content center
+      align-items center
+      &~.bdc-btn
+        border-left 1px solid #e6e6e6
+      &:before
+        content ''
+        margin-right Rem(10)
+      &.seller:before
+        width Rem(32/2)
+        height Rem(27/2)
+        getBg('contact-seller')
+        background-size cover
+      &.called:before
+        width Rem(27/2)
+        height Rem(27/2)
+        getBg('contact-tel')
+        background-size cover
+.barter-item
+  padding Rem(10)
+  background #f7f7f7
+  display flex
+  &.bg-w
+    background #fff
+  .bdi-img
+    flex 0 0 Rem(95)
+    height Rem(95)
+    margin-right Rem(15)
+    display flex
+    justify-content center
+    align-items center
+    >img
+      max-width 100%
+      max-height 100%
+  .bdi-info
+    display flex
+    flex-flow column
+    justify-content space-between
+    >h3
+      color #333
+      font-weight 600
+      line-height Rem(21)
+    .i-info,.c-info
+      font-size Rem(12)
+      line-height Rem(19)
+      color #666
+      >span
+        margin-right Rem(10)
+    .i-info
+      >span~span
+        margin-left -4px
+    .c-info
+      color $theme-color
+      padding-left Rem(12*3)
+      text-indent Rem(-12*3)
+      >span
+        margin-left -4px
