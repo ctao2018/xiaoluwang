@@ -17,14 +17,13 @@
     $(".mr-menu-list li a").removeClass("active")
     $(event.target).addClass("active");
     urlData.curr = urlData[type];//切换接口，或者根据实际情况更改pageData中的参数
-    $(".os-section").html("");// 切换后将容器清空
+    $(".oss-pagebox").html("");// 切换后将容器清空
     getDataByAjax(pageData);// 加载新数据
   }
 
   // 拼接html结构
   function getDomHtml(data) {
-    var _html = '<div class="oss-pagebox">'+
-      '<div class="oss-page">'+
+    var _html = '<a href="javascript:;;" class="oss-page">'+
         '<div class="ossp-img">'+
           '<img src="'+data.pic+'" alt="">'+
         '</div>'+
@@ -32,8 +31,7 @@
             '<div class="ossp-miaoshu">'+data.title+'</div>'+
             '<div>'+data.shuliang+' 浏览</div>'+
         '</div>'+
-      '</div>'+
-    '</div>';
+      '</a>';
     return _html;
   }
   // ajax请求
@@ -44,18 +42,11 @@
       data: pageData,
       success: function (res) {
         for (var i = 0; i < res.pages.length; i++) {
-          $(".os-section").append(getDomHtml(res.pages[i]))
+          $(".oss-pagebox").append(getDomHtml(res.pages[i]))
         }
       }
     })
   }
-
-  // 初始化下拉刷新方法，传入容器selector及回调函数
-  $(function () {
-    onPullDownRefresh('.os-section', function () {
-      getDataByAjax(pageData)
-    })
-  })
 
   $(function () {
     // 初始化轮播
@@ -88,20 +79,20 @@
 
    $(function () {
     // 初始化上拉加载
-    onReachBottom.init('.os-section', function () {
+    onReachBottom.init('.oss-pagebox', function () {
       $.ajax({
         url: './front/mockdata/049offensiveStrategy-1.json',
         type: 'GET',
         success: function (res) {
           var pages = res.pages;
           for (var i = 0; i < pages.length; i++) {
-            $(".os-section").append(getDomHtml(pages[i]))
+            $(".oss-pagebox").append(getDomHtml(pages[i]))
           }
           hideReachLoading();
           onReachBottom.hasNextPage = res.hasNextPage; //获取是否有下一页数据
           onReachBottom.currPage = res.currPage; //获取当前页数
           if (!onReachBottom.hasNextPage) {
-            showNullReach($(".os-section"))
+            showNullReach($(".oss-pagebox"))
           }
         }
       })
