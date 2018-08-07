@@ -1,0 +1,44 @@
+@import './base'
+
+.guide-set
+    .gs-tit
+        padding 0 Rem(10) 0 Rem(15)
+        height Rem(40)
+        line-height Rem(40)
+        font-size Rem(15)
+        color #333333
+        botLine()
+        background-color #ffffff
+    .gs-li
+        padding Rem(15) Rem(10) Rem(15) Rem(15)
+        background-color #ffffff
+        color #666666
+        font-size Rem(15)
+        margin-bottom Rem(10)
+        .gs-lip
+            display flex
+            justify-content space-between
+            margin-bottom Rem(10)
+            .gs-liedt
+                width Rem(15)
+                height Rem(15)
+                getBg('c-edit')
+                background-size Rem(15) Rem(15)
+                display inline-block
+            .gs-lidel
+                width Rem(12)
+                height Rem(15)
+                getBg('c-del')
+                background-size Rem(12) Rem(15)
+                display inline-block
+                margin-right Rem(2.5)
+    .gs-btn
+        display block
+        height Rem(50)
+        width Rem(355)
+        border-radius 3px
+        margin Rem(50) auto Rem(30)
+        background $theme-color
+        color #fff
+        border 0
+        font-size Rem(15)
