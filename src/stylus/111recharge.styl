@@ -1,0 +1,57 @@
+@import './base'
+.recharge
+  .r-czinput
+    background-color #FFF
+    padding 0 Rem(15)
+    height Rem(50)
+    line-height Rem(50)
+    display flex
+    justify-content space-between
+    align-items: center
+    span
+      display inline-block
+      width Rem(80)
+    input
+      background-color #fff
+      width 100%
+      border: 0
+  .r-czsm
+    padding 0 Rem(15)
+    color: #999
+    font-size Rem(11)
+    height Rem(40)
+    line-height: Rem(40)
+  .wop-apyway
+    background #fff
+    padding 0 Rem(10)
+    margin-bottom Rem(10)
+    .wopa-way
+      flex 1 0 auto
+      display flex
+      align-items center
+      >img
+        flex 0 0 Rem(30)
+        height Rem(30)
+        margin-right Rem(10)
+    .wop-line
+      display flex
+      justify-content space-between
+      align-items center
+      font-size Rem(15)
+      padding Rem(10) 0
+      line-height Rem(30)
+      botLine()
+      &:last-child
+        border 0
+      .wop-price
+        color $theme-color
+  .wop-paybtn
+    display block
+    margin Rem(35) auto
+    width Rem(355)
+    height Rem(45)
+    border-radius 3px
+    background $theme-color
+    color #fff
+    font-size Rem(17)
+    border 0
