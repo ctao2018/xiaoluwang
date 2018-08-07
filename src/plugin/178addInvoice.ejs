@@ -1,0 +1,9 @@
+<script>
+  $(function(){
+    $(".ait-list li").each(function(i,el){
+      $(el).on("click",function(){
+        $(el).addClass("active").siblings().removeClass("active");
+      })
+    })
+  })
+</script>

@@ -1,0 +1,54 @@
+@import './base'
+
+.add-invoice
+  .ai-type
+    background #fff
+    display flex
+    flex-flow column
+    margin-bottom Rem(10)
+    >label
+      line-height Rem(25)
+      padding Rem(5) Rem(10)
+      botLine()
+    .ait-list
+      display flex
+      justify-content space-between
+      padding Rem(10)
+      >li
+        padding Rem(5) Rem(10)
+        min-width Rem(50)
+        text-align center
+        background #EFF3F6
+        color #666
+        border-radius 3px
+        &.active
+          background $theme-color
+          color #fff
+  .ai-wrap
+    padding 0 Rem(10)
+    background #fff
+  .ai-line
+    padding Rem(10) 0
+    display flex
+    botLine()
+    >label
+      flex 0 0 Rem(70)
+      line-height Rem(30)
+    .ai-text
+      flex 1 0 auto
+      >input[type=text]
+        width 100%
+        height Rem(30)
+        border 0
+  .ai-other
+    padding Rem(10) 0
+    line-height Rem(30)
+    display flex
+    justify-content space-between
+    align-items center
+  .ai-tips
+    color #999
+    padding Rem(10) 0 
+    font-size Rem(12)
+    line-height Rem(20)
+    text-align center
