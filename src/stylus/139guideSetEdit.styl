@@ -1,0 +1,74 @@
+@import './base'
+
+.guide-set-edit
+    .clr
+        &:after
+            content ""
+            clear both
+            visibility hidden
+            display block
+            font-size 0 
+            height 0 
+            line-height 0
+    .clr 
+        zoom:1
+    .gse-top
+        font-size Rem(18)
+        color #333333
+        text-align center
+        position relative
+        margin Rem(80) 0 Rem(50)
+        font-weight bold
+        a
+            color #333333
+        .gse-closei
+            width Rem(11)
+            height Rem(11)
+            getBg('c-close')
+            background-size Rem(11) Rem(11)
+            display inline-block
+            position absolute
+            top Rem(4)
+            right Rem(20)
+    .gse-li
+        width 100%
+        margin-bottom Rem(15)
+        .gse-lipa
+            color #333333
+            font-size Rem(15)
+            padding 0 Rem(10)
+            background-color #ffffff
+            height Rem(50)
+            line-height Rem(50)
+            .gse-lisa
+                float left
+            .gse-liinp
+                float left
+                width Rem(250)
+                height Rem(50)
+                line-height Rem(50)
+                font-size Rem(14)
+                border none
+        .gse-libt
+            margin-top Rem(10)
+            padding 0 Rem(10)
+            p
+                color #999999
+                font-size Rem(11)
+                line-height Rem(14)
+    .gse-btn
+        display block
+        height Rem(50)
+        width Rem(355)
+        border-radius 3px
+        margin Rem(50) auto Rem(15)
+        background $theme-color
+        color #fff
+        border 0
+        font-size Rem(15)
+    .gse-ptxt
+        text-align center
+        color #999999
+        font-size Rem(11)
+        margin-bottom Rem(15)
+
