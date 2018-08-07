@@ -1,0 +1,73 @@
+<div class="add-common-passenger">
+  <div class="acp-name">
+    <%= tcm({str:'旅客姓名',more:false,num:false}) %>
+    <div class="acp-box">
+      <div class="acp-line">
+        <label class="acp-label">英文姓<i>Surname</i></label>
+        <div class="acp-text"><input type="text" placeholder="如张小白填写为“ZHANG”"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">英文名<i>Given names</i></label>
+        <div class="acp-text"><input type="text" placeholder="如张小白填写为“xiaobai”"></div>
+      </div>
+    </div>
+  </div>
+  <div class="acp-tips">
+    <span>为了顺利出行，请确保出行姓名与证件一致。</span>
+    <i class="a-icon"></i>
+  </div>
+  <div class="acp-paper">
+    <%= tcm({str:'签证信息',more:false,num:false}) %>
+    <div class="acp-box">
+      <div class="acp-line">
+        <label class="acp-label">护照号码</label>
+        <div class="acp-text"><input type="text" placeholder="护照号码"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">目的地</label>
+        <div class="acp-text"><input type="text" placeholder="出行目的地，必填"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">证件有效期</label>
+        <div class="slc-box">
+          <input type="text" readonly data-source='-9' class="slc-curr" value="" placeholder="请选择，必填">
+          <ul class="slc-list">
+            <li data-source="0">3年</li>
+            <li data-source="1">5年</li>
+            <li data-source="2">10年</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="acp-otherinfo">
+    <%= tcm({str:'其他信息',more:false,num:false}) %>
+    <div class="acp-box">
+      <div class="acp-line">
+        <label class="acp-label">性别</label>
+        <label class="acp-radio"><input type="radio" class="p-point">男</label>
+        <label class="acp-radio"><input type="radio" class="p-point">女</label>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">国籍</label>
+        <div class="acp-text"><input type="text" readonly placeholder="请选择"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">生日</label>
+        <div class="acp-text"><input type="text" readonly placeholder="请选择" id="birthday"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">签发日期</label>
+        <div class="acp-text"><input type="text" readonly placeholder="请选择" id="issueDate"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">生效日期</label>
+        <div class="acp-text"><input type="text" readonly placeholder="请选择" id="effectiveDate"></div>
+      </div>
+      <div class="acp-line">
+        <label class="acp-label">手机号码</label>
+        <div class="acp-text"><input type="text" placeholder="常用手机号"></div>
+      </div>
+    </div>
+  </div>
+</div>

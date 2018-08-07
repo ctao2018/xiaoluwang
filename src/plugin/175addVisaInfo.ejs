@@ -1,0 +1,31 @@
+<script src="./front/laydate/laydate.js"></script>
+<script>
+  $(function(){
+    mockSelect();
+    laydate.render({
+      elem: '#birthday',
+      showBottom: false,
+      theme: '#ff772e',
+      max:0
+    });
+    laydate.render({
+      elem: '#issueDate',
+      showBottom: false,
+      theme: '#ff772e'
+    });
+    laydate.render({
+      elem: '#effectiveDate',
+      showBottom: false,
+      theme: '#ff772e'
+    });
+    // 其它信息
+    $(".acp-otherinfo .title-count-more").on('click',function(){
+      var _box = $(".acp-otherinfo .acp-box");
+      if(_box.is(":hidden")){
+        _box.slideDown();
+      }else{
+        _box.slideUp();
+      }
+    })
+  })
+</script>
