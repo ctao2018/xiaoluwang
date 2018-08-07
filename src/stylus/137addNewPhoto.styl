@@ -1,0 +1,45 @@
+@import './base'
+
+.add-new-photo
+    .clr
+        &:after
+            content ""
+            clear both
+            visibility hidden
+            display block
+            font-size 0 
+            height 0 
+            line-height 0
+    .clr 
+        zoom:1
+    .anp-ul
+        padding Rem(15) Rem(10)
+        margin-left Rem(-12.5)
+        .anp-li
+            width Rem(110)
+            height Rem(70)
+            float left 
+            margin-left Rem(12.5)
+            margin-bottom Rem(12.5)
+            img 
+                width 100%
+                height Rem(70)
+        .anp-addpic
+            position relative
+            display flex
+            align-items center
+            justify-content center
+            background-color #e7e7e7
+            i
+                width Rem(21)
+                height Rem(21)
+                getBg('addpic')
+                background-size Rem(21) Rem(21)
+                display inline-block
+            input 
+                width Rem(110)
+                height Rem(70)
+                position absolute
+                left 0
+                top 0
+                opacity 0
