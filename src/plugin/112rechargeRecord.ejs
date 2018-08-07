@@ -15,13 +15,14 @@
 
   // ajax请求
   function getDataByAjax() {
+    $(".rrs-body").html('')
     $.ajax({
       url: './front/mockdata/112rechargeRecord.json',
       type: "GET",
       success: function (res) {
         // console.log(res)
         for (var i = 0; i < res.length; i++) {
-          $(".rr-section").prepend(getDomHtml(res[i]))
+          $(".rrs-body").prepend(getDomHtml(res[i]))
         }
         fullDownLoading.hide(); 
       }

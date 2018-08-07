@@ -1,0 +1,35 @@
+<script>
+  
+    // 拼接html结构
+    function getDomHtml(res) {
+      var _html = '<div class="rrs-box">'+
+          '<p>'+res.yhwz+'</p>'+
+          '<p>'+res.times+'</p>'+
+          '<p>'+res.jili+'</p>'+
+          '<p>'+res.beizhu+'</p>'+
+        '</div>';
+      return _html;
+    }
+  
+    // ajax请求
+    function getDataByAjax() {
+      $(".rrs-body").html('');
+      $.ajax({
+        url: './front/mockdata/115presentRecord.json',
+        type: "GET",
+        success: function (res) {
+          for (var i = 0; i < res.length; i++) {
+            $(".rrs-body").prepend(getDomHtml(res[i]))
+          }
+          fullDownLoading.hide(); 
+        }
+      })
+    }
+  
+    // 初始化下拉刷新方法，传入容器selector及回调函数
+    $(function () {
+      onPullDownRefresh('.rr-section', function () {
+        getDataByAjax()
+      })
+    })
+  </script>
