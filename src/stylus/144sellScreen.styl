@@ -1,0 +1,81 @@
+
+@import './base'
+.sell-screen
+  .ss-scroll-wall
+    .swiper-pagination-bullet
+      background #fff
+      opacity 1
+      transition .3s
+    .swiper-pagination-bullet-active
+        background $theme-color
+  .ss-city-wrap
+    position relative
+    background #fff
+    line-height Rem(30)
+    botLine()
+    .ssc-choose
+      display flex
+      flex-flow row wrap
+      justify-content space-between
+      align-items center
+      padding Rem(10) Rem(75) Rem(10) Rem(10)
+      color #666666
+      font-size Rem(15)
+      &.ssc-hide
+        visibility hidden
+        z-index -99
+        background #fff
+        position absolute
+        top 100%
+        left 0px
+        width 100%
+        box-sizing border-box
+        justify-content flex-start
+        padding Rem(10) 0
+        span
+          padding 0 Rem(10)
+        &.active
+          z-index 2
+          visibility visible
+          animation emersion .7s
+        &.unactive
+          z-index 2
+          visibility visible
+          animation unemersion .7s
+    .ss-more
+      position absolute
+      right Rem(10)
+      top Rem(10.5)
+      color #999999
+      getBg('more-xs')
+      padding-right Rem(15)
+      background-position right center
+      background-size Rem(19/2) auto
+  .ss-scenery
+    display flex
+    flex-flow row wrap
+    padding Rem(10) Rem(10) 0 Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    >a
+      line-height Rem(30)
+      padding 0 Rem(10)
+      margin 0 Rem(10) Rem(10) 0
+      background #eff3f6
+      color #666666
+      border-radius 3px
+  .ss-tit
+    padding 0 Rem(15)
+    height Rem(50)
+    background-color #ffffff
+    display flex
+    justify-content space-between
+    align-items center
+    position relative
+    margin-bottom: Rem(10)
+    .ss-titil
+        color: #333333
+        font-size: Rem(15)
+    .ss-titr
+        font-size 0
+        beMore(15)

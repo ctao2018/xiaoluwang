@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="front/swiper/swiper.min.css">
+<script src="front/swiper/swiper.min.js"></script>
+<script>
+  $(function () {
+
+    // 初始化轮播
+    var mySwiper = new Swiper('.swiper-container', {
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletElement: 'li',
+      },
+    });
+
+    // 绑定城市更多选择
+    $(".ss-more").on('click',function(){
+      var el = $(".ssc-choose.ssc-hide"); 
+      if(!el.hasClass("active")){
+        if(el.hasClass("unactive")){
+          el.removeClass("unactive");
+          clearTimeout(timed);
+        }
+        el.addClass("active");
+      }else{
+        el.removeClass("active");
+        el.addClass("unactive");
+        var timed = setTimeout(function(){
+          el.removeClass("unactive");
+        },50)
+      }
+    })
+
+  })
+
+
+  // 上拉加载html拼接方法
+  function getHtmlTemp(res) {
+    var _html ='<div class="se-list">' +
+        '<div class="se-top">' +
+            '<div class="se-topl">' +
+                '<img src="./front/images/l-manpage01.png">' +
+                '<span class="se-toplsa">'+res.tipTitle+'</span>' +
+                '</div>' +
+                '<div class="se-topr">' +
+                    '<h3 class="se-toprh">'+res.title+'</h3>' +
+                    ' <p class="se-toprpa"><span>¥</span>'+res.money+'</p>' +
+                    '<p class="se-toprpb">' +
+                        '<span>'+res.tocity+'</span>' +
+                        '<span>产品编号：'+res.number+'</span>' +
+                        '</p>' +
+                        ' </div>' +
+                        ' </div>' +
+                        '<div class="se-bottom">' +
+                            '<p class="se-btp">' +
+                                '<span class="se-btpl">出发地：'+res.gocity+'</span>' +
+                                ' <span class="se-btpr">团位：'+res.tuanwei+'人</span>' +
+                                '</p>' +
+                                ' <p class="se-btp">' +
+                                    '<span class="se-btpl">合销商户：'+res.selling+'</span>' +
+                                    '<span class="se-btpr">结算：'+res.settlement+'</span>' +
+                                    '</p>' +
+                                    '</div>' +
+                                    '</div>'
+      
+    
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.ss-listbx',function () {
+      $.ajax({
+        url: './front/mockdata/144sellScreen.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".ss-listbx .show-reach-loading").before(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".ss-listbx"))
+          }
+        }
+      })
+    })
+  })
+</script>
+  
