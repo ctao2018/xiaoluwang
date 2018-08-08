@@ -19,27 +19,30 @@
         '<div class="dtsl-img">'+
           '<img src="'+res.pic+'" alt="">'+
         '</div>'+
-        '<div class="dtsl-txt">'+res.miaoshu+'</div>'+
+        '<div class="dtsl-txt">'+
+            '<div class="dtsl-miaoshu">'+res.miaoshu+'</div>'+
+          '<div>'+res.num+' 浏览</div>  '+
+          '</div>'+
       '</a>';
     return _html;
   }
 
   $(function () {
     // 初始化上拉加载
-    onReachBottom.init('.dts-list-box',function () {
+    onReachBottom.init('.dtsl-section',function () {
       $.ajax({
         url: './front/mockdata/050detailsStrategy.json',
         type: 'GET',
         success: function (res) {
           var pages = res.pages;
           for (var i = 0; i < pages.length; i++) {
-            $(".dts-list-box .show-reach-loading").before(getHtmlTemp(pages[i]))
+            $(".dtsl-section").append(getHtmlTemp(pages[i]))
           }
           hideReachLoading();
           onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
           onReachBottom.currPage = res.currPage;//获取当前页数
           if(!onReachBottom.hasNextPage){
-            showNullReach($(".dts-list-box"))
+            showNullReach($(".dtsl-section"))
           }
         }
       })
