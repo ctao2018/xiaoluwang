@@ -110,6 +110,56 @@
             border 1px solid $theme-color
             color $theme-color
             margin-left Rem(12)
+        .i-seller
+          display flex
+          justify-content space-between
+          font-size Rem(12)
+        .i-orderinfo
+          display flex
+          justify-content space-between
+          font-size Rem(12)
+          margin-top Rem(5)
+          p:first-child
+            color $theme-color
+            font-size Rem(14)
+            >em
+              color $theme-color
+              font-size Rem(10)
+    .ol-group
+      background #fff
+      padding 0 Rem(10)
+      .olg-line
+        display flex
+        justify-content space-between
+        padding Rem(10) 0
+        line-height Rem(25)
+        color #666
+        botLine()
+      .olg-human
+        display flex
+        position relative
+        align-items center
+        padding Rem(10) Rem(60) Rem(10) 0
+        font-size Rem(12)
+        color #666
+        .olg-img
+          display flex
+          justify-content center
+          align-items center
+          width Rem(30)
+          height Rem(30)
+          border-radius 100%
+          overflow hidden
+          margin-left Rem(10)
+          >img
+            max-width 100%
+            max-height 100%
+        .olg-more
+          position absolute
+          right 0px
+          top Rem(10)
+          line-height Rem(30)
+          font-size Rem(14)
     .ol-bot
       display flex
       justify-content space-between
@@ -124,6 +174,12 @@
       justify-content flex-end
       padding Rem(5) 0
       background #fff
+      &.between
+        justify-content space-between
+        align-items center
+        padding-left Rem(10)
+        .ola-btn
+          display flex
       .btn-normal
         height Rem(25)
         padding 0 Rem(10)

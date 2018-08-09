@@ -1,0 +1,32 @@
+@import './base'
+
+.passenger-msg
+  .pm-item
+    position relative
+    display flex
+    padding Rem(10)
+    background #fff
+    margin-bottom Rem(10)
+    .pmi-icon
+      flex 0 0 Rem(50)
+      height Rem(50)
+      border-radius 100%
+      overflow hidden
+      margin-right Rem(10)
+      >img
+        max-width 100%
+        max-height 100%
+    .pmi-info
+      display flex
+      flex-flow column
+      justify-content space-around
+      h3
+        color #333333
+        font-weight bold
+      p
+        color #666666
+    .pmi-date
+      position absolute
+      top Rem(15)
+      right Rem(10)
+      color #999

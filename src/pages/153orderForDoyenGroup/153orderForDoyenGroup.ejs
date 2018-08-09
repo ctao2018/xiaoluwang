@@ -1,0 +1,21 @@
+<div class="order-list">
+    <ul class="ol-tab">
+      <li data-status="0" class="active">全部</li>
+      <li data-status="1">待付款</li>
+      <li data-status="2">待确认/出行</li>
+      <li data-status="3">待评价</li>
+      <li data-status="4">退款</li>
+    </ul>
+    <div class="order-list-items">
+      <%= 
+      orderItem({
+        num    : 1,
+        type   : 3,
+        hasDate: false,
+        hasInfo: true,
+        status : '待确认',
+        btn    : ['联系买家','确认订单']
+      })
+      %>
+    </div>
+  </div>
