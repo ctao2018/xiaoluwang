@@ -1,0 +1,35 @@
+<script>
+  
+    // 拼接html结构
+    function getDomHtml(res) {
+      var _html = '<div class="sab-page">'+
+          '<span>最美九寨沟 5.1组团游活动</span>'+
+          '<span>4月20日 12:30:60</span>'+
+          '<span>48723</span>'+
+          '<span>￥16.8</span>'+
+        '</div>';
+      return _html;
+    }
+  
+    // ajax请求
+    function getDataByAjax() {
+      $(".sab-body").html('');
+      $.ajax({
+        url: './front/mockdata/118shareArea.json',
+        type: "GET",
+        success: function (res) {
+          for (var i = 0; i < res.length; i++) {
+            $(".sab-body").prepend(getDomHtml(res[i]))
+          }
+          fullDownLoading.hide(); 
+        }
+      })
+    }
+  
+    // 初始化下拉刷新方法，传入容器selector及回调函数
+    $(function () {
+      onPullDownRefresh('.sa-banbox', function () {
+        getDataByAjax()
+      })
+    })
+  </script>
