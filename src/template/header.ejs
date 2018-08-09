@@ -10,8 +10,16 @@
     <% } %>
   </div>
   <% } %>
-  <% if(showTitle != false){ %>
+  <% if(showTitle){ %>
     <h3 class="nav-title"><%= pageTitle %></h3>
+  <% } %>
+  <% if(navList){ %>
+    <h3 class="nav-title show-navlist"><span><%= pageTitle %></span><i class="slide"></i></h3>
+    <ul class="nav-list">
+      <li class="active"><%= pageTitle %></li>
+      <li>选项2</li>
+      <li>选项3</li>
+    </ul>
   <% } %>
   <% if(search != false){ %>
     <div class="<%= search %>"><input type="text" placeholder="<%= searchStr %>"></div>
