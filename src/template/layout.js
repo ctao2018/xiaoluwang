@@ -18,7 +18,8 @@ let pf = {
 	showTitle: true,
 	isHead: true,
 	isFoot: false,
-	footType: 'account'
+	footType: 'account',
+	navList:false,
 }
 
 const moduleExports = {
