@@ -37,6 +37,46 @@ $nav-btn(w = 45,h = 45)
     text-align center
     color #fff
     box-sizing border-box
+  .show-navlist
+    display flex
+    justify-content center
+    align-items center
+    >.slide
+      flex 0 0 Rem(16)
+      height Rem(9)
+      margin Rem(3) 0 0 Rem(5)
+      getBg('slide-nav')
+      background-size cover
+      transition .3s linear
+      transition-property transform
+    &.active>.slide
+      transform rotate(180deg)
+  .nav-list
+    visibility hidden
+    position absolute
+    left 0px
+    top Rem(55)
+    opacity 0
+    z-index -9
+    width 100%
+    background #fff
+    box-shadow 0 3px 5px rgba(0,0,0,.1)
+    padding Rem(5) 0
+    text-align center
+    transition .3s linear
+    transition-property z-index,opacity,top
+    >li
+      line-height Rem(35)
+      padding 0 Rem(10)
+      font-size Rem(15)
+      &.active
+        color $theme-color
+    &.active
+      visibility visible
+      z-index 9
+      opacity 1
+      top Rem(45)
+
   .lt-btn-box,.lt-btn-box
     position relative
     z-index 2

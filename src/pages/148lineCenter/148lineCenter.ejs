@@ -1,9 +1,42 @@
 <div class="line-center">
-    <ul class="lc-menu-list">
-        <li><a href="javascript:;;" class="pr-on">出团中</a></li>
-        <li><a href="javascript:;;">仓库</a></li>
-        <li><a href="javascript:;;">审核中</a></li>
-        <li><a href="javascript:;;">线路记录</a></li>
-    </ul>
+    <div class="lc-topfix">
+        <ul class="lc-menu-list">
+            <li><a href="javascript:;;" class="pr-on">出团中</a></li>
+            <li><a href="javascript:;;">仓库</a></li>
+            <li><a href="javascript:;;">审核中</a></li>
+            <li><a href="javascript:;;">线路记录</a></li>
+        </ul>
+    </div>
     
+    <div class="lc-big">
+        <div class="lc-box lc-ctz">
+            <%= lineCenterItem({type:'group'})+ lineCenterItem({type:'group'}) +lineCenterItem({type:'group'})%>
+        </div>
+        <div class="lc-box lc-ck">
+            <div class="lc-ckbx">
+                <p class="lc-ckbxp">小鹿网旅游</p>
+                <div class="lc-ckbxit">
+                    <%= lineCenterItem({type:'ck'})+ lineCenterItem({type:'ck'}) +lineCenterItem({type:'ck'})%>
+                </div>
+            </div>
+            <div class="lc-ckbx">
+                <p class="lc-ckbxp">大鹿旅行社</p>
+                <div class="lc-ckbxit">
+                    <%= lineCenterItem({type:'ck'})+ lineCenterItem({type:'ck'}) %>
+                </div>
+            </div>
+        </div>
+        <div class="lc-box lc-shz">
+                <%= lineCenterItem({type:'check'})+ lineCenterItem({type:'check'}) +lineCenterItem({type:'check'})%>
+        </div>
+        <div class="lc-box lc-jl">
+            <div class="lc-jltop">
+                <a href="javascript:;;">全部</a>
+                <a href="javascript:;;">近一个月</a>
+                <a href="javascript:;;">近三个月</a>
+                <a href="javascript:;;">三个月以前</a>
+            </div>
+            <%= lineCenterItem({type:'record'})+ lineCenterItem({type:'record'}) +lineCenterItem({type:'record'})%>
+        </div>
+    </div>
 </div>

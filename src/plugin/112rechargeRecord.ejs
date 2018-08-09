@@ -1,14 +1,11 @@
 <script>
-  
-
-
   // 拼接html结构
   function getDomHtml(res) {
-    var _html = '<div class="rrs-box">'+
-        '<p>'+res.times+'</p>'+
-        '<p>'+res.bianhua+'</p>'+
-        '<p>'+res.jili+'</p>'+
-        '<p>'+res.beizhu+'</p>'+
+    var _html = '<div class="rrs-box">' +
+      '<p>' + res.times + '</p>' +
+      '<p>' + res.bianhua + '</p>' +
+      '<p>' + res.jili + '</p>' +
+      '<p>' + res.beizhu + '</p>' +
       '</div>';
     return _html;
   }
@@ -24,7 +21,7 @@
         for (var i = 0; i < res.length; i++) {
           $(".rrs-body").prepend(getDomHtml(res[i]))
         }
-        fullDownLoading.hide(); 
+        fullDownLoading.hide();
       }
     })
   }
@@ -33,6 +30,38 @@
   $(function () {
     onPullDownRefresh('.rr-section', function () {
       getDataByAjax()
+    })
+  })
+
+
+  $(function () {
+    $(".show-navlist").on("click", function (e) {
+      if (!$(".nav-list").hasClass("active")) {
+        $(".show-navlist").addClass("active");
+        $(".nav-list").addClass("active");
+      } else {
+        $(".show-navlist").removeClass("active");
+        $(".nav-list").removeClass("active");
+      }
+      e.stopPropagation();
+      $(document).on("click", function (e) {
+        $(".nav-list").removeClass("active");
+        e.stopPropagation();
+      });
+    })
+    $(".nav-list").on('click', function (e) {
+      e.preventDefault()
+    })
+    $(".nav-list li").each(function (i, el) {
+      $(el).on("click", function () {
+        $(el).addClass("active").siblings().removeClass("active");
+        $(".show-navlist span").text($(el).text());
+        $(".nav-list").removeClass("active");
+        $(".show-navlist").removeClass("active");
+        // 选择结束 
+        // do something
+        // $(el) 为点击的选项对象
+      })
     })
   })
 </script>
