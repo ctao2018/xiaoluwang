@@ -1,0 +1,19 @@
+<div class="order-list">
+  <ul class="ol-tab">
+    <li><span>出团日期</span><span id="choose-date"></span></li>
+    <li data-status="0" class="active">待出团</li>
+    <li data-status="1">已出团</li>
+  </ul>
+  <div class="order-list-items">
+    <%= 
+    orderItem({
+      num    : 1,
+      type   : 4,
+      hasDate: false,
+      hasInfo: true,
+      status : '待出团',
+      btn    : ['联系买家','确认订单']
+    })
+    %>
+  </div>
+</div>
