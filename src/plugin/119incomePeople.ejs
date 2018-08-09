@@ -1,0 +1,54 @@
+<script>
+  $(function(){
+    $("#sort-list").on("click",function(){
+      console.log(22)
+      if($(this).hasClass("down")){
+        // 改为从大到小
+        $(this).removeClass("down").text('倒序')
+      }else{
+        // 改为从小到大
+        $(this).addClass("down").text('正序')
+      }
+    })
+  })
+
+
+
+   // 上拉加载html拼接方法
+ function getHtmlTemp(res) {
+    var _html = '<a class="ipl-record-item" href="'+res.link+'">'+
+          '<div class="ipl-img"><img src="'+res.pic+'"></div>'+
+          '<div class="ipl-info">'+
+            '<h3>'+res.nr+'</h3>'+
+            '<div>'+
+                '<p class="i-date">带团时间：'+res.time+'</p>'+
+                '<span class="i-date i-mt">'+res.city+'</span>'+
+            '</div>'+
+          '</div>'+
+          '<div>￥'+res.money+'</div>'+
+        '</a>';
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.iplb-pages',function () {
+      $.ajax({
+        url: './front/mockdata/119incomePeople.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".iplb-pages").append(getHtmlTemp(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".iplb-pages"))
+          }
+        }
+      })
+    })
+  })
+</script>

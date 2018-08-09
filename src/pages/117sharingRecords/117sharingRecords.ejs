@@ -1,0 +1,61 @@
+<div class="sharing-records">
+  <div class="sr-scroll-wall">
+      <%= scrollWall %>
+  </div>
+  <div class="sr-title-shouyi">
+    <p class="srt-money">￥160.40</p>
+    <p>分享收益</p>
+  </div>
+  <!-- 分享 -->
+  <div class="sr-maishu">
+    <div>
+      <p>200个</p>
+      <p>分享链数</p>
+    </div>
+    <div>
+        <p>998次</p>
+        <p>分享点击次数</p>
+      </div>
+  </div>
+  <!-- 列表 -->
+  <div class="sr-listbox">
+    <div class="wd-fixtop">
+      <span class="wdf-mult">综合</span>
+      <span class="wdf-sort" id="w-level">达人等级</span>
+      <span class="wdf-sort" id="w-price">价格</span>
+      <ul class="wdf-multlist">
+        <li>综合</li>
+        <li>热度</li>
+        <li>时间</li>
+      </ul>
+    </div>
+    <!-- 分享 -->
+    <div class="srl-box">
+      <%for(var i=0;i<2;i++){%>
+        <div class="ac-section">
+          <div class="acs-header">
+            <h3 class="h-redbag">发布时间：2018年4月18日</h3>
+            <span class="h-more">热门分享</span>
+          </div>
+          <div class="acs-redbag">
+            <div class="acsr-top">
+              <div class="acsr-info">
+                <h3>最美九寨沟5.1组团游活动</h3>
+                <div class="i-data">
+                  <p> <span>总收益：</span> <i>10000.00元</i></p>
+                  <p> <span>剩余收益：</span> <i>9000.00元</i></p>
+                  <p> <span>分享次数：</span> <i>1289490次</i></p>
+                </div>
+              </div>
+              <a class="acsr-share" href="">
+                <i></i>
+                <p>去分享</p>
+              </a>
+            </div>
+            <p class="acsr-tips">分享后点击次数达到200次即可获得红包</p>
+          </div>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</div>

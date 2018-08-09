@@ -1,8 +1,8 @@
-const content = require('./178addInvoice.ejs');
+const content   = require('./178addInvoice.ejs');
 const botSource = require('../../plugin/178addInvoice.ejs');
-const layout  = require('../../template/layout.js');
-const tcm = require('../../template/title-count-more.ejs');
-const pf      = {
+const layout    = require('../../template/layout.js');
+const tcm       = require('../../template/title-count-more.ejs');
+const pf        = {
   pageTitle: '新增发票',
   ltBtn1   : 'btn-string',
   ltStr1   : '取消',
@@ -13,4 +13,4 @@ const pf      = {
 
 module.exports = layout.init({
   pf
-}).run(content(),'',botSource());
+}).run(content(), '', botSource());
