@@ -1,0 +1,119 @@
+@import './base'
+
+.sell-detail
+    margin-top Rem(-45)
+    .clr
+        &:after
+            content ""
+            clear both
+            visibility hidden
+            display block
+            font-size 0 
+            height 0 
+            line-height 0
+    .clr 
+        zoom:1
+    .sd-scroll
+        position relative
+        img 
+            width 100%
+        .sd-spa
+            height Rem(35/2)
+            line-height Rem(35/2)
+            border-radius Rem(35/2)
+            padding Rem(5/2) Rem(15/2)
+            font-size: Rem(12)
+            background-color: rgba(0,0,0,0.5)
+            color #fff
+            position absolute
+            bottom Rem(15)
+            left Rem(15)
+            z-index 99
+    .sd-head
+        background-color: #ffffff
+        padding Rem(15) Rem(10)
+        margin-bottom Rem(10)
+        .sd-headh
+            font-size: Rem(31/2)
+            color #333333
+            line-height Rem(18)
+            margin-bottom Rem(10)
+            ellps(line = 2)
+        .sd-headp
+            font-size: Rem(13)
+            color #666666
+            margin-bottom Rem(5)
+            ellp()
+        .sd-hdbx
+            botLine()
+            padding-top Rem(10)
+            .sd-hdbxp
+                font-size: Rem(13)
+                color #666666
+                margin-bottom Rem(10) 
+                display flex
+                justify-content space-between
+                .sd-hdbxpl
+                    max-width Rem(220)
+                    ellp()
+                .sd-hdbxpr
+                    max-width Rem(135)
+                    ellp()
+                .sd-money
+                    color $theme-color
+                    font-size Rem(18)
+                    em
+                        font-size Rem(11)
+        .sd-hdtyp
+            padding-top Rem(15)
+            display flex
+            justify-content space-between
+            font-size: Rem(13)
+            color #666666
+    .sd-bd
+        background-color: #ffffff
+        padding Rem(10)
+        .sd-bdtop
+            display flex
+            justify-content space-between
+            padding-bottom Rem(10)
+            botLine()
+            .sd-bdtopl
+                width Rem(115)
+                img 
+                    width 100%
+                    height Rem(75)
+            .sd-bdtopr
+                width Rem(445/2)
+                .sd-bdtoprh
+                    color #333333
+                    font-size Rem(16)
+                    margin-bottom Rem(10)
+                    ellp()
+                .sd-bdtoprpa
+                     margin-bottom Rem(10)
+                     span 
+                        float left
+                    .sd-star
+                        width Rem(68)
+                        margin 0 Rem(10)
+        .sd-bdbt
+            .sd-bdbtp
+                color #666666
+                font-size Rem(13)
+                margin-top Rem(10)
+                span 
+                    width 50%
+                    float left
+    .sd-btn
+        display block
+        height Rem(50)
+        width Rem(355)
+        border-radius 3px
+        margin Rem(50) auto Rem(15)
+        background $theme-color
+        color #fff
+        border 0
+        font-size Rem(15)
+
+        

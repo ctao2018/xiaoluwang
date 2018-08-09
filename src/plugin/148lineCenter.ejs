@@ -1,0 +1,92 @@
+<script>
+    $(function(){
+            // 点击顶部选择
+        $(".lc-menu-list").find('li').each(function(i){
+            $(this).on("click",function(){
+                $(".lc-menu-list li a").removeClass("pr-on");
+                $(this).find("a").addClass("pr-on");
+                $('.lc-big').find('.lc-box').eq(i).show().siblings().hide();
+            })
+        })
+
+        // 点击展开收起
+        $('.lc-ckbx').each(function(){
+            var _this = $(this);
+            _this.find('.lc-ckbxp').on('click',function(){
+                var bxit = _this.find('.lc-ckbxit').css('display');
+                if(bxit == 'block'){
+                    _this.find('.lc-ckbxit').hide()
+                }else{
+                    _this.find('.lc-ckbxit').show()
+                }
+            })
+        })
+   
+    })
+
+    // 上拉加载html拼接方法  出团中
+  function getHtmlTempA(res) {
+    var _html ='<div class="se-list">' +
+        '<div class="se-top">' +
+            '<div class="se-topl">' +
+                '<img src="./front/images/l-manpage01.png">' +
+                '<span class="se-toplsa">'+res.tipTitle+'</span>' +
+                '</div>' +
+                '<div class="se-topr">' +
+                    '<h3 class="se-toprh">'+res.title+'</h3>' +
+                    ' <p class="se-toprpa"><span>¥</span>'+res.money+'</p>' +
+                    '<p class="se-toprpb">' +
+                        '<span>'+res.tocity+'</span>' +
+                        '<span>产品编号：'+res.number+'</span>' +
+                        '</p>' +
+                        ' </div>' +
+                        ' </div>' +
+                        '<div class="se-bottom">' +
+                            '<p class="se-btp">' +
+                                '<span class="se-btpl">出发地：'+res.gocity+'</span>' +
+                                ' <span class="se-btpr">团位：'+res.tuanwei+'人</span>' +
+                                '</p>' +
+                                ' <p class="se-btp">' +
+                                    '<span class="se-btpl">合销商户：'+res.selling+'</span>' +
+                                    '<span class="se-btpr">出团时间：'+res.goTime+'</span>' +
+                                    '</p>' +
+                                    '</div>' +
+                        ' <div class="se-sj">' +
+                            ' <span class="se-sjspa">上架时间：'+res.shelfTime+'</span>' +
+                            '<div class="se-sjr">' +
+                                    '<a href="javascript:void(0)">编辑</a>' +
+                                    '<a href="javascript:void(0)">下架</a>' +
+                                    '</div>' +
+                            '</div>' +
+                        ' </div>' 
+      
+    
+    return _html;
+  }
+
+  $(function () {
+    // 初始化上拉加载
+    onReachBottom.init('.lc-ctz',function () {
+      $.ajax({
+        url: './front/mockdata/144sellScreen.json',
+        type: 'GET',
+        success: function (res) {
+          var pages = res.pages;
+          for (var i = 0; i < pages.length; i++) {
+            $(".lc-ctz .show-reach-loading").before(getHtmlTempA(pages[i]))
+          }
+          hideReachLoading();
+          onReachBottom.hasNextPage = res.hasNextPage;//获取是否有下一页数据
+          onReachBottom.currPage = res.currPage;//获取当前页数
+          if(!onReachBottom.hasNextPage){
+            showNullReach($(".lc-ctz"))
+          }
+        }
+      })
+    })
+  })
+
+
+
+
+</script>
