@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="front/calendar/calendar-pro.css">
+<script src="front/calendar/calendar-pro.js"></script>
+<script>
+  $(function () {
+    $('.calendar-box').calendar({
+            ele : '.lcd-box', //依附
+            title : '',
+            // beginDate : '2018-07-09',
+            //	endDate : '2017-07-04',
+            data : [
+                {date:'2018-07-07',data:'107'},
+                {date:'2018-07-08',data:'108'},
+                {date:'2018-07-09',data:'109'},
+                {date:'2018-07-10',data:'110'},
+                {date:'2018-07-11',data:'111'},
+                {date:'2018-07-12',data:'112'},
+                {date:'2018-07-13',data:'113'},
+        //		{date:'2018-07-14',data:'114'},
+                {date:'2018-07-15',data:'115'},
+                {date:'2018-07-16',data:'116'},
+                {date:'2018-07-17',data:'117'},
+                {date:'2018-07-18',data:'118'},
+                {date:'2018-07-19',data:'119'},
+                {date:'2018-07-20',data:'120'},
+                {date:'2018-07-21',data:'121'},
+                {date:'2018-07-22',data:'122'},
+                {date:'2018-07-23',data:'123'}
+            ]
+        });
+        $('.lcd-btn').on('click',function(){
+            var data = $('.calendar-box').calendarGetActive();
+            console.log(data);
+            if(data.date){
+                alert(data.date);
+            }
+           
+        })
+        
+  })
+</script>

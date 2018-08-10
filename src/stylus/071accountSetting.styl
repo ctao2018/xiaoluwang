@@ -6,20 +6,45 @@
     display flex
     justify-content space-between
     align-items center
-    padding Rem(10) Rem(30) Rem(10) Rem(10)
+    padding Rem(10)
     line-height Rem(30)
     font-size Rem(15)
     color #333333
-    toMore(15)
     botLine()
     &:last-child
       border 0
+    .aml-text
+      border 0
+      text-align right
+  a.aml-item
+    toMore(15)
+    padding-right Rem(30)
   &.nomore .aml-item
     padding Rem(10)
     &:after
       display none !important
   &.mb-10
     margin-bottom Rem(10)
+  .slc-box
+    flex 0 0 Rem(150)
+    .slc-curr
+      text-align right
+      border 0
+  .doyen-info
+    padding Rem(10) Rem(10) 0
+    line-height Rem(30)
+  .doyen-area
+    padding Rem(10)
+    textarea
+      background #f4f4f4
+      width 100%
+      padding Rem(10)
+      resize none
+      box-sizing border-box
+      height Rem(100)
+      line-height Rem(25)
+      border 0
+
 .acc-more-title
   padding Rem(10)
   font-size Rem(13)

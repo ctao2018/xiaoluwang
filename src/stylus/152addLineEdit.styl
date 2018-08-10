@@ -1,0 +1,80 @@
+@import './base'
+
+.add-line-edit
+    .ale-adda
+        width 100%
+        height Rem(50)
+        background-color #ffffff
+        text-align center
+        line-height Rem(50)
+        display block
+        font-size Rem(15)
+        color #999999
+        margin-bottom Rem(10)
+        i
+            width Rem(12.5)
+            height Rem(12.5)
+            getBg('add')
+            background-size Rem(12.5) Rem(12.5)
+            display inline-block
+            margin-right Rem(10)
+    .ale-list
+        display block
+        padding Rem(10)
+        background #fff
+        margin-bottom: Rem(10)
+        .ale-top
+            display flex
+            justify-content space-between
+            padding-bottom Rem(10)
+            botLine()
+            .ale-topl
+                width Rem(130)
+                position relative
+                img 
+                    width 100%
+                    height Rem(100)
+                    border-radius: Rem(2)
+                .ale-toplsa
+                    height Rem(35/2)
+                    line-height: Rem(35/2)
+                    border-radius Rem(35/2)
+                    padding Rem(5/2) Rem(15/2)
+                    font-size: Rem(12)
+                    background-color: rgba(0,0,0,0.5)
+                    color #fff
+                    position absolute
+                    top Rem(15/2)
+                    left Rem(15/2)
+            .ale-topr
+                width Rem(415/2)
+                .ale-toprh
+                    color: #333333
+                    font-size: Rem(14)
+                    line-height: Rem(16)
+                    ellps(line = 2)
+                    margin-bottom: Rem(15)
+                .ale-toprpa
+                    color $theme-color
+                    font-size: Rem(15)
+                    margin-bottom: Rem(15)
+                    span 
+                        font-size: Rem(10)
+                .ale-toprpb
+                    display: flex
+                    justify-content: space-between
+                    font-size: Rem(12)
+                    color: #666666
+        .ale-btp
+            margin-top: Rem(10)
+            display: flex
+            justify-content: space-between
+            font-size: Rem(12)
+            color: #666666
+            .ale-btpl
+                width Rem(210)
+                ellp()
+            .ale-btpr
+                width Rem(130)
+                ellp()
+    

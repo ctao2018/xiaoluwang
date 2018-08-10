@@ -1,0 +1,30 @@
+@import './base'
+
+.doyen-detail-album
+  display flex
+  flex-flow row wrap
+  padding Rem(10)
+  padding-right 0
+  .dda-item
+    position relative
+    flex 0 0 Rem(325/3)
+    height Rem(325/3)
+    overflow hidden
+    border 1px solid #e6e6e6
+    background #fff
+    display flex
+    justify-content center
+    align-items center
+    margin-bottom Rem(10)
+    margin-right Rem(10)
+    >img
+      max-height 100%
+  .dda-del
+    position absolute
+    display block
+    width Rem(24/2)
+    height Rem(30/2)
+    right Rem(5)
+    bottom Rem(5)
+    getBg('c-del')
+    background-size cover
