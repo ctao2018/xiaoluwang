@@ -1,0 +1,12 @@
+<script>
+  $(function(){
+    $(".dda-item").each(function(i,el){
+      $(el).find(".dda-del").on("click",function(){
+        showConfirm('确定删除此照片吗？',function(){
+          console.log('删除成功')
+          $(el).remove();
+        })
+      })
+    })
+  })
+</script>
