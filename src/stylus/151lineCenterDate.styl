@@ -1,0 +1,61 @@
+@import './base'
+
+.line-center-date
+    .lcd-box
+        width: 100%;
+        background: #fff;
+        border-left: none;
+        border-right: none;
+        .ht-rili-leftarr
+            width Rem(6)
+            height Rem(13)
+            getBg('c-arrl')
+            background-size Rem(6) Rem(13)
+            display inline-block
+            margin-left Rem(10)
+            padding 0 Rem(5)
+        .ht-rili-date
+            font-size: Rem(16)
+            color #333333
+        .ht-rili-rightarr
+            width Rem(6)
+            height Rem(13)
+            getBg('c-arrr')
+            background-size Rem(6) Rem(13)
+            display inline-block
+            margin-right Rem(10)
+            padding 0 Rem(5)
+        .ht-rili-head
+            border-top 1px solid #f1f1f1
+            border-bottom 1px solid #f1f1f1
+            .ht-rili-th
+                background-color: #f8f8f8
+                height Rem(30)
+                line-height Rem(30)
+                font-size: Rem(13)
+                &:first-child, &:last-child
+                    color: $theme-color
+        .ht-rili-body
+            .ht-rili-td
+                background-color: #ffffff
+                .ht-rili-day
+                    font-size: Rem(15)
+                .ht-rili-money
+                    font-size: Rem(13)
+                    color $theme-color
+                    margin-top Rem(5)
+            .ht-rili-td-active
+                background: $theme-color
+                color: #fff;
+                .ht-rili-money
+                    color: #fff;
+    .lcd-btn
+        display block
+        height Rem(50)
+        width Rem(355)
+        border-radius 3px
+        margin Rem(50) auto Rem(15)
+        background $theme-color
+        color #fff
+        border 0
+        font-size Rem(15)

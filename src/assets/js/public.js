@@ -529,3 +529,30 @@ function onPullDownRefresh(elem, callback) {
     }
   })
 }
+
+function initTimeOut(){
+  $(".global-timeout").each(function(i,el){
+    var _date = $(el).data("date");
+    if($(el).text() == ''){
+      $(el).text("--:--:--");
+      var invStr = "inv" + _date;
+      invStr = setInterval(function(){
+        var _now = new Date();
+        var _time = _now.getTime();
+        var timeDif = Math.floor((_date - _time)/1000);
+        if(timeDif <= 0){
+          $(el).text("--:--:--");
+          clearInterval(invStr);
+          return false
+        }
+        var hour = Math.floor(timeDif/(60*60));
+        var minute = Math.floor(timeDif%(60*60)/60);
+        var second = Math.floor(timeDif%60);
+        hour = hour < 10 ? "0" + hour : hour;
+        minute = minute < 10 ? "0" + minute : minute;
+        second = second < 10 ? "0" + second : second;
+        $(el).text(hour + ":" + minute + ":" + second)
+      },1000);
+    }
+  })
+}

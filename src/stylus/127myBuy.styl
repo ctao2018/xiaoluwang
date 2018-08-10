@@ -1,0 +1,74 @@
+@import './base'
+
+.my-buy
+    .mb-top
+        padding Rem(15) Rem(10)
+        background-color #ffffff
+        margin-bottom Rem(10)
+        h2
+            color #333333
+            font-size: Rem(15)
+            text-align: center
+            margin-bottom Rem(15)
+        p 
+            color #666666
+            font-size: Rem(13)
+            line-height: Rem(20)
+    .mb-adda
+        width 100%
+        height Rem(50)
+        background-color #ffffff
+        text-align center
+        line-height Rem(50)
+        display block
+        font-size Rem(15)
+        color #999999
+        margin-bottom Rem(10)
+        i
+            width Rem(12.5)
+            height Rem(12.5)
+            getBg('add')
+            background-size Rem(12.5) Rem(12.5)
+            display inline-block
+            margin-right Rem(10)
+    .mb-ul
+        background-color #ffffff
+        .mb-li
+            height Rem(50)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 Rem(15)
+            color #333333
+            font-size: Rem(15)
+            botLine()
+            position relative
+            &:last-child
+                border-bottom none
+            input 
+                width Rem(200)
+                height Rem(45/2)
+                line-height: Rem(45/2)
+                padding Rem(5/2) 0
+                margin-left Rem(10)
+                border none
+                font-size: Rem(14)
+            .mb-lir
+                font-size 0
+                beMore(15)
+    .mb-pswp
+        margin-top Rem(15)
+        font-size: Rem(12)
+        color #666666
+        padding 0 Rem(20)
+        display inline-block
+    .mb-btn
+        display block
+        height Rem(50)
+        width Rem(355)
+        border-radius 3px
+        margin Rem(45) auto Rem(35)
+        background $theme-color
+        color #fff
+        border 0
+        font-size Rem(15)
