@@ -1,0 +1,35 @@
+<script>
+  function tishi(){
+    showTips("为了您的资金安全，只能绑定您本人的银行卡")
+  }
+  // 清空input
+  function qingkong(){
+    $(".xyc").val('')
+    $(".xyc").focus()
+  }
+
+</script>
+
+<script>
+  $(function(){
+    // 计时时间
+    var times = 10
+    // 点击获取验证码
+    $(".vi-btn.active").on("click",function(){
+      if(times >= 10){
+        $(".vi-btn").removeClass("active")
+        $(".vi-btn").html("重新获取("+times+")")
+        var settimes = setInterval(function(){
+          times -=1
+          $(".vi-btn").html("重新获取("+times+")")
+          if(times <= 0){
+            $(".vi-btn").html("重新获取")
+            $(".vi-btn").addClass("active")
+            clearInterval(settimes)
+            times = 10
+          }
+        },1000)
+      }
+    })
+  })
+</script>
