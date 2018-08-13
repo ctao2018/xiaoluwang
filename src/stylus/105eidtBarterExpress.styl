@@ -1,0 +1,71 @@
+@import './base'
+
+.edit-barter
+  .eb-edit
+    padding 0 Rem(10)
+    background #fff
+    margin-top Rem(10)
+    .ebe-line
+      display flex
+      padding Rem(10) 0
+      line-height Rem(30)
+      &.bt
+        justify-content space-between
+        padding-right Rem(15)
+        botLine() 
+        toMore(0)
+      .slc-box .slc-curr
+        border 0
+        text-align right
+      .ebe-text
+        border 0
+        flex 1 0 auto
+  .eb-upload
+    padding 0 Rem(10) Rem(10)
+    background #fff
+    margin-top Rem(10)
+    >h3
+      line-height Rem(45)
+    .ebu-wrap
+      display flex
+    .ebu-push
+      position relative
+      flex 0 0 Rem(55)
+      height Rem(55)
+      >input[type=file]
+        width 100%
+        height 100%
+        opacity 0
+      &:before
+        content ''
+        display block
+        width 100%
+        height 100%
+        getBg('up-file')
+        background-size cover
+        position absolute
+        left 0px
+        top 0px
+    .ebu-box
+      position relative
+      flex 0 0 Rem(55)
+      height Rem(55)
+      margin 0 Rem(15) Rem(15) 0
+      display flex
+      justify-content center
+      align-items center
+      >img
+        max-width 100%
+        max-height 100%
+      >i
+        display block
+        position absolute
+        right Rem(-15)
+        top Rem(-15)
+        width Rem(30)
+        height Rem(30)
+        getBg('upload-del')
+        background-size Rem(15)
+        background-position center
+
+
