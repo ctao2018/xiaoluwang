@@ -1,0 +1,25 @@
+<script>
+        $(function(){
+                // 点击顶部选择
+            $(".os-menu-list").find('li').each(function(i){
+                $(this).on("click",function(){
+                    $(".os-menu-list li a").removeClass("pr-on");
+                    $(this).find("a").addClass("pr-on");
+                    $('.os-big').find('.os-box').eq(i).show().siblings().hide();
+                })
+            })
+
+            $(".si-sjr").each(function(){
+                $(this).find(".si-sure").on("click",function(){
+                    showConfirm('确定接单吗？',function(){
+                    console.log('接单成功')
+                    })
+                })
+            })
+
+              // 启动倒计时
+            initTimeOut();
+        })
+        
+ 
+</script>

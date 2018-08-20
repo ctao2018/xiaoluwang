@@ -1,0 +1,37 @@
+<script>
+    $('.al-bqbx').find('.al-bqa').each(function(){
+        $(this).on('click',function(){
+            var lab = $(this).clone();
+            var selbx= $('.al-selbx');
+            var aleng = selbx.find('.al-bqa').length;
+            
+            if(aleng<2){
+                if(aleng = 1){
+                    var labn = $(this).text();
+                    var seln = selbx.find('.al-bqa').text();
+                    if(labn == seln){
+                        return false
+                    }else{
+                        selbx.append(lab)
+                    }
+                }else{
+                    selbx.append(lab)
+                }
+                
+            }else{
+                showTips("最多只能设置两个标签！");
+                return false;
+            }
+            delLab()
+        })
+    })
+    delLab()
+    function delLab(){
+        $('.al-selbx').find('.al-bqa').each(function(){
+        $(this).on('click',function(){
+            $(this).remove();
+        })
+    })
+    }
+    
+</script>

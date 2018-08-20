@@ -1,0 +1,79 @@
+<div class="si-list">
+    <div class="si-tit">
+        <div class="si-titl">
+            <img src="./front/images/tx-001.png" alt="">
+            <span>王尼玛</span>
+        </div>
+        <% if(type =="dfk"){ %>
+            <span class="si-titr">待付款</span>
+        <% } %>
+        <% if(type =="dqr"){ %>
+            <span class="si-titr">待确认</span>
+        <% } %>
+        <% if(type =="dpj"){ %>
+            <span class="si-titr">待评价</span>
+        <% } %>
+        <% if(type =="tk"){ %>
+            <span class="si-titr">等待退款</span>
+        <% } %>
+    </div>
+    <div class="si-box">
+        <div class="si-top">
+            <div class="si-topl">
+                <img src="./front/images/l-manpage01.png">
+            </div>
+            <div class="si-topr">
+                <h3 class="si-toprh">徒步向导：美丽丽江、向导全程陪同服务、品位慢生活</h3>
+                <p class="si-toprpb clr">
+                    <span class="si-tcl">套餐:</span>
+                    <span class="si-tcr">【游丽江】咨询服务1天</span>
+                </p>
+            </div>
+        </div>
+        <div class="si-bottom">
+            <div class="si-btpl">
+                <p>出发时间：2018-08-08</p>
+                <p>备注：无</p>
+            </div>
+            <div class="si-btpr">
+                <p>合计：<em>￥99.00</em></p>
+            </div>
+        </div>
+        <% if(type=="dfk"){ %>
+            <div class="si-sj">
+                <span class="si-sjspa">确认剩余时间：<i class="global-timeout" data-date="1534660181000"></i></span>
+                <div class="si-sjr">
+                    <a href="javascript:void(0)">联系买家</a>
+                </div>
+            </div>
+        <% } %>
+        <% if(type=="dqr"){ %>
+            <div class="si-sj">
+                <span class="si-sjspa">确认剩余时间：<i class="global-timeout" data-date="1534660181000"></i></span>
+                <div class="si-sjr">
+                    <a href="javascript:void(0)">联系买家</a>
+                    <a class="si-sure" href="javascript:void(0)">确认接单</a>
+                </div>
+            </div>
+        <% } %>
+        <% if(type=="dpj"){ %>
+            <div class="si-sj">
+                <span class="si-sjspa"></span>
+                <div class="si-sjr">
+                    <a href="javascript:void(0)">联系买家</a>
+                </div>
+            </div>
+        <% } %>
+        <% if(type=="tk"){ %>
+            <div class="si-sj">
+                <span class="si-sjspa">待退款</span>
+                <div class="si-sjr">
+                    <a href="javascript:void(0)">联系买家</a>
+                    <a href="javascript:void(0)">处理退款</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    
+        
+</div>
