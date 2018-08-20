@@ -1,0 +1,52 @@
+<script>
+  $(function(){
+    var flag = true;
+    $(".invoice-manage").on('click',function(){
+      if(flag){
+        $(".il-item").addClass("edit");
+        flag = !flag;
+        $(".invoice-manage").text("取消");
+        $(".invoice-del").show();
+      }else{
+        $(".il-item").removeClass("edit");
+        flag = !flag
+        $(".invoice-manage").text("管理");
+        $(".invoice-del").hide();
+      }
+    })
+    $(".invoice-del").on('click',function(){
+      var boxs = $("[name='invoice-box']");
+      var ids = [];
+      var delBox = [];
+      for(var i = 0;i<boxs.length;i++){
+        if($(boxs[i]).prop("checked")){
+          ids.push($(boxs[i]).data("id"))
+          delBox.push($(boxs[i]))
+        }
+      }
+      if(ids.length<=0){
+        showTips('请选择需要删除的发票信息');
+        return false;
+      }
+      getDelInfo = {
+        delBox:delBox,
+        ids:ids
+      }
+      delFunc(delBox)
+    })
+  })
+
+  var getDelInfo = {}
+
+  function delFunc(){
+    showConfirm('确定删除选中的发票信息吗？',function(){
+      var boxs = getDelInfo.delBox;// 选中的付款框对象
+      var ids = getDelInfo.ids;// 选中的复选框对应的id
+      for(var i = 0;i<boxs.length;i++){
+        boxs[i].parent(".il-item").remove();
+      }
+      $(".invoice-manage").text("管理");
+      $(".invoice-del").hide();
+    })
+  }
+</script>

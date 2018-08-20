@@ -1,0 +1,26 @@
+<div class="order-list">
+  <ul class="ol-tab">
+    <li data-status="0" class="active">带团服务</li>
+    <li data-status="1">向导服务</li>
+    <li data-status="2">咨询服务</li>
+  </ul>
+  <div class="order-list-items">
+    <%= 
+    orderItem({
+      type  : 5,
+      string: '距离出行时间还有：',
+      status: '3天'
+    })+
+    orderItem({
+      type  : 5,
+      string: '',
+      status: '已完成'
+    })+
+    orderItem({
+      type  : 6,
+      string: '',
+      status: '已完成'
+    })
+    %>
+  </div>
+</div>
