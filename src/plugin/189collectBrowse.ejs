@@ -1,0 +1,71 @@
+<script src="front/js/jquery.mobile-1.4.5.min.js"></script>
+<script>
+    $(function(){
+        // 点击顶部选择
+        tabSel(".cb-menu-list",'.cb-big','.cb-box');
+        tabSel(".cb-bxspul",'.cb-spbig','.cb-spbx');
+
+        var flaga = true;
+        $(".nav-wrap .btn-string").on("click",function(){
+            if(flaga){
+                $(this).text('取消');
+                $('.cl-sel').show();
+                $('.cb-delbtn').show();
+                $(".cl-spbx").removeClass('selected');
+                flaga = false;
+            }else{
+                $(this).text('编辑');
+                $('.cl-sel').hide();
+                $('.cb-delbtn').hide();
+                $(".cl-sel").find("input:checkbox").prop("checked", false);
+                flaga = true;
+            }
+            init()
+        })
+        
+        init()
+        
+    })
+    
+
+    function tabSel(ul,big,box){
+        $(ul).find('li').each(function(i){
+            $(this).on("click",function(){
+                $(ul).find("a").removeClass("pr-on");
+                $(this).find("a").addClass("pr-on");
+                $(big).find(box).eq(i).show().siblings().hide();
+            })
+        })
+    }
+
+
+    function init() {
+    
+        var flagb = $('.cl-sel').css('display');
+        if(flagb === 'block'){
+            
+            $(".cl-spbx").on('swipeleft', function(event) {
+                event.preventDefault();
+                $(".cl-spbx").removeClass('selected');
+               
+            });
+        }else{
+            
+            $(".cl-spbx").on('swipeleft', function(event) {
+                event.preventDefault();
+                $(".cl-spbx").removeClass('selected');
+                $(this).addClass('selected');
+                
+            });
+            $(".cl-spbx").on('swiperight', function(event) {
+                event.preventDefault();
+                $(this).removeClass('selected');
+            });
+        }
+        
+    }
+
+
+
+    
+</script>

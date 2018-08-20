@@ -1,0 +1,69 @@
+@import './base'
+
+.collect-list
+    margin-bottom Rem(10)
+    .cl-sp
+        width 100%
+        overflow hidden
+        .cl-spbx
+            width Rem(500)
+            transition: all 0.3s linear;
+            .cl-sel
+                display none
+                float left
+                width Rem(40)
+                line-height: Rem(120)
+                text-align: center
+            .cl-cont
+                width Rem(710/2)
+                padding Rem(10)
+                background-color: #ffffff
+                display: flex
+                justify-content: space-between
+                float left
+                .cl-contl
+                    width Rem(150)
+                    position relative
+                    img 
+                        width 100%
+                        height Rem(100)
+                        border-radius: Rem(2)
+                    .cl-contlsa
+                        height Rem(25/2)
+                        line-height: Rem(25/2)
+                        padding Rem(1) Rem(5)
+                        font-size: Rem(9)
+                        background-color: rgba(0,0,0,0.5)
+                        color #fff
+                        position absolute
+                        top Rem(15/2)
+                        left Rem(15/2)
+                .cl-contr
+                    width Rem(380/2)
+                    .cl-contrh
+                        color: #333333
+                        font-size: Rem(14)
+                        line-height: Rem(16)
+                        ellps(line = 2)
+                        margin-bottom: Rem(40)
+                    .cl-contrp
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        .cl-contrpa
+                            font-size: Rem(15)
+                            color #ff0000
+                        .cl-contrpb
+                            font-size: Rem(11)
+                            color #666666
+            .cl-del
+                float left
+                width Rem(75)
+                line-height: Rem(120)
+                text-align: center
+                font-size: Rem(12)
+                color #666666
+        .selected
+            transform: translate(Rem(-75))
+            transition: all 0.3s linear
+            

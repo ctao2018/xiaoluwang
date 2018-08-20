@@ -1,0 +1,86 @@
+@import './base'
+.ui-loader
+    display: none
+.collect-browse
+    .cb-head
+        position: fixed
+        top Rem(45)
+        left 0
+        right 0
+        z-index 99
+        .cb-menu-list
+            background-color: #fff
+            font-size: 0
+            border-bottom 1px solid #e6e6e6
+            display: flex
+            justify-content: space-around
+            li
+                font-size: Rem(14)
+                display: inline-block
+                text-align: center
+                a
+                    padding: Rem(10) 0
+                    display: inline-block
+                    color #666
+                .pr-on
+                    border-bottom 1px solid $theme-color
+                    color $theme-color
+    .cb-big
+        margin-top Rem(35)
+        .cb-box
+            display none
+        .cb-bxsp
+            display block
+            .cb-bxspul
+                background-color: #fff
+                font-size: 0
+                border-bottom 1px solid #e6e6e6
+                li
+                    font-size: Rem(14)
+                    display: inline-block
+                    text-align: center
+                    width 33%
+                    border-right 1px solid #e6e6e6
+                    &:last-child
+                        border-right none
+                    a
+                        padding: Rem(10) 0
+                        display: inline-block
+                        color #666
+                    .pr-on
+                        color $theme-color
+            .cb-spbx
+                display none
+                .cb-bxspt
+                    background-color: #ffffff
+                    padding Rem(10)
+                    display: flex
+                    justify-content: space-around
+                    margin-bottom Rem(10)
+                    >a
+                        color: #666666
+                        font-size: Rem(14)
+                        padding: Rem(2) Rem(12)
+                        height Rem(30)
+                        line-height: Rem(30)
+                        border-radius: Rem(15)
+                        background-color: #eff3f6
+            .cb-spsp
+                display block
+    .cb-delbtn
+        color #ffffff
+        font-size: Rem(15)
+        width 100%
+        height Rem(40)
+        line-height Rem(40)
+        background-color #939393
+        position absolute
+        left 0
+        bottom 0
+        right 0
+        display: none
+        text-align: center
+        z-index 999
+
+
+                
