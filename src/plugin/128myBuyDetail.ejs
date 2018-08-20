@@ -1,0 +1,12 @@
+<script>
+        $(function(){
+                // 点击顶部选择
+            $(".mbd-menu-list").find('li').each(function(i){
+                $(this).on("click",function(){
+                    $(".mbd-menu-list li a").removeClass("pr-on");
+                    $(this).find("a").addClass("pr-on");
+                
+                })
+            })
+        })
+</script>

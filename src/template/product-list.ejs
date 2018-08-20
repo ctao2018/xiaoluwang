@@ -1,0 +1,45 @@
+<div class="product-list">
+    <div class="pl-tit">
+        <span>向导服务</span>
+        <% if(type =="sxz"){ %>
+            <span class="pl-titr">上架中</span>
+        <% } %>
+        <% if(type =="ck"){ %>
+            <span class="pl-titr">仓库中</span>
+        <% } %>
+        <% if(type =="shz"){ %>
+            <span class="pl-titr">待审核</span>
+        <% } %>
+    </div>
+    <div class="pl-top">
+        <div class="pl-topl">
+            <img src="./front/images/l-manpage01.png">
+        </div>
+        <div class="pl-topr">
+            <h3 class="pl-toprh">徒步向导：美丽丽江、向导全程陪同服务、品位慢生活</h3>
+            <p class="pl-toprpb">
+                <span class="pl-tcl"><em>￥</em>298<em>起</em></span>
+                <span class="pl-tcr">共5个套餐</span>
+            </p>
+        </div>
+    </div>
+    
+    <% if(type=="sxz"){ %>
+        <div class="pl-btn">
+            <a href="javascript:void(0)">下架</a>
+        </div>
+    <% } %>
+    <% if(type=="ck"){ %>
+        <div class="pl-btn">
+            <a href="javascript:void(0)">删除</a>
+            <a href="javascript:void(0)">提交审核</a>
+        </div>
+    <% } %>
+    <% if(type=="shz"){ %>
+        <div class="pl-btn">
+            <a href="javascript:void(0)">取消审核</a>
+        </div>
+    <% } %>
+    
+        
+</div>

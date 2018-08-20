@@ -1,0 +1,61 @@
+@import './base'
+
+.product-list
+    display block
+    background #fff
+    margin-bottom: Rem(10)
+    .pl-tit
+        height Rem(50)
+        display flex
+        justify-content space-between
+        align-items: center
+        botLine()
+        padding 0 Rem(10)
+        color #333333
+        font-size: Rem(14)
+        .pl-titr
+            color #999999
+    .pl-top
+        display flex
+        justify-content space-between
+        padding Rem(10)
+        botLine()
+        .pl-topl
+            width Rem(130)
+            position relative
+            img 
+                width 100%
+                height Rem(100)
+                border-radius: Rem(2)
+        .pl-topr
+            width Rem(415/2)
+            .pl-toprh
+                color: #333333
+                font-size: Rem(14)
+                line-height: Rem(16)
+                ellps(line = 2)
+                margin-bottom: Rem(40)
+            .pl-toprpb
+                font-size: Rem(12)
+                color: #333333
+                .pl-tcl
+                    color $theme-color
+                    margin-right Rem(5)
+                    font-size Rem(16)
+                    em
+                        font-size: Rem(11)
+    .pl-btn
+        padding Rem(10)
+        text-align: right 
+        >a
+            font-size: Rem(14)
+            color: #ffffff
+            width Rem(145/2)
+            height Rem(55/2)
+            line-height Rem(55/2)
+            border-radius 3px
+            background-color $theme-color
+            margin-left Rem(5)
+            display inline-block
+            text-align center
+    

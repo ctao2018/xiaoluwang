@@ -1,0 +1,59 @@
+@import './base'
+
+.doyen-center
+    .dc-hdul
+        background-color #ffffff
+        margin-bottom Rem(10)
+        padding 0 Rem(15)
+        .dc-hdli
+            height Rem(125/2)
+            line-height Rem(125/2)
+            display: flex
+            justify-content: space-between
+            color #333333
+            font-size: Rem(15)
+            position relative
+            .dc-hdlil
+                display: flex
+                align-items: center
+                img 
+                    width Rem(95/2)
+                    height Rem(95/2)
+                    border-radius: Rem(95/4)
+                    margin-right Rem(15)
+            .dc-hdlir
+                font-size 0
+                beMore(0)
+    .dc-mul
+        background-color #ffffff
+        margin-bottom Rem(10)
+        .dc-mli
+            height Rem(50)
+            display: flex
+            justify-content: space-between
+            align-items: center
+            color #333333
+            font-size: Rem(15)
+            position relative
+            padding 0 Rem(15)
+            botLine()
+            &:last-child
+                border-bottom none 
+            .dc-mlir
+                font-size 0
+                beMore(15)
+    .dc-change
+        height Rem(40)
+        background-color: #ffffff
+        display: flex
+        justify-content: center
+        align-items: center
+        color #666666
+        font-size: Rem(14)
+        i 
+            width Rem(29/2)
+            height Rem(13)
+            getBg('c-change')
+            background-size Rem(29/2) Rem(13)
+            display inline-block
+            margin-right Rem(10)
