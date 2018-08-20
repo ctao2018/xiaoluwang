@@ -9,11 +9,11 @@
       </div>
       <div class="acp-line">
         <label class="acp-label">英文姓<i>Surname</i></label>
-        <div class="acp-text"><input type="text" placeholder="如张小白填写为“ZHANG”"></div>
+        <div class="acp-text"><input type="text" page-verify='email' placeholder="如张小白填写为“ZHANG”"></div>
       </div>
       <div class="acp-line">
         <label class="acp-label">英文名<i>Given names</i></label>
-        <div class="acp-text"><input type="text" placeholder="如张小白填写为“xiaobai”"></div>
+        <div class="acp-text"><input type="text" page-verify='empty' placeholder="如张小白填写为“xiaobai”"></div>
       </div>
     </div>
   </div>
@@ -27,8 +27,9 @@
       <div class="acp-line">
         <label class="acp-label">证件类型</label>
         <div class="slc-box">
-          <input type="text" readonly data-source='-9' class="slc-curr" value="" placeholder="请选择">
+          <input type="text" readonly data-source='-9' page-verify='empty' class="slc-curr" value="" placeholder="请选择">
           <ul class="slc-list">
+            <li data-source="-9">请选择</li>
             <li data-source="0">身份证</li>
             <li data-source="1">护照</li>
             <li data-source="2">军官证</li>
