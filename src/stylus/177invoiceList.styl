@@ -6,7 +6,20 @@
     background #fff
     line-height Rem(25)
     display flex
-    justify-content space-between
+    align-items center
     margin-bottom Rem(10)
-    color #333
-  
+    >input[type=checkbox]
+      display none
+    >a
+      color #333
+      flex 1 0 auto
+      display flex
+      justify-content space-between
+      transition .5s
+    &.edit
+      >input[type=checkbox]
+        display block
+      >a
+        margin-left Rem(10)
+.invoice-del
+  display none

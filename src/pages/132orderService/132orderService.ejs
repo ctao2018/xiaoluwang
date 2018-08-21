@@ -1,4 +1,30 @@
 <div class="order-service">
+    <div class="os-head">
+        <ul class="os-menu-list">
+            <li><a href="javascript:;;" class="pr-on">全部</a></li>
+            <li><a href="javascript:;;" >待付款</a></li>
+            <li><a href="javascript:;;">待确认/出行</a></li>
+            <li><a href="javascript:;;">待评价</a></li>
+            <li><a href="javascript:;;">退款/售后</a></li>
+        </ul>
+    </div>
+    <div class="os-big">
+        <div class="os-box os-all">
+            <%= serviceItem({type:'dfk'})+ serviceItem({type:'dqr'}) +serviceItem({type:'dpj'})%>
+        </div>
+        <div class="os-box os-dfk">
+            <%= serviceItem({type:'dfk'})+ serviceItem({type:'dfk'}) +serviceItem({type:'dfk'})%>
+        </div>
+        <div class="os-box os-dqr">
+            <%= serviceItem({type:'dqr'})+ serviceItem({type:'dqr'}) +serviceItem({type:'dqr'})%>
+        </div>
+        <div class="os-box os-dpj">
+            <%= serviceItem({type:'dpj'})+ serviceItem({type:'dpj'}) +serviceItem({type:'dpj'})%>
+        </div>
+        <div class="os-box os-tk">
+            <%= serviceItem({type:'tk'})+ serviceItem({type:'tk'}) +serviceItem({type:'tk'})%>
+        </div>
+    </div>
     <ul class="os-menu-list">
         <li><a href="javascript:;;" class="pr-on">待付款</a></li>
         <li><a href="javascript:;;">待出行</a></li>

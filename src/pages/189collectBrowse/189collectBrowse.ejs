@@ -1,0 +1,66 @@
+<div class="collect-browse">
+    <div class="cb-head">
+        <ul class="cb-menu-list">
+            <li><a href="javascript:;;" class="pr-on">商品收藏</a></li>
+            <li><a href="javascript:;;" >店铺收藏</a></li>
+            <li><a href="javascript:;;">浏览记录</a></li>
+        </ul>
+    </div>
+    <div class="cb-big">
+        <!-- 商品收藏 -->
+        <div class="cb-box cb-bxsp">
+            <ul class="cb-bxspul">
+                <li><a href="javascript:;;" class="pr-on">商品</a></li>
+                <li><a href="javascript:;;" >旅行</a></li>
+                <li><a href="javascript:;;">达人产品</a></li>
+            </ul>
+            <div class="cb-spbig">
+                <!-- 商品 -->
+                <div class="cb-spbx cb-spsp">
+                    <div class="cb-splist">
+                        <%= collectList({type:'sp'})+ collectList({type:'sp'}) +collectList({type:'sp'})%>
+                    </div>
+                </div>
+
+                 <!-- 旅行 -->
+                <div class="cb-spbx">
+                    <div class="cb-bxspt">
+                        <a href="javascript:;;">近一个月</a>
+                        <a href="javascript:;;">近三个月</a>
+                        <a href="javascript:;;">三个月以前</a>
+                    </div>
+                    <div class="cb-splist">
+                        <%= collectList({type:'lx'})+ collectList({type:'lx'}) +collectList({type:'lx'})%>
+                    </div>
+                </div>
+
+                  <!-- 达人产品 -->
+                <div class="cb-spbx">
+                    <div class="cb-bxspt">
+                        <a href="javascript:;;">近一个月</a>
+                        <a href="javascript:;;">近三个月</a>
+                        <a href="javascript:;;">三个月以前</a>
+                    </div>
+                    <div class="cb-splist">
+                        <%= collectList({type:'dr'})+ collectList({type:'dr'}) +collectList({type:'dr'})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 店铺收藏 -->
+        <div class="cb-box">
+                <%= storeList()+ storeList() +storeList()%>
+        </div>
+
+        <!-- 浏览记录 -->
+        <div class="cb-box">
+                <ul class="cb-bxspul">
+                    <li class="scjlli"><a href="javascript:;;" class="pr-on">商品</a></li>
+                    <li class="scjlli"><a href="javascript:;;" >旅行</a></li>
+                </ul>
+                <%= collectList({type:'sp'})+ collectList({type:'lx'}) +collectList({type:'dr'})%>
+        </div>
+    </div>
+    <a class="cb-delbtn" href="javascript:void(0)">删除</a>
+</div>

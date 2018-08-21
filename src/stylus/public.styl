@@ -16,6 +16,21 @@
     opacity 0
     transform translateY(Rem(15))
 
+@keyframes errAnims
+  0%
+    transform translateX(Rem(0))
+  25%
+    transform translateX(Rem(-10))
+  50%
+    transform translateX(Rem(10))
+  75%
+    transform translateX(Rem(-10))
+  100%
+    transform translateX(Rem(0))
+
+.errAnim
+  animation errAnims .7s
+
 [data-tabbox]
   display none
 

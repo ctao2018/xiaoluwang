@@ -1,0 +1,54 @@
+@import './base'
+
+.store-list
+    margin-bottom Rem(10)
+    .cl-sp
+        width 100%
+        overflow hidden
+        .cl-spbx
+            width Rem(500)
+            transition: all 0.3s linear;
+            .cl-sel
+                display none
+                float left
+                width Rem(40)
+                text-align: center
+                input 
+                    margin-top: 2.857rem;
+            .cl-cont
+                width Rem(710/2)
+                padding Rem(10)
+                background-color: #ffffff
+                display: flex
+                justify-content: space-between
+                float left
+                .cl-contl
+                    width Rem(230/2)
+                    position relative
+                    img 
+                        width 100%
+                        height Rem(75)
+                .cl-contr
+                    width Rem(445/2)
+                    .cl-contrh
+                        color: #333333
+                        font-size: Rem(16)
+                        line-height: Rem(18)
+                        ellps(line = 2)
+                        margin-bottom: Rem(15)
+                    .cl-contrp
+                        color: #666666
+                        font-size: Rem(14)
+                        display: flex
+                        align-items: center
+                        width 80%
+            .cl-del
+                float left
+                width Rem(75)
+                line-height: Rem(95)
+                text-align: center
+                font-size: Rem(12)
+                color #666666
+        .selected
+            transform: translate(Rem(-75))
+            transition: all 0.3s linear

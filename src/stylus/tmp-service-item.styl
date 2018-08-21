@@ -1,0 +1,121 @@
+@import './base'
+
+.si-list
+    display block
+    background #fff
+    margin-bottom: Rem(10)
+    .si-tit
+        height Rem(50)
+        display flex
+        justify-content space-between
+        align-items: center
+        botLine()
+        padding 0 Rem(10)
+        color #666666
+        font-size: Rem(14)
+        .si-titl
+            display: flex
+            align-items: center
+            img 
+                width Rem(35)
+                height Rem(35)
+                border-radius: Rem(35/2)
+                margin-right Rem(10)
+    .si-box
+        padding Rem(10)
+        .si-top
+            display flex
+            justify-content space-between
+            padding-bottom Rem(10)
+            botLine()
+            .si-topl
+                width Rem(130)
+                position relative
+                img 
+                    width 100%
+                    height Rem(100)
+                    border-radius: Rem(2)
+                .si-toplsa
+                    height Rem(35/2)
+                    line-height: Rem(35/2)
+                    border-radius Rem(35/2)
+                    padding Rem(5/2) Rem(15/2)
+                    font-size: Rem(12)
+                    background-color: rgba(0,0,0,0.5)
+                    color #fff
+                    position absolute
+                    top Rem(15/2)
+                    left Rem(15/2)
+            .si-topr
+                width Rem(415/2)
+                .si-toprh
+                    color: #333333
+                    font-size: Rem(14)
+                    line-height: Rem(16)
+                    ellps(line = 2)
+                    margin-bottom: Rem(40)
+                .si-toprpb
+                    font-size: Rem(12)
+                    color: #333333
+                    span 
+                        float left
+                    .si-tcl
+                        margin-top Rem(8)
+                        margin-right Rem(10)
+                    .si-tcr
+                        color #666666
+                        height Rem(20)
+                        line-height Rem(20)
+                        padding Rem(4) Rem(8)
+                        background-color #eff3f6
+                        border-radius: Rem(25/2)
+                        max-width Rem(150)
+                        ellp()
+    .si-bottom
+        padding-top: Rem(10)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: Rem(12)
+        color: #666666
+        botLine()
+        .si-btpl
+            width Rem(210)
+            p
+                margin-bottom Rem(10)
+        .si-btpr
+            font-size: Rem(14)
+            width Rem(130)
+            em
+                color $theme-color
+    .si-sj
+        padding Rem(10) 0 0
+        display flex
+        justify-content space-between
+        align-items: center
+        .si-sjspa
+            color #666666
+            font-size Rem(13)
+        .si-sjr
+            >a
+                font-size: Rem(13)
+                color: $theme-color
+                height Rem(30)
+                line-height Rem(30)
+                padding Rem(5) Rem(15)
+                border-radius 4px
+                background-color #ffffff
+                margin-left Rem(5)
+                border 1px solid $theme-color
+    .clr
+        &:after
+            content ""
+            clear both
+            visibility hidden
+            display block
+            font-size 0 
+            height 0 
+            line-height 0
+    .clr 
+        zoom:1
+        
