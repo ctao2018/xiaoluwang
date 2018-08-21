@@ -6,6 +6,8 @@ const pf = {
   pageTitle: '订单中心',
   isFoot: true,
   footType: 'doyen',
+const pf = {
+  pageTitle: '订单中心',
 }
 
 

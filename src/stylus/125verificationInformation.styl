@@ -1,0 +1,92 @@
+
+@import './base'
+.verification-information
+  .vb-tips
+    padding: Rem(15) Rem(10)
+    color: #999
+    font-size: Rem(12)
+  .vb-pagebox
+    padding: 0 Rem(35/2)
+    .vbp-cared
+      background-color #fff
+      padding: Rem(15) Rem(10) Rem(10)
+      border-radius: Rem(8)
+      .vbpc-ckr
+        botLine()
+        // margin-bottom Rem(10)
+        &:last-child
+          border-bottom 0
+          margin-bottom 0
+        p
+          color #999
+          font-size: Rem(12)
+          padding Rem(10) Rem(10) 0
+        .vbpc-input
+          display flex
+          justify-content: space-between
+          align-items: center
+          padding: Rem(10) Rem(10)
+          input
+            width 100%
+            margin Rem(5) 0
+            border: 0
+            color: #333
+          .vbpc-yiwen
+            width Rem(15)
+            height Rem(15)
+            getBg("qus-help")
+            background-size: contain
+            display inline-block
+            vertical-align middle
+          .vbpc-close
+            width Rem(15)
+            height Rem(15)
+            getBg("l-close")
+            background-size: contain
+            display inline-block
+            vertical-align middle
+        .vi-btn
+          min-width Rem(90)
+          background-color #ccc
+          border: 0
+          font-size: Rem(12)
+          color: #fff
+          padding Rem(5) Rem(5)
+          &.active
+            background-color $theme-color
+        .vit-box
+          display flex
+          align-items: center
+          padding-bottom Rem(10)
+          .vit-img
+            width Rem(30)
+            height Rem(30)
+            display inline-block
+            vertical-align middle
+            img
+              max-width 100%
+          .vit-txt
+            display inline-block
+            vertical-align middle
+            margin-left Rem(10)
+            p
+              line-height Rem(20)
+              padding: 0
+              .vit-name
+                color: #333
+                font-size: Rem(13)
+    .vbp-tybox
+      display flex
+      padding Rem(10) 0
+      a
+        color: #999
+.vb-footBtn
+  padding Rem(50) Rem(15)
+  a
+    border-radius: Rem(4)
+    background-color $theme-color
+    color: #fff
+    text-align center
+    height Rem(45)
+    line-height: Rem(45)
+    display: block
