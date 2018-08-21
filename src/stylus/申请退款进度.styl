@@ -1,0 +1,116 @@
+@import './base'
+
+.refund-progress
+  .rp-top
+    background #fff
+    height Rem(145)
+    display flex
+    flex-flow column
+    align-items center
+    box-sizing border-box
+    padding-top Rem(35)
+    color #999
+    line-height Rem(20)
+    margin-bottom Rem(10)
+    .rp-icon
+      width Rem(50)
+      height Rem(50)
+      background url('../assets/images/icon/rp-icon1.png') center no-repeat
+      background-size cover
+      margin-bottom Rem(5)
+      &.succ
+        background url('../assets/images/icon/rp-icon2.png') center no-repeat
+        background-size cover
+      &.fail
+        background url('../assets/images/icon/rp-icon3.png') center no-repeat
+        background-size cover
+  .rp-progress
+    background #fff
+    margin-bottom Rem(10)
+    padding Rem(10)
+    color #999
+    ul
+      position relative
+      &:before
+        content ''
+        display block
+        width 1px
+        height Rem(80)
+        background #f5f5f5
+        position absolute
+        left Rem(7)
+        top Rem(20)
+      &.succ
+        &:before
+          background #999
+        li
+          &:before
+            background #999
+          &:last-child
+            color #8ed96e
+          &:last-child:before
+            background #fff url('../assets/images/icon/rp-ps.png') center no-repeat
+            background-size cover
+      &.fail
+        &:before
+          background #999
+        li
+          &:before
+            background #999
+          &:last-child
+            color #ff0000
+          &:last-child:before
+            background #fff url('../assets/images/icon/rp-pf.png') center no-repeat
+            background-size cover
+    li
+      position relative
+      z-index 2
+      display flex
+      align-items center
+      line-height Rem(40)
+      >label
+        margin-right Rem(10)
+      &:before
+        content ''
+        display block
+        width Rem(14)
+        height Rem(14)
+        border-radius 100%
+        background #f5f5f5
+        margin-right Rem(20)
+      &.active
+        >label
+          color $theme-color
+        &:before
+          background $theme-color
+  .rp-title
+    display flex
+    justify-content space-between
+    align-items center
+    padding Rem(10)
+    background #fff
+    line-height Rem(30)
+    botLine()
+    >h3
+      position relative
+      padding-left Rem(10)
+      font-weight bold
+      font-size Rem(16)
+      &:before
+        content ''
+        display block
+        width Rem(2)
+        height Rem(15)
+        abs(0,auto,0,0)
+        background $theme-color
+        margin auto
+  .rp-info
+    padding Rem(10)
+    line-height Rem(30)
+    background #fff
+    color #333
+    >p
+      >span
+        color #666
+      >i
+        color $theme-color
