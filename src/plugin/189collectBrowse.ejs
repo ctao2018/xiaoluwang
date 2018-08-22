@@ -40,7 +40,8 @@
 
 
     function init() {
-    
+        var boxW = $(window).width()-30;
+		$('.cl-cont').css({'width':boxW,'padding':'15px'});
         var flagb = $('.cl-sel').css('display');
         if(flagb === 'block'){
             

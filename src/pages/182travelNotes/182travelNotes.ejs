@@ -1,0 +1,96 @@
+<div class="travel-notes">
+    <div class="tn-topfix">
+        <ul class="tn-menu-list">
+            <li><a href="javascript:void(0)" class="pr-on">我的驻足</a></li>
+            <li><a href="javascript:void(0)">我的游记</a></li>
+            <li><a href="javascript:void(0)">关注的达人</a></li>
+        </ul>
+    </div>
+    <div class="tn-big">
+        <!-- 我的驻足 -->
+        <div class="tn-box tn-zz">
+           <% for (var i =0;i<4;i++){%>
+            <div class="tn-zzbig">
+                <div class="tn-zzbx clearfix">
+                    <div class="tn-sel">
+                        <input type="checkbox" name="sp" class="p-hook fill">
+                    </div>
+                    <a class="tn-item" href="javascript:void(0)">
+                        <div class="tn-img">
+                            <img src="./front/images/l-photoR01.png" alt="">
+                        </div>
+                        <div class="tn-txt">
+                            <p class="tn-txt-title">在康定</p>
+                            <p class="tn-txt-ms">康定，一座享誉世界的历史文化名城；一座跑马山界的历史文化名城；一座跑马山</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <%}%>
+            
+        </div>
+
+        <!-- 我的游记 -->
+        <div class="tn-box tn-yj">
+            <div class="tn-yjhead">
+                <h3>游记列表</h3>
+                <button type="button" class="br-sort" id="sort-list">倒序</button>
+            </div>
+            <% for (var i =0;i<4;i++){%>
+            <div class="tn-yjbig">
+                <div class="tn-yjbx">
+                    <div class="tn-sel">
+                        <input type="checkbox" name="sp" class="p-hook fill">
+                    </div>
+                    <div class="tn-yjcont">
+                        <a class="tn-link" href="javascript:void(0)">
+                            <div class="tn-img">
+                                <img src="http://placehold.it/710x260/09f/fff.png">
+                                <span class="tn-date">2018年5月10日</span>
+                            </div>
+                            <h3 class="tn-title">我走过最长的路，就是去赏花的山路</h3>
+                        </a>
+                        <div class="tn-info">
+                            <div class="tn-view">
+                                <p>浏览数：56872</p>
+                                <p class="likes" onclick="likedFunc.changeLiked(this)"><i class="icon"></i> 45412</p>
+                            </div>
+                            <a href="javascript:void(0)" class="tn-msg">留言</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+            
+            
+            
+        </div>
+
+        <!-- 关注的达人 -->
+        <div class="tn-box tn-dr">
+            <% for (var i =0;i<4;i++){%>
+            <div class="tn-drbig">
+                <div class="tn-drbx">
+                    <div class="tn-sel">
+                        <input type="checkbox" name="sp" class="p-hook fill">
+                    </div>
+                    <div class="tn-drcont">
+                        <a href="javascript:void(0)">
+                            <div class="tn-item-img">
+                                <img src="./front/images/l-mandetImg.png" alt="">
+                            </div>
+                            <div class="tn-item-txt">
+                                <h3 class="tn-tit">鹿友大团长</h3>
+                                <p class="tn-pa">A级旅游达人</p>
+                                <p class="tn-jianjie">简介：时尚旅游达人，十三年漫漫旅行总十三年漫漫旅行总十三年漫漫旅行总</p>
+                            </div>
+                            <div class="tn-jpicon"><img src="./front/images/icon/jinpai.png" alt=""></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </div>
+    <a class="tn-camer" href="javascript:void(0)"></a>
+</div>

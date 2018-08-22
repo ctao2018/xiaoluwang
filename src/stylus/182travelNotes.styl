@@ -1,0 +1,250 @@
+@import './base'
+
+.travel-notes
+    .tn-topfix
+        position: fixed
+        top Rem(45)
+        left 0
+        right 0
+        z-index 99
+        .tn-menu-list
+            background-color: #fff
+            font-size: 0
+            border-bottom 1px solid #e6e6e6
+            display: flex
+            justify-content: space-around
+            li
+                font-size: Rem(14)
+                display: inline-block
+                text-align: center
+                a
+                    padding: Rem(10) 0
+                    display: inline-block
+                    color #666
+                .pr-on
+                    border-bottom 1px solid $theme-color
+                    color $theme-color
+    .tn-big
+        margin-top Rem(45)
+        .tn-box
+            display: none
+        .tn-zz
+            display: block
+            background-color #fff
+            .tn-zzbig
+                width 100%
+                overflow hidden
+            .tn-zzbx
+                width Rem(415)
+                .tn-sel
+                    display none
+                    float left
+                    width Rem(40)
+                    text-align: center
+                    input 
+                        margin-top: Rem(65)
+                .tn-item
+                    width Rem(355)
+                    display block
+                    padding Rem(10)
+                    float left
+                    .tn-img
+                        width 100%
+                        max-height Rem(130)
+                        border-radius 8px
+                        overflow hidden
+                        display flex
+                        justify-content center
+                        align-items center
+                        img
+                            max-width 100%
+                            max-height 100%
+                    .tn-txt
+                        padding Rem(15) 0
+                        .tn-txt-title
+                            color #333
+                            font-weight: bold
+                            font-size: Rem(14)
+                            margin-bottom: Rem(10)
+                        .tn-txt-ms
+                            color #999
+                            ellp()
+        .tn-yj
+            background-color #ffffff
+            .tn-yjhead
+                width 100%
+                height Rem(65/2)
+                background-color #ffffff
+                display: flex
+                justify-content: space-around
+                align-items: center
+                botLine()
+                font-size: Rem(15)
+                h3
+                    color $theme-color
+                .br-sort
+                    position relative
+                    border 0
+                    padding-right Rem(15)
+                    background #fff
+                    color #666666
+                    &:after
+                        content ''
+                        display block
+                        abs(3,0,0,auto)
+                        margin auto
+                        width Rem(9)
+                        height Rem(6)
+                        getBg('icon-sort')
+                        background-position 0 Rem(-8)
+                        background-size Rem(9) Rem(14)
+                        transition .3s background-position
+                    &.down:after
+                        background-position 0 0
+            .tn-yjbig
+                width 100%
+                overflow hidden
+                .tn-yjbx
+                     width Rem(415)
+                    .tn-sel
+                        display none
+                        float left
+                        width Rem(40)
+                        text-align: center
+                        input 
+                            margin-top: Rem(65)
+                    .tn-yjcont
+                        width Rem(355)
+                        padding Rem(10) Rem(10) 0
+                        float left
+                        .tn-link
+                            display block
+                            .tn-img
+                                position relative
+                                display flex
+                                justify-content center
+                                align-items center
+                                >img
+                                    max-width 100%
+                                    border-radius 5px
+                                .tn-date
+                                    position absolute
+                                    bottom Rem(10)
+                                    right Rem(10)
+                                    display block
+                                    padding 0 Rem(10)
+                                    line-height Rem(18)
+                                    font-size Rem(12)
+                                    color #fff
+                                    background rgba(0,0,0,.5)
+                                    border-radius 10px
+                                    z-index 2
+                            .tn-title
+                                line-height Rem(25)
+                                padding Rem(10) 0
+                                color #333
+                                font-weight 600
+                        .tn-info
+                            display flex
+                            align-items center
+                            justify-content space-between
+                            padding Rem(10) 0
+                            line-height Rem(20)
+                            border-top 1px solid #e6e6e6
+                            color #666666
+                            .tn-view
+                                flex 0 0 auto
+                                display flex
+                                align-items center
+                                >p~p
+                                    margin-left Rem(35)
+                            .tn-msg
+                                width Rem(15)
+                                height Rem(29/2)
+                                getBg('leave-word')
+                                background-size cover
+                                font-size 0
+                        .likes
+                            display flex
+                            align-items center
+                            .icon
+                                width Rem(20)
+                                height Rem(18)
+                                getBg('l-collect')
+                                background-size Rem(25) Rem(46)
+                                background-position Rem(-3) Rem(-26)
+                                margin-right Rem(5)
+                            &.liked .icon
+                                background-position-y Rem(-3)
+        .tn-dr
+            background-color #ffffff
+            .tn-drbig
+                width 100%
+                overflow hidden
+                .tn-drbx
+                     width Rem(415)
+                    .tn-sel
+                        display none
+                        float left
+                        width Rem(40)
+                        text-align: center
+                        input 
+                            margin-top: Rem(36)
+                    .tn-drcont
+                        width Rem(365)
+                        padding 0 Rem(5)
+                        float left
+                        position relative      
+                        background-color #fff
+                        a
+                            color: #333
+                            border-bottom 1px solid #dfdfdf
+                            height Rem(60)
+                            display block
+                            padding: Rem(10) Rem(5)
+                        .tn-item-img
+                            width Rem(50)
+                            height Rem(50)
+                            border-radius 50%
+                            overflow hidden
+                            justify-content space-between
+                            align-items center
+                            position absolute
+                            left Rem(5)
+                            top 50%
+                            margin-top Rem(-25)
+                            img
+                                max-width 100%
+                                max-height 100%
+                        .tn-item-txt
+                            margin-left Rem(70)
+                            font-size: Rem(15)
+                            .tn-tit
+                               margin-bottom Rem(5)
+                            .tn-pa
+                                color #999
+                                font-size: Rem(14)
+                                margin-bottom Rem(10)
+                            .tn-jianjie
+                                ellp()
+                                color #999
+                        .tn-jpicon
+                            position absolute
+                            width Rem(15)
+                            height Rem(15)
+                            justify-content space-between
+                            align-items: center
+                            right: Rem(10)
+                            top 20%
+                            img
+                                max-width 100%
+                                max-height 100%
+    .tn-camer
+        width Rem(50)
+        height Rem(50)
+        getBg('c-came')
+        background-size: Rem(50) Rem(50)
+        position: fixed
+        left 50%
+        margin-left Rem(-25)
+        bottom: Rem(35)

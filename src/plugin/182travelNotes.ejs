@@ -1,0 +1,37 @@
+<script>
+    $(function(){
+            // 点击顶部选择
+        $(".tn-menu-list").find('li').each(function(i){
+            $(this).on("click",function(){
+                $(".tn-menu-list li a").removeClass("pr-on");
+                $(this).find("a").addClass("pr-on");
+                $('.tn-big').find('.tn-box').eq(i).show().siblings().hide();
+            })
+        })
+
+        $("#sort-list").on("click",function(){
+            if($(this).hasClass("down")){
+                // 改为从大到小
+                $(this).removeClass("down").text('倒序')
+            }else{
+                // 改为从小到大
+                $(this).addClass("down").text('正序')
+            }
+        })
+
+          var flaga = true;
+        $(".nav-wrap .btn-string").on("click",function(){
+           
+            if(flaga){
+                $(this).text('删除');
+                $('.tn-sel').show();
+                flaga = false;
+            }else{
+                $(this).text('管理');
+                $('.tn-sel').hide();
+                flaga = true;
+            }
+           
+        })
+    })
+</script>
