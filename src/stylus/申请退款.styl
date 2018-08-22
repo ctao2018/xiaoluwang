@@ -1,0 +1,75 @@
+@import './base'
+
+.tour-refund
+  .ol-item .ol-mid
+    background #fff
+  .tr-title
+    display flex
+    justify-content space-between
+    align-items center
+    padding Rem(10)
+    background #fff
+    line-height Rem(30)
+    botLine()
+    >h3
+      position relative
+      padding-left Rem(10)
+      font-weight bold
+      font-size Rem(16)
+      &:before
+        content ''
+        display block
+        width Rem(2)
+        height Rem(15)
+        abs(0,auto,0,0)
+        background $theme-color
+        margin auto
+    .slc-curr
+      text-align right
+      border 0
+    .slc-box
+      padding-right Rem(15)
+      toMore(0)
+  .tr-reason,.tr-file
+    background #fff
+    margin-bottom Rem(10)
+  .tr-line
+    margin 0 Rem(10)
+    padding Rem(10) 0
+    line-height Rem(30)
+    botLine()
+    display flex
+    align-items center
+    &:last-child
+      border 0
+    input[type=text]
+      border 0
+  .tr-price
+    color $theme-color
+    font-size Rem(12)
+    >i
+      font-size Rem(14)
+  .tr-imgwrap
+    display flex
+    flex-flow row wrap
+    padding Rem(10) 0 Rem(10) Rem(10)
+    .tr-imgbox
+      flex 0 0 Rem(110)
+      margin 0 Rem(10) Rem(10) 0
+      height Rem(70)
+      display flex
+      justify-content center
+      align-items center
+      >img
+        max-width 100%
+        max-height 100%
+    .tr-upimg
+      flex 0 0 Rem(110)
+      margin 0 Rem(10) Rem(10) 0
+      height Rem(70)
+      background #e7e7e7 url('../assets/images/icon/camere.png') center no-repeat
+      background-size Rem(27) auto
+      input[type=file]
+        width 100%
+        height 100%
+        opacity 0
